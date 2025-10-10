@@ -57,7 +57,7 @@ const translations: Translations = {
   // Hero
   badge: { vi: 'Giải pháp POS #1 tại Việt Nam', en: '#1 POS Solution in Vietnam', ko: '베트남 1위 POS 솔루션', zh: '越南第一POS解决方案', ja: 'ベトナムNo.1 POSソリューション' },
   heroTitle1: { vi: 'POS ONE', en: 'POS ONE', ko: 'POS ONE', zh: 'POS ONE', ja: 'POS ONE' },
-  heroSubtitle: { vi: 'Giải pháp bán hàng và kế toán cho hộ kinh doanh, SME', en: 'Comprehensive Retail Management Solution', ko: '종합 소매 관리 솔루션', zh: '全面的零售管理解决方案', ja: '包括的な小売管理ソリューション' },
+  heroSubtitle: { vi: 'Giải pháp bán hàng và kế toán cho hộ kinh doanh, SME', en: 'Retail and Accounting Solution for Businesses and SMEs', ko: '비즈니스 및 중소기업을 위한 소매 및 회계 솔루션', zh: '面向企业和中小企业的零售与会计解决方案', ja: 'ビジネスと中小企業のための小売および会計ソリューション' },
   heroTitle2: { vi: 'Triển khai đơn giản, Quản lý toàn diện, Tuân thủ chính sách thuế', en: 'Operate smarter, Grow stronger', ko: '스마트 운영, 강력한 성장', zh: '智能运营，强劲增长', ja: 'スマートに運営、力強く成長' },
   heroDesc: { vi: 'Giải pháp quản lý bán hàng và vận hành chuỗi toàn diện. Tích hợp thanh toán, quản lý kho, báo cáo thông minh và kết nối đa nền tảng - tất cả trong một hệ thống.', en: 'Comprehensive retail and chain management solution. Payment integration, inventory management, smart reporting and multi-platform connectivity - all in one system.', ko: '종합 소매 및 체인 관리 솔루션. 결제 통합, 재고 관리, 스마트 리포팅 및 멀티 플랫폼 연결 - 하나의 시스템에서 모두.', zh: '全面的零售和连锁管理解决方案。支付集成、库存管理、智能报告和多平台连接 - 一站式系统。', ja: '包括的な小売およびチェーン管理ソリューション。決済統合、在庫管理、スマートレポート、マルチプラットフォーム連携 - すべて1つのシステムで。' },
   registerNow: { vi: 'Đăng ký ngay', en: 'Register Now', ko: '지금 등록', zh: '立即注册', ja: '今すぐ登録' },
