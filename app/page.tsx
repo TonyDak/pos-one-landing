@@ -240,6 +240,7 @@ export default function POSOneLanding() {
   const [scrolled, setScrolled] = useState(false);
   const [language, setLanguage] = useState<Language>('vi');
   const [langMenuOpen, setLangMenuOpen] = useState(false);
+  const [videoModalOpen, setVideoModalOpen] = useState(false);
 
   const t = (key: string): string => {
     return translations[key]?.[language] || key;
@@ -589,12 +590,12 @@ export default function POSOneLanding() {
               <span className="relative z-10">{t('registerNow')}</span>
               <ArrowRight size={20} className="relative z-10 group-hover:translate-x-2 transition-transform" />
             </Link>
-            <Link
-              href="https://posone.vn/"
+            <button
+              onClick={() => setVideoModalOpen(true)}
               className="px-8 py-4 bg-white border-2 border-green-500 text-green-600 rounded-xl font-bold hover:bg-green-50 transition-all flex items-center space-x-3"
             >
               <span>{t('watchDemo')}</span>
-            </Link>
+            </button>
           </div>
 
           {/* Stats */}
@@ -1602,6 +1603,33 @@ export default function POSOneLanding() {
           </div>
         </div>
       </footer>
+
+      {/* Video Modal */}
+      {videoModalOpen && (
+        <div 
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] flex items-center justify-center p-4 animate-scale-in"
+          onClick={() => setVideoModalOpen(false)}
+        >
+          <div 
+            className="relative w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setVideoModalOpen(false)}
+              className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all hover:scale-110"
+            >
+              <X size={24} />
+            </button>
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/aBQEO2xvnZw?autoplay=1"
+              title="POS ONE Demo Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
