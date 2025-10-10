@@ -47,7 +47,8 @@ const translations: Translations = {
   
   // Hero
   badge: { vi: 'Giải pháp POS #1 tại Việt Nam', en: '#1 POS Solution in Vietnam', ko: '베트남 1위 POS 솔루션', zh: '越南第一POS解决方案', ja: 'ベトナムNo.1 POSソリューション' },
-  heroTitle1: { vi: 'Phần Mềm POS ONE', en: 'POS ONE Software', ko: 'POS ONE 소프트웨어', zh: 'POS ONE 软件', ja: 'POS ONE ソフトウェア' },
+  heroTitle1: { vi: 'POS ONE', en: 'POS ONE', ko: 'POS ONE', zh: 'POS ONE', ja: 'POS ONE' },
+  heroSubtitle: { vi: 'Giải pháp quản lý bán hàng toàn diện', en: 'Comprehensive Retail Management Solution', ko: '종합 소매 관리 솔루션', zh: '全面的零售管理解决方案', ja: '包括的な小売管理ソリューション' },
   heroTitle2: { vi: 'Vận hành thông minh, phát triển vững mạnh', en: 'Operate smarter, Grow stronger', ko: '스마트 운영, 강력한 성장', zh: '智能运营，强劲增长', ja: 'スマートに運営、力強く成長' },
   heroDesc: { vi: 'Giải pháp quản lý bán hàng và vận hành chuỗi toàn diện. Tích hợp thanh toán, quản lý kho, báo cáo thông minh và kết nối đa nền tảng - tất cả trong một hệ thống.', en: 'Comprehensive retail and chain management solution. Payment integration, inventory management, smart reporting and multi-platform connectivity - all in one system.', ko: '종합 소매 및 체인 관리 솔루션. 결제 통합, 재고 관리, 스마트 리포팅 및 멀티 플랫폼 연결 - 하나의 시스템에서 모두.', zh: '全面的零售和连锁管理解决方案。支付集成、库存管理、智能报告和多平台连接 - 一站式系统。', ja: '包括的な小売およびチェーン管理ソリューション。決済統合、在庫管理、スマートレポート、マルチプラットフォーム連携 - すべて1つのシステムで。' },
   registerNow: { vi: 'Đăng ký ngay', en: 'Register Now', ko: '지금 등록', zh: '立即注册', ja: '今すぐ登録' },
@@ -90,10 +91,36 @@ const translations: Translations = {
   premiumPlan: { vi: 'Gói Premium', en: 'Premium Plan', ko: '프리미엄 플랜', zh: '高级套餐', ja: 'プレミアムプラン' },
   
   perStore: { vi: '/Cửa hàng/Năm', en: '/Store/Year', ko: '/매장/년', zh: '/店铺/年', ja: '/店舗/年' },
+  perMonth: { vi: '/tháng', en: '/month', ko: '/월', zh: '/月', ja: '/月' },
   mostPopular: { vi: 'PHỔ BIẾN NHẤT', en: 'MOST POPULAR', ko: '가장 인기있는', zh: '最受欢迎', ja: '最も人気' },
+  forSmallBusiness: { vi: 'Cho cửa hàng nhỏ', en: 'For Small Business', ko: '소규모 비즈니스용', zh: '适合小型企业', ja: '小規模店舗向け' },
+  forGrowingBusiness: { vi: 'Cho cửa hàng đang phát triển', en: 'For Growing Business', ko: '성장하는 비즈니스용', zh: '适合成长型企业', ja: '成長中の店舗向け' },
+  forEnterprise: { vi: 'Cho chuỗi cửa hàng', en: 'For Enterprise', ko: '대기업용', zh: '适合连锁企业', ja: 'チェーン店向け' },
   
   promo12: { vi: 'Thuê 12 tháng tặng 3 tháng', en: 'Subscribe 12 months, get 3 months free', ko: '12개월 구독 시 3개월 무료', zh: '订购12个月送3个月', ja: '12ヶ月契約で3ヶ月無料' },
   promo24: { vi: 'Thuê 24 tháng tặng 6 tháng', en: 'Subscribe 24 months, get 6 months free', ko: '24개월 구독 시 6개월 무료', zh: '订购24个月送6个月', ja: '24ヶ月契約で6ヶ月無料' },
+  
+  // Plan Features
+  salesManagement: { vi: 'Quản lý bán hàng', en: 'Sales Management', ko: '판매 관리', zh: '销售管理', ja: '販売管理' },
+  inventoryManagement: { vi: 'Quản lý kho hàng', en: 'Inventory Management', ko: '재고 관리', zh: '库存管理', ja: '在庫管理' },
+  promotionManagement: { vi: 'Quản lý khuyến mãi', en: 'Promotion Management', ko: '프로모션 관리', zh: '促销管理', ja: 'プロモーション管理' },
+  dashboard: { vi: 'Dashboard', en: 'Dashboard', ko: '대시보드', zh: '仪表板', ja: 'ダッシュボード' },
+  salesReports: { vi: 'Báo cáo bán hàng', en: 'Sales Reports', ko: '판매 보고서', zh: '销售报告', ja: '販売レポート' },
+  freeInvoices1500: { vi: 'Miễn phí 1500 hóa đơn điện tử', en: 'Free 1500 e-invoices', ko: '무료 1500 전자 송장', zh: '免费1500张电子发票', ja: '無料1500電子インボイス' },
+  freeInvoices3000: { vi: 'Miễn phí 3000 hóa đơn điện tử', en: 'Free 3000 e-invoices', ko: '무료 3000 전자 송장', zh: '免费3000张电子发票', ja: '無料3000電子インボイス' },
+  freeInvoices5000: { vi: 'Miễn phí 5000 hóa đơn điện tử', en: 'Free 5000 e-invoices', ko: '무료 5000 전자 송장', zh: '免费5000张电子发票', ja: '無料5000電子インボイス' },
+  freeInvoiceSetup: { vi: 'Miễn phí khởi tạo hóa đơn trị giá 500K', en: 'Free invoice setup (worth $20)', ko: '무료 송장 설정 ($20 상당)', zh: '免费发票设置（价值$20）', ja: '無料インボイス設定（$20相当）' },
+  freeOnlineDeployment: { vi: 'Miễn phí triển khai online', en: 'Free online deployment', ko: '무료 온라인 배포', zh: '免费在线部署', ja: '無料オンライン展開' },
+  freeSupport: { vi: 'Miễn phí hỗ trợ', en: 'Free support', ko: '무료 지원', zh: '免费支持', ja: '無料サポート' },
+  allBasicFeatures: { vi: 'Đầy đủ các tính năng và dịch vụ của gói Basic', en: 'All Basic plan features and services', ko: '모든 베이직 플랜 기능 및 서비스', zh: '所有基础套餐功能和服务', ja: 'すべてのベーシックプラン機能とサービス' },
+  allBasicAdvanceFeatures: { vi: 'Đầy đủ các tính năng và dịch vụ của gói Basic và Advance', en: 'All Basic and Advance plan features', ko: '모든 베이직 및 어드밴스 플랜 기능', zh: '所有基础和进阶套餐功能', ja: 'すべてのベーシックとアドバンスプラン機能' },
+  customerManagement: { vi: 'Quản lý khách hàng thành viên', en: 'Member customer management', ko: '회원 고객 관리', zh: '会员客户管理', ja: '会員顧客管理' },
+  expenseManagement: { vi: 'Quản lý thu chi', en: 'Revenue & expense management', ko: '수익 및 비용 관리', zh: '收支管理', ja: '収支管理' },
+  revenueAnalysis: { vi: 'Phân tích doanh thu', en: 'Revenue analysis', ko: '수익 분석', zh: '收入分析', ja: '収益分析' },
+  grabFoodIntegration: { vi: 'Kết nối Grab Food', en: 'Grab Food integration', ko: 'Grab Food 연동', zh: '集成Grab Food', ja: 'Grab Food連携' },
+  shopeeFoodIntegration: { vi: 'Kết nối Shopee Food', en: 'Shopee Food integration', ko: 'Shopee Food 연동', zh: '集成Shopee Food', ja: 'Shopee Food連携' },
+  freeDeploymentHCM: { vi: 'Miễn phí triển khai nội thành HCM & online', en: 'Free deployment in HCM & online', ko: '호치민 및 온라인 무료 배포', zh: '胡志明市及在线免费部署', ja: 'ホーチミン及びオンライン無料展開' },
+  registerNowBtn: { vi: 'Đăng ký ngay!', en: 'Register Now!', ko: '지금 등록!', zh: '立即注册！', ja: '今すぐ登録！' },
   
   contactHotline: { vi: 'Liên hệ Hotline 19002137 để được hỗ trợ nhanh nhất', en: 'Contact Hotline 19002137 for fastest support', ko: '가장 빠른 지원을 위해 핫라인 19002137로 연락하세요', zh: '联系热线19002137获取最快支持', ja: '最速サポートはホットライン19002137へ' },
   
@@ -114,6 +141,19 @@ const translations: Translations = {
   documentation: { vi: 'Tài liệu', en: 'Documentation', ko: '문서', zh: '文档', ja: 'ドキュメント' },
   footerDesc: { vi: 'Giải pháp POS thông minh cho cửa hàng hiện đại', en: 'Smart POS solution for modern stores', ko: '현대적인 매장을 위한 스마트 POS 솔루션', zh: '现代门店的智能POS解决方案', ja: '現代の店舗向けスマートPOSソリューション' },
   copyright: { vi: 'Tất cả các quyền được bảo lưu.', en: 'All rights reserved.', ko: '모든 권리 보유.', zh: '版权所有。', ja: '全著作権所有。' },
+  
+  // Footer specific
+  companyFullName: { vi: 'Công ty Cổ Phần Công Nghệ KAS', en: 'KAS Technology Corporation', ko: 'KAS 기술 주식회사', zh: 'KAS科技股份公司', ja: 'KAS テクノロジー株式会社' },
+  address: { vi: 'Địa chỉ', en: 'Address', ko: '주소', zh: '地址', ja: '住所' },
+  addressDetail: { vi: '199 Đường Nguyễn Hoàng, Phường Bình Trưng, Thành Phố Hồ Chí Minh', en: '199 Nguyen Hoang Street, Binh Trung Ward, Ho Chi Minh City', ko: '199 응우옌 호앙 거리, 빈 쯩 구, 호치민시', zh: '胡志明市平中坊阮晃街199号', ja: 'ホーチミン市ビンチュン区グエンホアン通り199番地' },
+  hotline: { vi: 'Hotline', en: 'Hotline', ko: '핫라인', zh: '热线', ja: 'ホットライン' },
+  email: { vi: 'Email', en: 'Email', ko: '이메일', zh: '邮箱', ja: 'メール' },
+  website: { vi: 'Website', en: 'Website', ko: '웹사이트', zh: '网站', ja: 'ウェブサイト' },
+  supportSection: { vi: 'Hỗ trợ', en: 'Support', ko: '지원', zh: '支持', ja: 'サポート' },
+  contactPhone: { vi: 'Liên hệ: 1900 2137', en: 'Contact: 1900 2137', ko: '문의: 1900 2137', zh: '联系: 1900 2137', ja: 'お問い合わせ: 1900 2137' },
+  developedBy: { vi: 'Phát triển bởi Công ty Cổ Phần Công Nghệ KAS', en: 'Developed by KAS Technology Corporation', ko: 'KAS 기술 주식회사에서 개발', zh: '由KAS科技股份公司开发', ja: 'KAS テクノロジー株式会社が開発' },
+  privacyPolicy: { vi: 'Chính sách bảo mật', en: 'Privacy Policy', ko: '개인정보 처리방침', zh: '隐私政策', ja: 'プライバシーポリシー' },
+  termsOfService: { vi: 'Điều khoản dịch vụ', en: 'Terms of Service', ko: '서비스 약관', zh: '服务条款', ja: '利用規約' },
 };
 
 export default function POSOneLanding() {
@@ -416,11 +456,14 @@ export default function POSOneLanding() {
 
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-slide-up">
-            <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent animate-gradient">
               {t('heroTitle1')}
             </span>
             <br />
-            <span className="bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent animate-gradient">
+            <span className="text-2xl md:text-3xl lg:text-4xl text-gray-600 font-semibold block my-4">
+              {t('heroSubtitle')}
+            </span>
+            <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
               {t('heroTitle2')}
             </span>
           </h1>
@@ -595,8 +638,9 @@ export default function POSOneLanding() {
             <div className="group bg-white rounded-3xl p-8 border-2 border-gray-200 hover:border-green-300 transition-all duration-300 hover:shadow-2xl hover:scale-105">
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{t('basicPlan')}</h3>
+                <p className="text-sm text-gray-500 mb-3">{t('forSmallBusiness')}</p>
                 <div className="flex items-baseline">
-                  <span className="text-5xl font-bold text-gray-900">2,640,000 VNĐ</span>
+                  <span className="text-5xl font-bold text-gray-900">$105</span>
                 </div>
                 <span className="text-gray-600">{t('perStore')}</span>
               </div>
@@ -606,55 +650,55 @@ export default function POSOneLanding() {
                   <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                     <Check size={16} className="text-green-600" />
                   </div>
-                  <span className="text-gray-700">Quản lý bán hàng</span>
+                  <span className="text-gray-700">{t('salesManagement')}</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                     <Check size={16} className="text-green-600" />
                   </div>
-                  <span className="text-gray-700">Quản lý kho hàng</span>
+                  <span className="text-gray-700">{t('inventoryManagement')}</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                     <Check size={16} className="text-green-600" />
                   </div>
-                  <span className="text-gray-700">Quản lý khuyến mãi</span>
+                  <span className="text-gray-700">{t('promotionManagement')}</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                     <Check size={16} className="text-green-600" />
                   </div>
-                  <span className="text-gray-700">Dashboard</span>
+                  <span className="text-gray-700">{t('dashboard')}</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                     <Check size={16} className="text-green-600" />
                   </div>
-                  <span className="text-gray-700">Báo cáo bán hàng</span>
+                  <span className="text-gray-700">{t('salesReports')}</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                     <Check size={16} className="text-green-600" />
                   </div>
-                  <span className="text-gray-700">Miễn phí 1500 hóa đơn điện tử</span>
+                  <span className="text-gray-700">{t('freeInvoices1500')}</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                     <Check size={16} className="text-green-600" />
                   </div>
-                  <span className="text-gray-700">Miễn phí khởi tạo hóa đơn trị giá 500K</span>
+                  <span className="text-gray-700">{t('freeInvoiceSetup')}</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                     <Check size={16} className="text-green-600" />
                   </div>
-                  <span className="text-gray-700">Miễn phí triển khai online</span>
+                  <span className="text-gray-700">{t('freeOnlineDeployment')}</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                     <Check size={16} className="text-green-600" />
                   </div>
-                  <span className="text-gray-700">Miễn phí hỗ trợ</span>
+                  <span className="text-gray-700">{t('freeSupport')}</span>
                 </li>
               </ul>
               <Link 
@@ -663,7 +707,7 @@ export default function POSOneLanding() {
                 rel="noopener noreferrer"
                 className="block w-full px-6 py-4 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl text-center font-bold hover:from-green-700 hover:to-green-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                Đăng ký ngay!
+                {t('registerNowBtn')}
               </Link>
             </div>
 
@@ -673,42 +717,43 @@ export default function POSOneLanding() {
                 {t('mostPopular')}
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">{t('advancePlan')}</h3>
+              <p className="text-sm text-green-100 mb-3">{t('forGrowingBusiness')}</p>
               <div className="text-4xl font-bold text-white mb-6">
-                3,228,000 VNĐ
+                $129
                 <span className="text-lg text-green-100 font-normal">{t('perStore')}</span>
               </div>
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start space-x-3">
                   <Check size={20} className="text-green-100 flex-shrink-0 mt-0.5" />
-                  <span className="text-white">Đầy đủ các tính năng và dịch vụ của gói Basic</span>
+                  <span className="text-white">{t('allBasicFeatures')}</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <Check size={20} className="text-green-100 flex-shrink-0 mt-0.5" />
-                  <span className="text-white">Quản lý khách hàng thành viên</span>
+                  <span className="text-white">{t('customerManagement')}</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <Check size={20} className="text-green-100 flex-shrink-0 mt-0.5" />
-                  <span className="text-white">Quản lý thu chi</span>
+                  <span className="text-white">{t('expenseManagement')}</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <Check size={20} className="text-green-100 flex-shrink-0 mt-0.5" />
-                  <span className="text-white">Phân tích doanh thu</span>
+                  <span className="text-white">{t('revenueAnalysis')}</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <Check size={20} className="text-green-100 flex-shrink-0 mt-0.5" />
-                  <span className="text-white">Miễn phí 3000 hóa đơn điện tử</span>
+                  <span className="text-white">{t('freeInvoices3000')}</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <Check size={20} className="text-green-100 flex-shrink-0 mt-0.5" />
-                  <span className="text-white">Miễn phí khởi tạo hóa đơn trị giá 500k</span>
+                  <span className="text-white">{t('freeInvoiceSetup')}</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <Check size={20} className="text-green-100 flex-shrink-0 mt-0.5" />
-                  <span className="text-white">Miễn phí triển khai online</span>
+                  <span className="text-white">{t('freeOnlineDeployment')}</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <Check size={20} className="text-green-100 flex-shrink-0 mt-0.5" />
-                  <span className="text-white">Miễn phí hỗ trợ</span>
+                  <span className="text-white">{t('freeSupport')}</span>
                 </li>
               </ul>
               <Link 
@@ -717,7 +762,7 @@ export default function POSOneLanding() {
                 rel="noopener noreferrer"
                 className="block w-full px-6 py-4 bg-white text-green-600 rounded-xl text-center font-bold hover:bg-green-50 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                Đăng ký ngay!
+                {t('registerNowBtn')}
               </Link>
             </div>
 
@@ -725,8 +770,9 @@ export default function POSOneLanding() {
             <div className="group bg-white rounded-3xl p-8 border-2 border-gray-200 hover:border-green-300 transition-all duration-300 hover:shadow-2xl hover:scale-105">
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{t('premiumPlan')}</h3>
+                <p className="text-sm text-gray-500 mb-3">{t('forEnterprise')}</p>
                 <div className="flex items-baseline">
-                  <span className="text-5xl font-bold text-gray-900">4,428,000 VNĐ</span>
+                  <span className="text-5xl font-bold text-gray-900">$177</span>
                 </div>
                 <span className="text-gray-600">{t('perStore')}</span>
               </div>
@@ -736,43 +782,43 @@ export default function POSOneLanding() {
                   <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                     <Check size={16} className="text-green-600" />
                   </div>
-                  <span className="text-gray-700">Đầy đủ các tính năng và dịch vụ của gói Basic và Advance</span>
+                  <span className="text-gray-700">{t('allBasicAdvanceFeatures')}</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                     <Check size={16} className="text-green-600" />
                   </div>
-                  <span className="text-gray-700">Kết nối Grab Food</span>
+                  <span className="text-gray-700">{t('grabFoodIntegration')}</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                     <Check size={16} className="text-green-600" />
                   </div>
-                  <span className="text-gray-700">Kết nối Shopee Food</span>
+                  <span className="text-gray-700">{t('shopeeFoodIntegration')}</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                     <Check size={16} className="text-green-600" />
                   </div>
-                  <span className="text-gray-700">Miễn phí 5000 hóa đơn điện tử</span>
+                  <span className="text-gray-700">{t('freeInvoices5000')}</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                     <Check size={16} className="text-green-600" />
                   </div>
-                  <span className="text-gray-700">Miễn phí khởi tạo hóa đơn trị giá 500k</span>
+                  <span className="text-gray-700">{t('freeInvoiceSetup')}</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                     <Check size={16} className="text-green-600" />
                   </div>
-                  <span className="text-gray-700">Miễn phí triển khai nội thành HCM & online</span>
+                  <span className="text-gray-700">{t('freeDeploymentHCM')}</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                     <Check size={16} className="text-green-600" />
                   </div>
-                  <span className="text-gray-700">Miễn phí hỗ trợ</span>
+                  <span className="text-gray-700">{t('freeSupport')}</span>
                 </li>
               </ul>
               <Link 
@@ -781,7 +827,7 @@ export default function POSOneLanding() {
                 rel="noopener noreferrer"
                 className="block w-full px-6 py-4 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl text-center font-bold hover:from-green-700 hover:to-green-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                Đăng ký ngay!
+                {t('registerNowBtn')}
               </Link>
             </div>
           </div>
@@ -864,23 +910,23 @@ export default function POSOneLanding() {
                 </span>
               </Link>
               
-              <h3 className="text-xl font-bold text-white mb-4">Công ty Cổ Phần Công Nghệ KAS</h3>
+              <h3 className="text-xl font-bold text-white mb-4">{t('companyFullName')}</h3>
               
               <div className="space-y-3 text-gray-400">
                 <p className="flex items-start">
-                  <span className="font-semibold text-gray-300 mr-2">Địa chỉ:</span>
-                  <span>199 Đường Nguyễn Hoàng, Phường Bình Trưng, Thành Phố Hồ Chí Minh</span>
+                  <span className="font-semibold text-gray-300 mr-2">{t('address')}:</span>
+                  <span>{t('addressDetail')}</span>
                 </p>
                 <p className="flex items-start">
-                  <span className="font-semibold text-gray-300 mr-2">Hotline:</span>
+                  <span className="font-semibold text-gray-300 mr-2">{t('hotline')}:</span>
                   <a href="tel:19002137" className="hover:text-green-400 transition-colors">1900 2137</a>
                 </p>
                 <p className="flex items-start">
-                  <span className="font-semibold text-gray-300 mr-2">Email:</span>
+                  <span className="font-semibold text-gray-300 mr-2">{t('email')}:</span>
                   <a href="mailto:kas@kas.asia" className="hover:text-green-400 transition-colors">kas@kas.asia</a>
                 </p>
                 <p className="flex items-start">
-                  <span className="font-semibold text-gray-300 mr-2">Website:</span>
+                  <span className="font-semibold text-gray-300 mr-2">{t('website')}:</span>
                   <a href="https://kas.asia" target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors">kas.asia</a>
                 </p>
               </div>
@@ -912,7 +958,7 @@ export default function POSOneLanding() {
             <div>
               <h4 className="text-white font-bold text-lg mb-4 flex items-center">
                 <div className="w-1 h-6 bg-gradient-to-b from-green-500 to-emerald-500 rounded-full mr-3"></div>
-                Hỗ trợ
+                {t('supportSection')}
               </h4>
               <ul className="space-y-3">
                 <li><Link href="/help" className="text-gray-400 hover:text-green-400 transition-colors flex items-center group">
@@ -925,7 +971,7 @@ export default function POSOneLanding() {
                 </Link></li>
                 <li><a href="tel:19002137" className="text-gray-400 hover:text-green-400 transition-colors flex items-center group">
                   <span className="w-0 group-hover:w-2 h-0.5 bg-green-400 transition-all mr-0 group-hover:mr-2"></span>
-                  Liên hệ: 1900 2137
+                  {t('contactPhone')}
                 </a></li>
               </ul>
             </div>
@@ -935,15 +981,15 @@ export default function POSOneLanding() {
           <div className="border-t border-gray-800 pt-8">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <p className="text-gray-400 text-sm text-center md:text-left">
-                Phát triển bởi Công ty Cổ Phần Công Nghệ KAS
+                {t('developedBy')}
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
                 <Link href="/privacy" className="text-gray-400 hover:text-green-400 text-sm transition-colors">
-                  Chính sách bảo mật
+                  {t('privacyPolicy')}
                 </Link>
                 <span className="text-gray-600">|</span>
                 <Link href="/terms" className="text-gray-400 hover:text-green-400 text-sm transition-colors">
-                  Điều khoản dịch vụ
+                  {t('termsOfService')}
                 </Link>
               </div>
             </div>
