@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         hostname: 'api-kom.kas.asia',
         pathname: '/api/uploads/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'info.posone.ai',
+        pathname: '/wp-content/uploads/**',
+      },
     ],
   },
 };
