@@ -1429,7 +1429,7 @@ export default function POSOneLanding() {
           {/* CTA and Stats */}
           <div className="text-center">
             <Link
-              href="/auth/register"
+              href="https://koffice.ai/"
               className="inline-flex items-center space-x-3 px-10 py-5 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-2xl font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 mb-12"
             >
               <Briefcase size={24} />
