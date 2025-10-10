@@ -52,7 +52,7 @@ const translations: Translations = {
   pricing: { vi: 'Bảng giá', en: 'Pricing', ko: '가격', zh: '价格', ja: '料金' },
   contact: { vi: 'Liên hệ', en: 'Contact', ko: '문의', zh: '联系', ja: 'お問い合わせ' },
   login: { vi: 'Đăng nhập', en: 'Login', ko: '로그인', zh: '登录', ja: 'ログイン' },
-  demo: { vi: 'Đăng ký Demo', en: 'Request Demo', ko: '데모 신청', zh: '申请演示', ja: 'デモを申し込む' },
+  demo: { vi: 'Đăng ký sử dụng', en: 'Request Demo', ko: '데모 신청', zh: '申请演示', ja: 'デモを申し込む' },
   
   // Hero
   badge: { vi: 'Giải pháp POS #1 tại Việt Nam', en: '#1 POS Solution in Vietnam', ko: '베트남 1위 POS 솔루션', zh: '越南第一POS解决方案', ja: 'ベトナムNo.1 POSソリューション' },
