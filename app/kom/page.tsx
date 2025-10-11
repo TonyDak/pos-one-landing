@@ -329,43 +329,39 @@ export default function LandingPage() {
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-blue-500/50 overflow-hidden">
+            <Link href="/" className="flex items-center space-x-2 sm:space-x-3 group flex-shrink-0">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-blue-500/50 overflow-hidden">
                 <img 
                   src="https://api-kom.kas.asia/api/uploads/chat_image/image_1760004372567.png" 
                   alt="KOM Logo" 
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="text-2xl font-bold text-blue-500">
+              <span className="text-xl sm:text-2xl font-bold text-blue-500">
                 KOM 
               </span>
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative group">
+            {/* Desktop Navigation - Hidden on Mobile/Tablet */}
+            <div className="hidden lg:flex items-center space-x-4 xl:space-x-8 flex-shrink-0">
+              <a href="#features" className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative group whitespace-nowrap">
                 {t('features')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative group">
+              <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative group whitespace-nowrap">
                 {t('pricing')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <Link href="/auth/login" className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative group">
-                {t('login')}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
               
               {/* Language Selector */}
               <div className="relative">
                 <button
                   onClick={() => setLangMenuOpen(!langMenuOpen)}
-                  className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-all duration-300"
+                  className="flex items-center space-x-2 px-2 lg:px-3 py-2 rounded-lg hover:bg-gray-100 transition-all duration-300"
                 >
-                  <Globe size={20} className="text-gray-700" />
+                  <Globe size={20} className="text-gray-700 flex-shrink-0" />
                   <span className="text-sm font-medium text-gray-700 uppercase">{language}</span>
-                  <ChevronDown size={16} className={`text-gray-700 transition-transform ${langMenuOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown size={16} className={`text-gray-700 transition-transform flex-shrink-0 ${langMenuOpen ? 'rotate-180' : ''}`} />
                 </button>
                 
                 {langMenuOpen && (
@@ -431,33 +427,48 @@ export default function LandingPage() {
 
               <Link 
                 href="/auth/register"
-                className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 font-medium"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 xl:px-5 py-2.5 text-gray-700 hover:text-blue-600 border border-gray-300 hover:border-blue-500 rounded-xl transition-all duration-300 font-medium whitespace-nowrap text-sm"
               >
                 {t('freeTrial')}
               </Link>
+
+              <Link 
+                href="/auth/login"
+                className="px-5 xl:px-6 py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 font-medium whitespace-nowrap text-sm"
+              >
+                {t('login')}
+              </Link>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button 
-              className="md:hidden p-2"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            {/* Mobile Login Button & Menu Button - Show on Mobile/Tablet */}
+            <div className="lg:hidden flex items-center gap-2 sm:gap-3 flex-shrink-0">
+              <Link 
+                href="/auth/login"
+                className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg shadow-blue-500/30 font-medium text-sm whitespace-nowrap"
+              >
+                {t('login')}
+              </Link>
+              
+              <button 
+                className="p-2"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
 
-          {/* Mobile Menu */}
+          {/* Mobile Menu - Show on Mobile/Tablet */}
           {mobileMenuOpen && (
-            <div className="md:hidden py-4 space-y-4 border-t animate-slide-up">
+            <div className="lg:hidden py-4 space-y-4 border-t animate-slide-up">
               <a href="#features" className="block text-gray-700 hover:text-blue-600 font-medium py-2 hover:bg-blue-50 px-4 rounded-lg transition-all" onClick={() => setMobileMenuOpen(false)}>
                 {t('features')}
               </a>
               <a href="#pricing" className="block text-gray-700 hover:text-blue-600 font-medium py-2 hover:bg-blue-50 px-4 rounded-lg transition-all" onClick={() => setMobileMenuOpen(false)}>
                 {t('pricing')}
               </a>
-              <Link href="/auth/login" className="block text-gray-700 hover:text-blue-600 font-medium py-2 hover:bg-blue-50 px-4 rounded-lg transition-all">
-                {t('login')}
-              </Link>
               
               {/* Mobile Language Selector */}
               <div className="px-4">
