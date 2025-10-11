@@ -13,6 +13,8 @@ import {
   ArrowRight,
   Star,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Menu,
   X,
   Zap,
@@ -25,6 +27,8 @@ import {
   BookOpen,
   Trophy,
   Link2,
+  Share2,
+  Bell,
 } from "lucide-react";
 
 type Language = 'vi' | 'en' | 'ko' | 'zh' | 'ja';
@@ -44,14 +48,14 @@ const translations: Translations = {
   features: { vi: 'Tính năng', en: 'Features', ko: '기능', zh: '功能', ja: '機能' },
   pricing: { vi: 'Bảng giá', en: 'Pricing', ko: '가격', zh: '价格', ja: '料金' },
   login: { vi: 'Đăng nhập', en: 'Sign In', ko: '로그인', zh: '登录', ja: 'ログイン' },
-  freeTrial: { vi: 'Dùng thử miễn phí', en: 'Start Free Trial', ko: '무료 체험', zh: '开始免费试用', ja: '無料トライアルを開始' },
+  freeTrial: { vi: 'Đăng ký sử dụng', en: 'Get Started', ko: '시작하기', zh: '开始使用', ja: '始める' },
   
   // Hero
-  badge: { vi: '#1 Nền tảng Mạng xã hội tại Việt Nam', en: '#1 Social Network Platform in Vietnam', ko: '베트남 1위 소셜 네트워크 플랫폼', zh: '越南第一社交网络平台', ja: 'ベトナムNo.1のソーシャルネットワークプラットフォーム' },
-  heroTitle1: { vi: 'Mạng Xã Hội Hiện Đại', en: 'Modern Social Network', ko: '현대적인 소셜 네트워크', zh: '现代社交网络', ja: 'モダンソーシャルネットワーク' },
-  heroTitle2: { vi: 'Kết Nối Không Giới Hạn', en: 'Unlimited Connection', ko: '무제한 연결', zh: '无限连接', ja: '無限のつながり' },
-  heroDesc: { vi: 'Kết nối, chia sẻ và phát triển cộng đồng của bạn với nền tảng mạng xã hội thông minh. Nhắn tin thời gian thực, quản lý nhóm, lên lịch sự kiện và phân tích chi tiết - tất cả trong một nền tảng.', en: 'Connect, share and grow your community with an intelligent social platform. Real-time messaging, group management, event scheduling and detailed analytics - all in one platform.', ko: '지능형 소셜 플랫폼으로 커뮤니티를 연결하고 공유하며 성장시키세요. 실시간 메시징, 그룹 관리, 이벤트 일정 및 세부 분석 - 하나의 플랫폼에서 모두.', zh: '通过智能社交平台连接、分享和发展您的社区。实时消息、群组管理、活动安排和详细分析 - 全部集中在一个平台。', ja: 'インテリジェントなソーシャルプラットフォームでコミュニティをつなぎ、共有し、成長させましょう。リアルタイムメッセージング、グループ管理、イベントスケジューリング、詳細な分析 - すべて1つのプラットフォームで。' },
-  signUpTrial: { vi: 'Đăng ký dùng thử', en: 'Sign Up for Trial', ko: '체험 등록', zh: '注册试用', ja: 'トライアルに登録' },
+  badge: { vi: '#1 Mạng nội bộ Doanh nghiệp tại Việt Nam', en: '#1 Internal Social Network in Vietnam', ko: '베트남 내 1위 내부 소셜 네트워크', zh: '越南第一内部社交网络', ja: 'ベトナムでNo.1の社内ソーシャルネットワーク' },
+  heroTitle1: { vi: 'Nền tảng Kết Nối Doanh Nghiệp Hiện Đại', en: 'The Modern Enterprise', ko: '모던 엔터프라이즈', zh: '现代企业', ja: 'モダンエンタープライズ' },
+  heroTitle2: { vi: 'Tạo mội trường kết nối, giao tiếp, làm việc hiệu quả giữa Doanh nghiệp với Đối tác, Khách hàng, Nhân viên', en: 'Connection Platform', ko: '연결 플랫폼', zh: '连接平台', ja: 'コネクションプラットフォーム' },
+  heroDesc: { vi: 'KOM giúp doanh nghiệp xây dựng mạng nội bộ thông minh để giao tiếp, cộng tác và kết nối giữa nhân viên – đối tác – khách hàng một cách bảo mật và hiệu quả.', en: 'KOM helps enterprises build a smart internal network to communicate, collaborate, and connect employees, partners, and customers securely and efficiently.', ko: 'KOM은 기업이 직원, 파트너 및 고객을 안전하고 효율적으로 소통, 협업 및 연결할 수 있는 스마트 내부 네트워크를 구축하도록 도와줍니다.', zh: 'KOM帮助企业构建智能内部网络，以安全高效地沟通、协作和连接员工、合作伙伴和客户。', ja: 'KOMは、企業が従業員、パートナー、顧客と安全かつ効率的にコミュニケーション、コラボレーション、接続できるスマートな内部ネットワークの構築を支援します。' },
+  signUpTrial: { vi: 'Đăng ký trải nghiệm', en: 'Sign Up for Trial', ko: '체험 등록', zh: '注册试用', ja: 'トライアルに登録' },
   rating: { vi: 'Đánh giá', en: 'Rating', ko: '평가', zh: '评分', ja: '評価' },
   users: { vi: 'Người dùng', en: 'Users', ko: '사용자', zh: '用户', ja: 'ユーザー' },
   support: { vi: 'Hỗ trợ', en: 'Support', ko: '지원', zh: '支持', ja: 'サポート' },
@@ -60,7 +64,7 @@ const translations: Translations = {
   featuresBadge: { vi: 'Tính năng mạnh mẽ', en: 'Powerful Features', ko: '강력한 기능', zh: '强大功能', ja: '強力な機能' },
   featuresTitle: { vi: 'Mọi thứ bạn cần để', en: 'Everything You Need to', ko: '연결에 필요한 모든 것', zh: '连接所需的一切', ja: '接続に必要なすべて' },
   featuresConnect: { vi: ' Kết nối', en: ' Connect', ko: '', zh: '', ja: '' },
-  featuresDesc: { vi: 'Công cụ hiện đại được thiết kế cho mạng xã hội thế hệ mới', en: 'Modern tools designed for the next generation social network', ko: '차세대 소셜 네트워크를 위한 현대적인 도구', zh: '为下一代社交网络设计的现代工具', ja: '次世代ソーシャルネットワークのために設計された最新ツール' },
+  featuresDesc: { vi: 'Nền tảng hiện đại giúp Tổ chức luôn chuyển động và gắn kết', en: 'Modern platform to keep Organizations moving and connected', ko: '조직을 움직이고 연결 상태로 유지하는 현대적인 플랫폼', zh: '让组织保持运转和连接的现代平台', ja: '組織を動かし、つなぐためのモダンなプラットフォーム' },
   
   feature1Title: { vi: 'Nhắn tin Thời gian thực', en: 'Real-time Messaging', ko: '실시간 메시징', zh: '实时消息', ja: 'リアルタイムメッセージング' },
   feature1Desc: { vi: 'Trò chuyện nhanh như chớp với hỗ trợ đa phương tiện. Gửi tin nhắn, hình ảnh, video và file ngay lập tức với xác nhận đã đọc và đang nhập.', en: 'Lightning-fast chat with multimedia support. Send messages, images, videos and files instantly with read receipts and typing indicators.', ko: '멀티미디어 지원으로 빠른 채팅. 읽음 확인 및 입력 표시기로 메시지, 이미지, 비디오 및 파일을 즉시 전송하세요.', zh: '支持多媒体的超快聊天。即时发送消息、图片、视频和文件，包含已读回执和正在输入指示器。', ja: 'マルチメディア対応の超高速チャット。既読確認と入力インジケーターで、メッセージ、画像、動画、ファイルを瞬時に送信。' },
@@ -88,10 +92,10 @@ const translations: Translations = {
   
   basicPlan: { vi: 'Cơ bản', en: 'Basic', ko: '기본', zh: '基础版', ja: 'ベーシック' },
   proPlan: { vi: 'Chuyên nghiệp', en: 'Professional', ko: '프로페셔널', zh: '专业版', ja: 'プロフェッショナル' },
-  enterprisePlan: { vi: 'Doanh nghiệp', en: 'Enterprise', ko: '기업', zh: '企业版', ja: 'エンタープライズ' },
+  enterprisePlan: { vi: 'Theo yêu cầu', en: 'On-Demand', ko: '맞춤형', zh: '定制版', ja: 'カスタム' },
   mostPopular: { vi: 'PHỔ BIẾN NHẤT', en: 'MOST POPULAR', ko: '가장 인기있는', zh: '最受欢迎', ja: '最も人気' },
   perMonth: { vi: '/tháng', en: '/month', ko: '/월', zh: '/月', ja: '/月' },
-  custom: { vi: 'Tùy chỉnh', en: 'Custom', ko: '맞춤형', zh: '定制', ja: 'カスタム' },
+  custom: { vi: 'Liên hệ', en: 'Contact', ko: '문의', zh: '联系', ja: 'お問い合わせ' },
   
   // Pricing features
   upToMembers: { vi: 'Tới {count} thành viên', en: 'Up to {count} members', ko: '최대 {count}명의 회원', zh: '最多 {count} 名成员', ja: '最大 {count} 名のメンバー' },
@@ -103,11 +107,11 @@ const translations: Translations = {
   pointsSystem: { vi: 'Hệ thống điểm', en: 'Points System', ko: '포인트 시스템', zh: '积分系统', ja: 'ポイントシステム' },
   advancedAnalytics: { vi: 'Phân tích nâng cao', en: 'Advanced Analytics', ko: '고급 분석', zh: '高级分析', ja: '高度な分析' },
   support247: { vi: 'Hỗ trợ 24/7', en: '24/7 Support', ko: '24/7 지원', zh: '24/7 支持', ja: '24時間365日サポート' },
-  unlimitedEverything: { vi: 'Không giới hạn mọi thứ', en: 'Unlimited Everything', ko: '무제한 모든 것', zh: '无限制一切', ja: 'すべて無制限' },
-  multiLocation: { vi: 'Đa địa điểm', en: 'Multi-Location', ko: '다중 위치', zh: '多地点', ja: 'マルチロケーション' },
-  customAPI: { vi: 'Tích hợp API tùy chỉnh', en: 'Custom API Integration', ko: '맞춤형 API 통합', zh: '自定义API集成', ja: 'カスタムAPI統合' },
-  onSiteTraining: { vi: 'Đào tạo tại chỗ', en: 'On-site Training', ko: '현장 교육', zh: '现场培训', ja: 'オンサイトトレーニング' },
-  dedicatedManager: { vi: 'Quản lý tài khoản riêng', en: 'Dedicated Account Manager', ko: '전담 계정 관리자', zh: '专属客户经理', ja: '専任アカウントマネージャー' },
+  unlimitedEverything: { vi: 'Thương hiệu riêng theo yêu cầu', en: 'Your brand', ko: '귀하의 브랜드', zh: '您的品牌', ja: 'あなたのブランド' },
+  multiLocation: { vi: 'Hosting riêng', en: 'Private host', ko: '개인 호스팅', zh: '私有托管', ja: 'プライベートホスティング' },
+  customAPI: { vi: 'Tất cả tính năng', en: 'All features', ko: '모든 기능', zh: '所有功能', ja: 'すべての機能' },
+  onSiteTraining: { vi: 'Cổng kết nối mở', en: 'Developer portal', ko: '개발자 포털', zh: '开发者门户', ja: '開発者ポータル' },
+  dedicatedManager: { vi: 'Đào tạo và hỗ trợ', en: 'Training & support', ko: '교육 및 지원', zh: '培训与支持', ja: 'トレーニングとサポート' },
   
   getStarted: { vi: 'Bắt đầu ngay', en: 'Get Started', ko: '시작하기', zh: '立即开始', ja: '今すぐ始める' },
   contactSales: { vi: 'Liên hệ bán hàng', en: 'Contact Sales', ko: '영업 문의', zh: '联系销售', ja: '営業に連絡' },
@@ -115,10 +119,10 @@ const translations: Translations = {
   // CTA
   ctaBadge: { vi: 'Ưu đãi đặc biệt', en: 'Special Offer', ko: '특별 제안', zh: '特别优惠', ja: '特別オファー' },
   ctaTitle1: { vi: 'Sẵn sàng Chuyển đổi', en: 'Ready to Transform', ko: '변화할 준비가 되셨나요', zh: '准备好转型了吗', ja: '変革の準備はできていますか' },
-  ctaTitle2: { vi: 'Cộng đồng của bạn?', en: 'Your Community?', ko: '귀하의 커뮤니티를?', zh: '您的社区？', ja: 'あなたのコミュニティを？' },
-  ctaDesc: { vi: 'Tham gia cùng', en: 'Join', ko: '함께하세요', zh: '加入', ja: '参加する' },
+  ctaTitle2: { vi: 'Doanh nghiệp của bạn Kết nối & Làm việc?', en: 'Your Business Connect & Work?', ko: '귀사의 비즈니스 연결 및 작업?', zh: '您的企业连接与工作？', ja: 'あなたのビジネスは接続して働いていますか？' },
+  ctaDesc: { vi: 'Cùng hơn', en: 'Join over', ko: '이상에 가입하세요', zh: '加入超过', ja: '以上に参加しましょう' },
   ctaDescUsers: { vi: '50,000+ người dùng', en: '50,000+ users', ko: '50,000명 이상의 사용자', zh: '50,000+ 用户', ja: '50,000+ ユーザー' },
-  ctaDescUsing: { vi: 'đang sử dụng KOM để kết nối và phát triển cộng đồng của họ', en: 'already using KOM to connect and grow their communities', ko: '가 이미 KOM을 사용하여 커뮤니티를 연결하고 성장시키고 있습니다', zh: '已使用KOM连接和发展他们的社区', ja: 'がすでにKOMを使用してコミュニティを接続・成長させています' },
+  ctaDescUsing: { vi: 'tin tưởng KOM để nâng cao hiệu suất và kết nối nội bộ thông minh.', en: 'trust KOM to boost productivity and smart internal connections.', ko: 'KOM을 신뢰하여 생산성과 스마트한 내부 연결을 향상시키세요.', zh: '信赖KOM以提升生产力和智能内部连接。', ja: 'KOMを信頼して、生産性とスマートな内部接続を向上させましょう。' },
   startTrial: { vi: 'Đăng ký dùng thử', en: 'Sign Up for Trial', ko: '체험 등록', zh: '注册试用', ja: 'トライアルに登録' },
   noCreditCard: { vi: 'Không cần thẻ tín dụng', en: 'No credit card required', ko: '신용카드 불필요', zh: '无需信用卡', ja: 'クレジットカード不要' },
   cancelAnytime: { vi: 'Hủy bất cứ lúc nào', en: 'Cancel anytime', ko: '언제든지 취소', zh: '随时取消', ja: 'いつでもキャンセル可能' },
@@ -181,6 +185,15 @@ const translations: Translations = {
   workplaceTrusted: { vi: 'Được tin dùng bởi', en: 'Trusted by', ko: '신뢰받는 기업', zh: '受到信赖', ja: '信頼されています' },
   workplaceCompanies: { vi: '500+ doanh nghiệp', en: '500+ companies', ko: '500개 이상의 기업', zh: '500+ 家企业', ja: '500社以上の企業' },
   
+  // App Download
+  downloadTitle: { vi: 'Tải ứng dụng KOM', en: 'Download KOM App', ko: 'KOM 앱 다운로드', zh: '下载KOM应用', ja: 'KOMアプリをダウンロード' },
+  downloadDesc: { vi: 'Trải nghiệm KOM trên điện thoại của bạn', en: 'Experience KOM on your mobile device', ko: '모바일에서 KOM을 경험하세요', zh: '在手机上体验KOM', ja: 'モバイルデバイスでKOMを体験' },
+  downloadOn: { vi: 'TẢI TRÊN', en: 'GET IT ON', ko: '다운로드', zh: '下载于', ja: 'ダウンロード' },
+  googlePlay: { vi: 'Google Play', en: 'Google Play', ko: 'Google Play', zh: 'Google Play', ja: 'Google Play' },
+  appStore: { vi: 'App Store', en: 'App Store', ko: 'App Store', zh: 'App Store', ja: 'App Store' },
+  scanQR: { vi: 'Quét mã QR hoặc nhấp vào nút để tải ứng dụng KOM', en: 'Scan QR code or click button to download KOM app', ko: 'QR 코드를 스캔하거나 버튼을 클릭하여 KOM 앱을 다운로드하세요', zh: '扫描二维码或点击按钮下载KOM应用', ja: 'QRコードをスキャンまたはボタンをクリックしてKOMアプリをダウンロード' },
+  copyright: { vi: 'Bản quyền đã được bảo lưu', en: 'All rights reserved', ko: '모든 권리 보유', zh: '版权所有', ja: '全著作権所有' },
+  
   // Footer
   product: { vi: 'Sản phẩm', en: 'Product', ko: '제품', zh: '产品', ja: '製品' },
   company: { vi: 'Công ty', en: 'Company', ko: '회사', zh: '公司', ja: '会社' },
@@ -191,8 +204,7 @@ const translations: Translations = {
   helpCenter: { vi: 'Trung tâm trợ giúp', en: 'Help Center', ko: '도움말 센터', zh: '帮助中心', ja: 'ヘルプセンター' },
   documentation: { vi: 'Tài liệu', en: 'Documentation', ko: '문서', zh: '文档', ja: 'ドキュメント' },
   contact: { vi: 'Liên hệ', en: 'Contact', ko: '문의', zh: '联系', ja: 'お問い合わせ' },
-  footerDesc: { vi: 'Nền tảng mạng xã hội hiện đại được xây dựng để thành công', en: 'Modern social network platform built for success', ko: '성공을 위해 구축된 현대적인 소셜 네트워크 플랫폼', zh: '为成功而构建的现代社交网络平台', ja: '成功のために構築された最新のソーシャルネットワークプラットフォーム' },
-  copyright: { vi: 'Tất cả các quyền được bảo lưu.', en: 'All rights reserved.', ko: '모든 권리 보유.', zh: '版权所有。', ja: '全著作権所有。' },
+  footerDesc: { vi: 'Nền tảng kết nối doanh nghiệp hiện đại được xây dựng để thành công', en: 'The modern enterprise connection platform built for success', ko: '성공을 위해 구축된 현대적인 엔터프라이즈 연결 플랫폼', zh: '为成功而构建的现代企业连接平台', ja: '成功のために構築されたモダンエンタープライズ接続プラットフォーム' },
   privacy: { vi: 'Chính sách bảo mật', en: 'Privacy Policy', ko: '개인정보 보호정책', zh: '隐私政策', ja: 'プライバシーポリシー' },
   terms: { vi: 'Điều khoản dịch vụ', en: 'Terms of Service', ko: '서비스 약관', zh: '服务条款', ja: '利用規約' },
 };
@@ -202,6 +214,7 @@ export default function LandingPage() {
   const [scrolled, setScrolled] = useState(false);
   const [language, setLanguage] = useState<Language>('vi');
   const [langMenuOpen, setLangMenuOpen] = useState(false);
+  const [currentFeaturePage, setCurrentFeaturePage] = useState(0);
 
   const t = (key: string): string => {
     return translations[key]?.[language] || key;
@@ -532,7 +545,7 @@ export default function LandingPage() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-slide-up">
+          <h1 className="text-5xl md:text-5xl lg:text-6xl font-bold mb-6 animate-slide-up">
             <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
               {t('heroTitle1')}
             </span>
@@ -603,118 +616,201 @@ export default function LandingPage() {
         {/* Background decoration */}
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         
+        {/* Static background orbs */}
+        <div className="absolute top-20 left-20 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-400/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-cyan-400/5 rounded-full blur-3xl"></div>
+        
         <div className="max-w-7xl mx-auto relative">
           {/* Section Header */}
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center space-x-2 bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wide mb-6">
+          <div className="text-center mb-16 animate-slide-up">
+            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg">
               <Sparkles size={16} />
-              <span>{t('featuresBadge')}</span>
+              <span>Tính năng toàn diện</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              {t('featuresTitle')}
-              <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">{t('featuresConnect')}</span>
+            <h2 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent mb-4 animate-gradient pb-2">
+              16+ Tính Năng Mạnh Mẽ
             </h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
-              {t('featuresDesc')}
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Hệ sinh thái tính năng hoàn chỉnh cho mạng nội bộ doanh nghiệp hiện đại
             </p>
           </div>
 
-          {/* Features Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Feature 1 */}
-            <div className="feature-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-blue-200 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
-              <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
-                  <MessageSquare size={28} className="text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
-                  {t('feature1Title')}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {t('feature1Desc')}
-                </p>
-              </div>
+          {/* Features Grid with Pagination */}
+          <div className="relative">
+            {/* Previous Button - Left */}
+            <button
+              onClick={() => setCurrentFeaturePage(0)}
+              disabled={currentFeaturePage === 0}
+              className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-10 w-12 h-12 rounded-full flex items-center justify-center transition-all ${
+                currentFeaturePage === 0
+                  ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                  : 'bg-blue-500 text-white hover:bg-blue-600 hover:scale-110 shadow-lg hover:shadow-xl'
+              }`}
+            >
+              <ChevronLeft size={24} />
+            </button>
+
+            {/* Next Button - Right */}
+            <button
+              onClick={() => setCurrentFeaturePage(1)}
+              disabled={currentFeaturePage === 1}
+              className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-10 w-12 h-12 rounded-full flex items-center justify-center transition-all ${
+                currentFeaturePage === 1
+                  ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                  : 'bg-blue-500 text-white hover:bg-blue-600 hover:scale-110 shadow-lg hover:shadow-xl'
+              }`}
+            >
+              <ChevronRight size={24} />
+            </button>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {(() => {
+                const allFeatures = [
+                  { id: 1, color: 'blue', icon: MessageSquare, title: 'New Feed', desc: 'Nắm bắt mọi thông tin chuyển động trong Tổ chức của bạn, giữ cho Tổ chức luôn luôn chuyển động' },
+                  { id: 2, color: 'orange', icon: Users, title: 'Group', desc: 'Xây dựng các group theo phòng ban, đội nhóm, dự án giúp truyền thông nhất quán, giao tiếp dễ dàng, lưu giữ mọi công việc, cập nhật mọi khoảnh khắc' },
+                  { id: 3, color: 'cyan', icon: BookOpen, title: 'Pages', desc: 'Tổ chức có thể tạo ra các trang công khai, hay trang nội bộ giúp các Thành viên trong Tổ chức các Đối tác khách hàng tham gia kết nối, giao tiếp, làm việc trên từng Dự án, hoặc sản phẩm hoặc Sự kiện' },
+                  { id: 4, color: 'green', icon: Target, title: 'Personal Page', desc: 'Trang cá nhân của mỗi Thành viên trong Tổ chức của bạn, nơi họ chủ động chia sẻ các thông tin để kết nối các Thành viên khác, nơi lưu giữ các kinh nghiệm, kiến thức của họ đóng góp cho Tổ chức' },
+                  { id: 5, color: 'red', icon: MessageSquare, title: 'Chat Group, Group Call', desc: 'Mọi nội dung chat của các Nhóm nội bộ, các Nhóm với Khách hàng, Đối tác phải được giữ lại trong Tổ chức, đảm bảo được thông tin bí mật và nó là nguồn dữ liệu vô cùng quý giá' },
+                  { id: 6, color: 'purple', icon: Smartphone, title: 'Chat, Call', desc: 'Các Thành viên trong Tổ chức dễ dàng giao tiếp với nhau và tách bạch với các ứng dụng giao tiếp cá nhân khác, tạo sự tách bạch công việc và cá nhân, bảo mật thông tin của Tổ chức' },
+                  { id: 7, color: 'pink', icon: Award, title: 'Post', desc: 'Đây là một tính năng vô cùng quan trọng và được áp dụng nhiều nhất trong mọi Tổ chức. Post giúp truyền thông, thông báo và tương tác đa chiều' },
+                  { id: 8, color: 'indigo', icon: MessageSquare, title: 'Comment và Reply', desc: 'Post là một chủ đề truyền thông, giao tiếp, chia sẻ thì comment và reply là tính năng giữ luồng thông tin giao tiếp' },
+                  { id: 9, color: 'yellow', icon: Heart, title: 'Reaction', desc: 'Là cách phản hồi các post, comment một cách nhanh nhất và thể hiện được quan điểm của các Thành viên' },
+                  { id: 10, color: 'teal', icon: Share2, title: 'Share', desc: 'Hình thành văn hóa lan truyền, lưu giữ các hoạt động, các thông tin tốt trong Tổ chức. Thể hiện sự ghi nhận đối với Tác giả' },
+                  { id: 11, color: 'emerald', icon: TrendingUp, title: 'Poll', desc: 'Để khảo sát được ý muốn, mong đợi, phản hồi của các Thành viên, Đội nhóm trong Tổ chức thì Poll là một tính năng đi theo bài post thực hiện nó rất hiệu quả' },
+                  { id: 12, color: 'rose', icon: Bell, title: 'Reminder', desc: 'Toàn tổ chức, hoặc Phòng ban, Đội nhóm dễ dàng được KOM nhắc nhở các lịch sự kiện sắp diễn ra, giúp tránh bỏ lỡ các sự kiện, các việc cần làm' },
+                  { id: 13, color: 'amber', icon: Bell, title: 'Notification', desc: 'Tất cả các Thành viên trong Tổ chức dễ dàng nắm bắt được các thông tin từ quan trọng cho đến các công việc, các sự kiện sinh nhật' },
+                  { id: 14, color: 'lime', icon: Target, title: 'Daily Goals', desc: 'Các Phòng ban, Đội nhóm, Tổ dự án, từng Thành viên dễ dàng lập các mục tiêu ngày từ đó KOM sẽ nhắc nhở, thống kê và báo cáo hiệu suất, kết quả' },
+                  { id: 15, color: 'violet', icon: TrendingUp, title: 'Nhật ký hoạt động', desc: 'KOM cung cấp nhiều hệ thống dashboard phân tích, các hệ thống monitoring giúp từng Thành viên biết biết quá trình hoạt động, giao tiếp, làm việc của mình' },
+                  { id: 16, color: 'sky', icon: Globe, title: 'Liên kết ứng dụng', desc: 'KOM cung cấp cổng Developer portal giúp các ứng dụng khác dễ dàng kết nối để kết nối thông tin, nghiệp vụ, giúp Tổ chức tạo ra một nền tảng giao tiếp, làm việc và kinh doanh trên một nền tảng trung tâm là KOM' },
+                ];
+
+                const startIndex = currentFeaturePage * 8;
+                const endIndex = startIndex + 8;
+                const currentFeatures = allFeatures.slice(startIndex, endIndex);
+
+                return currentFeatures.map((feature) => {
+                  const Icon = feature.icon;
+                  
+                  // Color mapping for proper Tailwind class generation
+                  const colorClasses = {
+                    blue: { 
+                      bg: 'bg-blue-500/5', 
+                      gradient: 'from-blue-500 to-blue-600',
+                      border: 'hover:border-blue-300'
+                    },
+                    orange: { 
+                      bg: 'bg-orange-500/5', 
+                      gradient: 'from-orange-500 to-orange-600',
+                      border: 'hover:border-orange-300'
+                    },
+                    cyan: { 
+                      bg: 'bg-cyan-500/5', 
+                      gradient: 'from-cyan-500 to-cyan-600',
+                      border: 'hover:border-cyan-300'
+                    },
+                    green: { 
+                      bg: 'bg-green-500/5', 
+                      gradient: 'from-green-500 to-green-600',
+                      border: 'hover:border-green-300'
+                    },
+                    red: { 
+                      bg: 'bg-red-500/5', 
+                      gradient: 'from-red-500 to-red-600',
+                      border: 'hover:border-red-300'
+                    },
+                    purple: { 
+                      bg: 'bg-purple-500/5', 
+                      gradient: 'from-purple-500 to-purple-600',
+                      border: 'hover:border-purple-300'
+                    },
+                    pink: { 
+                      bg: 'bg-pink-500/5', 
+                      gradient: 'from-pink-500 to-pink-600',
+                      border: 'hover:border-pink-300'
+                    },
+                    indigo: { 
+                      bg: 'bg-indigo-500/5', 
+                      gradient: 'from-indigo-500 to-indigo-600',
+                      border: 'hover:border-indigo-300'
+                    },
+                    yellow: { 
+                      bg: 'bg-yellow-500/5', 
+                      gradient: 'from-yellow-500 to-yellow-600',
+                      border: 'hover:border-yellow-300'
+                    },
+                    teal: { 
+                      bg: 'bg-teal-500/5', 
+                      gradient: 'from-teal-500 to-teal-600',
+                      border: 'hover:border-teal-300'
+                    },
+                    emerald: { 
+                      bg: 'bg-emerald-500/5', 
+                      gradient: 'from-emerald-500 to-emerald-600',
+                      border: 'hover:border-emerald-300'
+                    },
+                    rose: { 
+                      bg: 'bg-rose-500/5', 
+                      gradient: 'from-rose-500 to-rose-600',
+                      border: 'hover:border-rose-300'
+                    },
+                    amber: { 
+                      bg: 'bg-amber-500/5', 
+                      gradient: 'from-amber-500 to-amber-600',
+                      border: 'hover:border-amber-300'
+                    },
+                    lime: { 
+                      bg: 'bg-lime-500/5', 
+                      gradient: 'from-lime-500 to-lime-600',
+                      border: 'hover:border-lime-300'
+                    },
+                    violet: { 
+                      bg: 'bg-violet-500/5', 
+                      gradient: 'from-violet-500 to-violet-600',
+                      border: 'hover:border-violet-300'
+                    },
+                    sky: { 
+                      bg: 'bg-sky-500/5', 
+                      gradient: 'from-sky-500 to-sky-600',
+                      border: 'hover:border-sky-300'
+                    },
+                  };
+                  
+                  const colors = colorClasses[feature.color as keyof typeof colorClasses] || colorClasses.blue;
+                  
+                  return (
+                    <div
+                      key={feature.id}
+                      className={`group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 ${colors.border} relative overflow-hidden cursor-pointer`}
+                    >
+                      <div className={`absolute top-0 right-0 w-32 h-32 ${colors.bg} rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500`}></div>
+                      <div className="relative z-10">
+                        <div className={`w-16 h-16 bg-gradient-to-br ${colors.gradient} rounded-2xl flex items-center justify-center mb-4 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg`}>
+                          <Icon size={28} className="text-white" />
+                        </div>
+                        <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                          {feature.title}
+                        </h3>
+                        <p className="text-sm text-gray-600 leading-relaxed">
+                          {feature.desc}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                });
+              })()}
             </div>
 
-            {/* Feature 2 */}
-            <div className="feature-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-orange-200 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
-              <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
-                  <Users size={28} className="text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-orange-600 transition-colors">
-                  {t('feature2Title')}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {t('feature2Desc')}
-                </p>
-              </div>
-            </div>
-
-            {/* Feature 3 */}
-            <div className="feature-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-cyan-200 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
-              <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
-                  <Calendar size={28} className="text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-cyan-600 transition-colors">
-                  {t('feature3Title')}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {t('feature3Desc')}
-                </p>
-              </div>
-            </div>
-
-            {/* Feature 4 */}
-            <div className="feature-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-green-200 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
-              <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
-                  <TrendingUp size={28} className="text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors">
-                  {t('feature4Title')}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {t('feature4Desc')}
-                </p>
-              </div>
-            </div>
-
-            {/* Feature 5 */}
-            <div className="feature-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-yellow-200 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
-              <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
-                  <Award size={28} className="text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-yellow-600 transition-colors">
-                  {t('feature5Title')}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {t('feature5Desc')}
-                </p>
-              </div>
-            </div>
-
-            {/* Feature 6 */}
-            <div className="feature-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-blue-200 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
-              <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
-                  <Smartphone size={28} className="text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
-                  {t('feature6Title')}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {t('feature6Desc')}
-                </p>
-              </div>
+            {/* Page Indicators */}
+            <div className="flex items-center justify-center gap-3 mt-12">
+              <button
+                onClick={() => setCurrentFeaturePage(0)}
+                className={`w-3 h-3 rounded-full transition-all ${currentFeaturePage === 0 ? 'bg-blue-500 w-8' : 'bg-gray-300 hover:bg-gray-400'}`}
+              ></button>
+              <button
+                onClick={() => setCurrentFeaturePage(1)}
+                className={`w-3 h-3 rounded-full transition-all ${currentFeaturePage === 1 ? 'bg-blue-500 w-8' : 'bg-gray-300 hover:bg-gray-400'}`}
+              ></button>
             </div>
           </div>
         </div>
@@ -905,9 +1001,14 @@ export default function LandingPage() {
                 </li>
               </ul>
 
-              <button className="block w-full py-4 bg-gradient-to-r from-gray-900 to-gray-800 text-white rounded-xl font-bold text-center hover:from-gray-800 hover:to-gray-700 transition-all duration-300 group-hover:shadow-lg">
+                <a
+                href="https://klinks.thek.one/uid/KOM"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full py-4 bg-gradient-to-r from-gray-900 to-gray-800 text-white rounded-xl font-bold text-center hover:from-gray-800 hover:to-gray-700 transition-all duration-300 group-hover:shadow-lg"
+                >
                 {t('contactSales')}
-              </button>
+                </a>
             </div>
           </div>
         </div>
@@ -1005,7 +1106,6 @@ export default function LandingPage() {
           {/* Products Carousel */}
           <div className="relative mb-16 overflow-hidden">
             <div className="flex gap-6 animate-scroll hover:pause-animation">
-                {/* Koffice */}
                 {/* Koffice */}
                 <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-teal-300 relative overflow-hidden cursor-pointer flex-shrink-0 w-72">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-teal-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
@@ -1394,7 +1494,7 @@ export default function LandingPage() {
           {/* CTA and Stats */}
           <div className="text-center">
             <Link
-              href="/auth/register"
+              href="https://koffice.ai/"
               className="inline-flex items-center space-x-3 px-10 py-5 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-2xl font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 mb-12"
             >
               <Briefcase size={24} />
@@ -1443,7 +1543,7 @@ export default function LandingPage() {
                 <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors">
                   <Globe size={20} />
                 </a>
-                <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors">
+                <a href="https://klinks.thek.one/uid/KOM" className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors">
                   <Users size={20} />
                 </a>
                 <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors">
@@ -1469,7 +1569,7 @@ export default function LandingPage() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors flex items-center space-x-2 group">
+                  <a href="https://klinks.thek.one/uid/KOM" className="text-gray-400 hover:text-blue-400 transition-colors flex items-center space-x-2 group">
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                     <span>{t('demo')}</span>
                   </a>
@@ -1482,7 +1582,7 @@ export default function LandingPage() {
               <h4 className="text-white font-bold text-lg mb-4">{t('company')}</h4>
               <ul className="space-y-3">
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors flex items-center space-x-2 group">
+                  <a href="https://klinks.thek.one/uid/KOM" className="text-gray-400 hover:text-blue-400 transition-colors flex items-center space-x-2 group">
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                     <span>{t('about')}</span>
                   </a>
@@ -1519,7 +1619,7 @@ export default function LandingPage() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors flex items-center space-x-2 group">
+                  <a href="https://klinks.thek.one/uid/KOM" className="text-gray-400 hover:text-blue-400 transition-colors flex items-center space-x-2 group">
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                     <span>{t('contact')}</span>
                   </a>
@@ -1528,11 +1628,100 @@ export default function LandingPage() {
             </div>
           </div>
 
+          {/* App Download Section */}
+          <div className="py-12 border-t border-gray-800">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-blue-500 mb-3">
+                {t('downloadTitle')}
+              </h3>
+              <p className="text-gray-400">
+                {t('downloadDesc')}
+              </p>
+            </div>
+            
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
+              {/* Download Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                {/* Google Play Button */}
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.kas.socialmobile&hl=vi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative bg-white hover:bg-gray-100 text-black rounded-xl px-6 py-3 flex items-center space-x-3 transition-all hover:scale-105 shadow-lg hover:shadow-2xl"
+                >
+                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                  </svg>
+                  <div className="text-left">
+                    <div className="text-xs font-medium text-gray-600">{t('downloadOn')}</div>
+                    <div className="text-lg font-bold">{t('googlePlay')}</div>
+                  </div>
+                </a>
+
+                {/* App Store Button */}
+                <a
+                  href="https://apps.apple.com/vn/app/kom/id6748440654?l=vi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative bg-white hover:bg-gray-100 text-black rounded-xl px-6 py-3 flex items-center space-x-3 transition-all hover:scale-105 shadow-lg hover:shadow-2xl"
+                >
+                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" />
+                  </svg>
+                  <div className="text-left">
+                    <div className="text-xs font-medium text-gray-600">{t('downloadOn')}</div>
+                    <div className="text-lg font-bold">{t('appStore')}</div>
+                  </div>
+                </a>
+              </div>
+
+              {/* QR Codes */}
+              <div className="flex gap-8">
+                {/* Google Play QR */}
+                <div className="text-center">
+                  <div className="bg-gray-800 p-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all hover:scale-105 border border-gray-700">
+                    <img
+                      src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://play.google.com/store/apps/details?id=com.kas.socialmobile%26hl=vi"
+                      alt="QR Code Google Play"
+                      className="w-32 h-32 md:w-36 md:h-36"
+                    />
+                  </div>
+                  <p className="text-sm text-gray-400 mt-3 font-medium">{t('googlePlay')}</p>
+                </div>
+
+                {/* App Store QR */}
+                <div className="text-center">
+                  <div className="bg-gray-800 p-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all hover:scale-105 border border-gray-700">
+                    <img
+                      src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://apps.apple.com/vn/app/kom/id6748440654?l=vi"
+                      alt="QR Code App Store"
+                      className="w-32 h-32 md:w-36 md:h-36"
+                    />
+                  </div>
+                  <p className="text-sm text-gray-400 mt-3 font-medium">{t('appStore')}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Helper Text */}
+            <p className="text-gray-500 text-sm mt-8 text-center">
+              <Smartphone className="inline-block mr-2" size={16} />
+              {t('scanQR')}
+            </p>
+          </div>
+
           {/* Bottom Bar */}
           <div className="pt-8 border-t border-gray-800">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <p className="text-sm text-gray-400">
-                © 2025 <span className="text-blue-400 font-semibold">KOM Technology</span>. {t('copyright')}
+                © 2025 <a
+                  href="https://klinks.thek.one/uid/KOM"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 font-semibold hover:underline"
+                >
+                  KOM Technology
+                </a>. {t('copyright')}
               </p>
               <div className="flex items-center space-x-6 text-sm">
                 <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
