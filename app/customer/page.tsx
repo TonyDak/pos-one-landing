@@ -22,7 +22,7 @@ const translations: Translations = {
   // Hero Section
   badge: { vi: 'Khách hàng', en: 'Customers', ko: '고객', zh: '客户', ja: '顧客' },
   heroTitle: { vi: 'Khách Hàng Của KAS', en: 'KAS Customers', ko: 'KAS 고객', zh: 'KAS客户', ja: 'KAS顧客' },
-  heroSubtitle: { vi: '3 Phân Khúc Mục Tiêu', en: '3 Target Segments', ko: '3개의 타겟 세그먼트', zh: '3个目标细分市场', ja: '3つのターゲットセグメント' },
+  heroSubtitle: { vi: '80% Khách hàng đã đồng hành trên 5 năm', en: '80% of Customers have been with us for over 5 years', ko: '고객의 80%가 5년 이상 함께했습니다', zh: '80%的客户与我们合作超过5年', ja: '顧客の80％が5年以上お付き合いしています' },
   heroDesc: { vi: 'Từ những cửa hàng nhỏ đến các thương hiệu lớn - hơn 10.000 khách hàng đã chọn KAS', en: 'From small stores to large brands - over 10,000 customers have chosen KAS', ko: '소규모 매장부터 대형 브랜드까지 - 10,000개 이상의 고객이 KAS를 선택했습니다', zh: '从小型商店到大品牌 - 超过10,000家客户选择了KAS', ja: '小規模店舗から大手ブランドまで - 10,000以上の顧客がKASを選択' },
   
   // Segments

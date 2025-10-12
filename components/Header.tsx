@@ -98,35 +98,10 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
                 {t('solutions')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </Link>
-              <Link href="/ai-transformation" className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative group">
+              {/* <Link href="/ai-transformation" className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative group">
                 {t('aiTransformation')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-
-              <Link 
-                href="https://kas.asia"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 font-medium"
-              >
-                {t('login')}
-              </Link>
-              <Link
-                href="https://kas.asia/register"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-2.5 bg-white border-2 border-blue-500 text-blue-600 rounded-xl font-medium hover:bg-blue-50 transition-all duration-300"
-              >
-                {t('register')}
-              </Link>
-              <Link
-                href="https://kas.asia/trial"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-2.5 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-xl font-medium hover:from-teal-600 hover:to-green-700 transition-all duration-300"
-              >
-                {t('trial')}
-              </Link>
+              </Link> */}
 
               {/* Desktop Language Selector */}
               <div className="relative">
@@ -155,6 +130,31 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
                   </div>
                 )}
               </div>
+
+              <Link 
+                href="https://kas.asia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 font-medium"
+              >
+                {t('login')}
+              </Link>
+              <Link
+                href="https://kas.asia/register"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-2.5 bg-white border-2 border-blue-500 text-blue-600 rounded-xl font-medium hover:bg-blue-50 transition-all duration-300"
+              >
+                {t('register')}
+              </Link>
+              <Link
+                href="https://kas.asia/trial"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-2.5 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-xl font-medium hover:from-teal-600 hover:to-green-700 transition-all duration-300"
+              >
+                {t('trial')}
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}

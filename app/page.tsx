@@ -6,6 +6,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import value from '../../kom/src/types/images';
 import { 
   Target,
   Heart,
@@ -44,60 +45,124 @@ const translations: Translations = {
   
   // Hero
   badge: { vi: 'Công nghệ hàng đầu', en: 'Leading Technology', ko: '최고의 기술', zh: '领先技术', ja: '最先端技術' },
-  heroTitle: { vi: 'Công ty Cổ Phần Công Nghệ KAS', en: 'KAS Technology Corporation', ko: 'KAS 기술 주식회사', zh: 'KAS科技股份公司', ja: 'KAS テクノロジー株式会社' },
-  heroSubtitle: { vi: 'Giải pháp công nghệ toàn diện', en: 'Comprehensive Technology Solutions', ko: '종합 기술 솔루션', zh: '综合技术解决方案', ja: '総合テクノロジーソリューション' },
-  heroDesc: { vi: 'Đại diện theo pháp luật của doanh nghiệp: Ông Nguyễn Hữu Đồng. Cung cấp các giải pháp công nghệ tiên tiến cho doanh nghiệp hiện đại.', en: 'Legal representative: Mr. Nguyen Huu Dong. Providing advanced technology solutions for modern businesses.', ko: '법적 대리인: Nguyen Huu Dong. 현대 기업을 위한 첨단 기술 솔루션 제공.', zh: '法定代表人：阮友东先生。为现代企业提供先进的技术解决方案。', ja: '法定代表者：Nguyen Huu Dong氏。現代企業向けの先進的なテクノロジーソリューションを提供。' },
+  heroTitle: { vi: 'CÔNG TY CỔ PHẦN CÔNG NGHỆ KAS', en: 'KAS Technology Corporation', ko: 'KAS 기술 주식회사', zh: 'KAS科技股份公司', ja: 'KAS テクノロジー株式会社' },
+  heroSubtitle: { vi: 'Nhà cung cấp giải pháp POS và ERP hàng đầu tại Việt Nam', en: 'Leading POS and ERP Solution Provider in Vietnam', ko: '베트남 최고의 POS 및 ERP 솔루션 제공업체', zh: '越南领先的POS和ERP解决方案提供商', ja: 'ベトナムの主要なPOSおよびERPソリューションプロバイダー' },
+  heroDesc: { vi: 'Giải pháp chuyên sâu cho ngành F&B, Retail, Hospitality', en: 'Specialized solutions for F&B, Retail, and Hospitality industries', ko: 'F&B, 소매 및 환대 산업을 위한 전문 솔루션', zh: '专为餐饮、零售和酒店行业提供的专业解决方案', ja: 'F＆B、小売、ホスピタリティ業界向けの専門ソリューション' },
   registerNow: { vi: 'Đăng ký ngay', en: 'Register Now', ko: '지금 등록', zh: '立即注册', ja: '今すぐ登録' },
   contactUs: { vi: 'Liên hệ tư vấn', en: 'Contact Us', ko: '상담 문의', zh: '联系咨询', ja: 'お問い合わせ' },
   
   // Vision Section
   visionBadge: { vi: 'Tầm nhìn', en: 'Vision', ko: '비전', zh: '愿景', ja: 'ビジョン' },
-  visionTitle: { vi: 'Tầm nhìn của chúng tôi', en: 'Our Vision', ko: '우리의 비전', zh: '我们的愿景', ja: '私たちのビジョン' },
+  visionTitle: { vi: 'Trở thành công ty công nghệ AI-First hàng đầu Việt Nam trong lĩnh vực POS và giải pháp quản trị doanh nghiệp, kiến tạo thế hệ sản phẩm thông minh tự động hóa cho mọi mô hình kinh doanh.', en: 'To become Vietnam\'s leading AI-First technology company in the field of POS and enterprise management solutions, creating a generation of intelligent products that automate all business models.', ko: 'POS 및 엔터프라이즈 관리 솔루션 분야에서 베트남 최고의 AI-First 기술 회사가 되어 모든 비즈니스 모델을 자동화하는 지능형 제품 세대를 만듭니다.', zh: '成为越南领先的AI优先技术公司，专注于POS和企业管理解决方案，打造智能产品世代，实现所有商业模式的自动化。', ja: 'POSおよびエンタープライズ管理ソリューションの分野でベトナムを代表するAIファーストテクノロジー企業となり、すべてのビジネスモデルを自動化するインテリジェント製品の世代を創造します。' },
   visionDesc: { vi: 'Trở thành đối tác công nghệ hàng đầu, đồng hành cùng doanh nghiệp Việt Nam trong hành trình chuyển đổi số, mang đến các giải pháp sáng tạo và hiệu quả nhất.', en: 'To become a leading technology partner, accompanying Vietnamese businesses in their digital transformation journey, delivering the most innovative and effective solutions.', ko: '베트남 기업의 디지털 전환 여정에 동행하는 선도적인 기술 파트너가 되어 가장 혁신적이고 효과적인 솔루션을 제공합니다.', zh: '成为领先的技术合作伙伴，陪伴越南企业数字化转型之旅，提供最具创新性和有效的解决方案。', ja: 'ベトナム企業のデジタルトランスフォーメーションの旅に同行する主要なテクノロジーパートナーとなり、最も革新的で効果的なソリューションを提供します。' },
   
   // Mission Section
   missionBadge: { vi: 'Sứ mệnh', en: 'Mission', ko: '미션', zh: '使命', ja: 'ミッション' },
-  missionTitle: { vi: 'Sứ mệnh của chúng tôi', en: 'Our Mission', ko: '우리의 미션', zh: '我们的使命', ja: '私たちのミッション' },
+  missionTitle: { vi: 'KAS mang đến hệ sinh thái giải pháp AI-Driven toàn diện, giúp doanh nghiệp tối ưu vận hành, minh bạch quản trị và tăng trưởng bền vững thông qua tự động hóa và dữ liệu thông minh', en: 'KAS provides a comprehensive AI-Driven solution ecosystem that helps businesses optimize operations, ensure transparent management, and achieve sustainable growth through automation and intelligent data.', ko: 'KAS는 자동화 및 지능형 데이터를 통해 비즈니스가 운영을 최적화하고 투명한 관리를 보장하며 지속 가능한 성장을 달성할 수 있도록 포괄적인 AI 기반 솔루션 생태계를 제공합니다.', zh: 'KAS提供全面的AI驱动解决方案生态系统，帮助企业通过自动化和智能数据优化运营、确保透明管理，实现可持续增长。', ja: 'KASは、ビジネスが運用を最適化し、透明な管理を確保し、自動化とインテリジェントデータを通じて持続可能な成長を達成できるようにする包括的なAI駆動ソリューションエコシステムを提供します。' },
   missionDesc: { vi: 'Phát triển và cung cấp các sản phẩm công nghệ chất lượng cao, giúp tối ưu hóa hoạt động kinh doanh, nâng cao hiệu suất làm việc và tạo ra giá trị bền vững cho khách hàng.', en: 'Develop and provide high-quality technology products that optimize business operations, enhance work efficiency, and create sustainable value for customers.', ko: '비즈니스 운영을 최적화하고 업무 효율성을 향상시키며 고객에게 지속 가능한 가치를 창출하는 고품질 기술 제품을 개발하고 제공합니다.', zh: '开发和提供优质技术产品，优化业务运营，提高工作效率，为客户创造可持续价值。', ja: 'ビジネス運営を最適化し、作業効率を向上させ、顧客に持続可能な価値を創造する高品質なテクノロジー製品を開発・提供します。' },
   
   // Core Values
   valuesBadge: { vi: 'Giá trị cốt lõi', en: 'Core Values', ko: '핵심 가치', zh: '核心价值观', ja: 'コアバリュー' },
   valuesTitle: { vi: 'Giá trị cốt lõi', en: 'Core Values', ko: '핵심 가치', zh: '核心价值观', ja: 'コアバリュー' },
   value1: { vi: 'Sáng tạo', en: 'Innovation', ko: '혁신', zh: '创新', ja: 'イノベーション' },
-  value1Desc: { vi: 'Luôn đổi mới và sáng tạo trong từng sản phẩm', en: 'Always innovating and creating in every product', ko: '모든 제품에서 항상 혁신하고 창조합니다', zh: '在每个产品中不断创新和创造', ja: 'すべての製品において常に革新し創造します' },
-  value2: { vi: 'Chất lượng', en: 'Quality', ko: '품질', zh: '质量', ja: '品質' },
-  value2Desc: { vi: 'Cam kết mang đến chất lượng tốt nhất', en: 'Committed to delivering the best quality', ko: '최고의 품질을 제공하기 위해 최선을 다합니다', zh: '致力于提供最佳质量', ja: '最高品質の提供に尽力します' },
-  value3: { vi: 'Tận tâm', en: 'Dedication', ko: '헌신', zh: '奉献', ja: '献身' },
-  value3Desc: { vi: 'Tận tâm phục vụ khách hàng với trách nhiệm cao', en: 'Dedicated to serving customers with high responsibility', ko: '높은 책임감으로 고객을 성실히 섬깁니다', zh: '以高度责任心尽心服务客户', ja: '高い責任感を持ってお客様に尽力します' },
-  value4: { vi: 'Hợp tác', en: 'Collaboration', ko: '협력', zh: '合作', ja: '協力' },
-  value4Desc: { vi: 'Xây dựng mối quan hệ đối tác bền vững', en: 'Building sustainable partnerships', ko: '지속 가능한 파트너십 구축', zh: '建立可持续的合作伙伴关系', ja: '持続可能なパートナーシップを構築' },
-  
+  value1Desc: { vi: 'Luôn tiên phong ứng dụng AI & công nghệ mới để tạo ra giải pháp đột phá', en: 'Always pioneering in applying AI & new technologies to create breakthrough solutions', ko: '항상 AI 및 새로운 기술을 적용하여 획기적인 솔루션을 창출하는 데 앞장서고 있습니다', zh: '始终在应用AI和新技术方面处于领先地位，创造突破性解决方案', ja: '常にAIと新技術の適用において先駆者であり、画期的なソリューションを創造しています' },
+  value2: { vi: 'Chính trực', en: 'Integrity', ko: '진실성', zh: '诚信', ja: '誠実' },
+  value2Desc: { vi: 'Minh bạch, trung thực và giữ trọn uy tín trong mọi cam kết', en: 'Transparency, honesty, and maintaining credibility in all commitments', ko: '모든 약속에서 투명성, 정직성 및 신뢰성 유지', zh: '在所有承诺中保持透明、诚实和信誉', ja: 'すべてのコミットメントにおいて透明性、誠実さ、信頼性を維持する' },
+  value3: { vi: 'Hiệu quả', en: 'Efficiency', ko: '탁월함', zh: '卓越', ja: '卓越' },
+  value3Desc: { vi: 'Tối ưu quy trình và giải pháp để mang lại hiệu quả vượt trội', en: 'Optimizing processes and solutions to deliver exceptional efficiency', ko: '탁월한 효율성을 제공하기 위해 프로세스 및 솔루션 최적화', zh: '优化流程和解决方案以提供卓越的效率', ja: '卓越した効率を提供するためにプロセスとソリューションを最適化する' },
+  value4: { vi: 'Khách hàng', en: 'Customer', ko: '고객 중심', zh: '以客户为中心', ja: '顧客中心' },
+  value4Desc: { vi: 'Lấy khách hàng làm trung tâm, thấu hiểu và đồng hành phát triển', en: 'Customer-centric, understanding and accompanying development', ko: '고객 중심, 이해 및 동반 개발', zh: '以客户为中心，理解并伴随发展', ja: '顧客中心、理解と伴走開発' },
+  value5: { vi: 'Tăng trưởng', en: 'Growth', ko: '성장', zh: '成长', ja: '成長' },
+  value5Desc: { vi: 'Tăng trưởng nhanh, bền vững và dài hạn cho cả KAS và khách hàng', en: 'Rapid, sustainable, and long-term growth for both KAS and customers', ko: 'KAS와 고객 모두를 위한 빠르고 지속 가능하며 장기적인 성장', zh: 'KAS和客户的快速、可持续和长期增长', ja: 'KASと顧客のための迅速で持続可能かつ長期的な成長' },
+
   // Roadmap
   roadmapBadge: { vi: 'Lộ trình phát triển', en: 'Development Roadmap', ko: '개발 로드맵', zh: '发展路线图', ja: '開発ロードマップ' },
   roadmapTitle: { vi: 'Lộ trình phát triển KAS', en: 'KAS Development Roadmap', ko: 'KAS 개발 로드맵', zh: 'KAS发展路线图', ja: 'KAS開発ロードマップ' },
-  roadmap2020: { vi: '2020 - Khởi đầu', en: '2020 - Beginning', ko: '2020 - 시작', zh: '2020 - 开始', ja: '2020 - 始まり' },
-  roadmap2020Desc: { vi: 'Thành lập công ty và phát triển sản phẩm đầu tiên', en: 'Company establishment and first product development', ko: '회사 설립 및 첫 제품 개발', zh: '公司成立和首个产品开发', ja: '会社設立と最初の製品開発' },
-  roadmap2021: { vi: '2021 - Mở rộng', en: '2021 - Expansion', ko: '2021 - 확장', zh: '2021 - 扩张', ja: '2021 - 拡大' },
-  roadmap2021Desc: { vi: 'Ra mắt hệ sinh thái ứng dụng KAS Workplace', en: 'Launch of KAS Workplace application ecosystem', ko: 'KAS Workplace 애플리케이션 생태계 출시', zh: '推出KAS Workplace应用生态系统', ja: 'KAS Workplaceアプリケーションエコシステムのローンチ' },
-  roadmap2023: { vi: '2023 - Phát triển', en: '2023 - Development', ko: '2023 - 개발', zh: '2023 - 发展', ja: '2023 - 発展' },
-  roadmap2023Desc: { vi: 'Tích hợp AI và mở rộng thị trường quốc tế', en: 'AI integration and international market expansion', ko: 'AI 통합 및 국제 시장 확장', zh: 'AI集成和国际市场扩张', ja: 'AI統合と国際市場の拡大' },
-  roadmap2025: { vi: '2025 - Dẫn đầu', en: '2025 - Leading', ko: '2025 - 선도', zh: '2025 - 领先', ja: '2025 - リード' },
-  roadmap2025Desc: { vi: 'Trở thành nền tảng công nghệ hàng đầu Việt Nam', en: 'Become Vietnam\'s leading technology platform', ko: '베트남 최고의 기술 플랫폼이 됩니다', zh: '成为越南领先的技术平台', ja: 'ベトナムを代表するテクノロジープラットフォームになる' },
+  roadmap2015: { vi: '2015 - Thành lập', en: '2015 - Establishment', ko: '2015 - 설립', zh: '2015 - 成立', ja: '2015 - 設立' },
+  roadmap2015Desc: { vi: 'Tập trung phát triển giải pháp POS cho mô hình chuỗi FnB, Retail', en: 'Focused on developing POS solutions for FnB and Retail chain models', ko: 'FnB 및 소매 체인 모델을 위한 POS 솔루션 개발에 집중', zh: '专注于为餐饮和零售连锁模式开发POS解决方案', ja: 'FnBおよび小売チェーンモデル向けのPOSソリューション開発に注力' },
+  roadmap2018: { vi: '2018 - Mở rộng thị trường, Đối tác', en: '2018 - Market Expansion, Partnership', ko: '2018 - 시장 확장, 파트너십', zh: '2018 - 市场扩张，合作伙伴', ja: '2018 - 市場拡大、パートナーシップ' },
+  roadmap2018Desc: { vi: 'Được nhiều chuỗi FnB, Retail đang mở rộng chuỗi và tăng trưởng chọn lựa là Đối tác công nghệ đồng hành. Tích hợp giải pháp với hầu hết các nền tảng bán hàng, thanh toán, chăm sóc khách hàng tại Việt Nam.', en: 'Chosen as technology partner by many expanding FnB and Retail chains. Integrated solutions with most sales, payment, and customer care platforms in Vietnam.', ko: '확장 중인 많은 FnB 및 소매 체인의 기술 파트너로 선정. 베트남의 대부분의 판매, 결제 및 고객 관리 플랫폼과 솔루션 통합.', zh: '被许多扩张中的餐饮和零售连锁店选为技术合作伙伴。与越南大多数销售、支付和客户服务平台集成解决方案。', ja: '拡大中の多くのFnBおよび小売チェーンの技術パートナーとして選ばれる。ベトナムのほとんどの販売、決済、顧客ケアプラットフォームとソリューションを統合。' },
+  roadmap2020: { vi: '2020 - Mở rộng giải pháp theo hướng ERP', en: '2020 - ERP Solution Expansion', ko: '2020 - ERP 솔루션 확장', zh: '2020 - ERP解决方案扩展', ja: '2020 - ERPソリューション拡張' },
+  roadmap2020Desc: { vi: 'Phát triển nền tảng quản trị tập trung, triển khai giải pháp theo hướng chuyển đổi số, đồng thời tích hợp với các hệ thống Kế toán, ERP trong và ngoài nước.', en: 'Developed centralized management platform, implemented digital transformation solutions, and integrated with domestic and international Accounting and ERP systems.', ko: '중앙 집중식 관리 플랫폼 개발, 디지털 전환 솔루션 구현, 국내외 회계 및 ERP 시스템과 통합.', zh: '开发集中管理平台，实施数字化转型解决方案，并与国内外会计和ERP系统集成。', ja: '集中管理プラットフォームを開発し、デジタルトランスフォーメーションソリューションを実装し、国内外の会計およびERPシステムと統合。' },
+  roadmap2025: { vi: '2025 - Go SaaS, Go Mass', en: '2025 - Go SaaS, Go Mass', ko: '2025 - Go SaaS, Go Mass', zh: '2025 - Go SaaS, Go Mass', ja: '2025 - Go SaaS, Go Mass' },
+  roadmap2025Desc: { vi: 'Triển khai mô hình kinh doanh giải pháp POS và ERP theo mô hình kinh doanh SaaS bên cạnh mô hình thực hiện theo dự án cho các Khách hàng lớn. Năm 2025 cũng là thời điểm KAS tham gia mở rộng xuống thị trường mass với giải pháp POSONE được phân phối qua nhiều Đối tác chiến lược.', en: 'Implemented SaaS business model for POS and ERP solutions alongside project-based model for large clients. 2025 marks KAS\'s expansion into mass market with POSONE solution distributed through strategic partners.', ko: 'SaaS 비즈니스 모델로 POS 및 ERP 솔루션 구현과 함께 대형 고객을 위한 프로젝트 기반 모델 운영. 2025년은 KAS가 전략적 파트너를 통해 배포되는 POSONE 솔루션으로 대중 시장으로 확장하는 해입니다.', zh: '实施POS和ERP解决方案的SaaS业务模式，同时为大客户提供基于项目的模式。2025年标志着KAS通过战略合作伙伴分销POSONE解决方案，向大众市场扩张。', ja: 'POSおよびERPソリューションのSaaSビジネスモデルを実装し、大規模クライアント向けのプロジェクトベースモデルと並行運用。2025年は、戦略的パートナーを通じて配信されるPOSONEソリューションで大衆市場に拡大する年です。' },
+  roadmap2026: { vi: '2026 - From SaaS to Platform', en: '2026 - From SaaS to Platform', ko: '2026 - From SaaS to Platform', zh: '2026 - From SaaS to Platform', ja: '2026 - From SaaS to Platform' },
+  roadmap2026Desc: { vi: 'Từ năm 2026, KAS triển khai chiến lược SUITE-FIRST và AI-FIRST, cung cấp cho thị trường các giải pháp AI-Driven Platform toàn diện.', en: 'From 2026, KAS implements SUITE-FIRST and AI-FIRST strategies, providing comprehensive AI-Driven Platform solutions to the market.', ko: '2026년부터 KAS는 SUITE-FIRST 및 AI-FIRST 전략을 구현하여 시장에 포괄적인 AI 기반 플랫폼 솔루션을 제공합니다.', zh: '从2026年开始，KAS实施SUITE-FIRST和AI-FIRST战略，为市场提供全面的AI驱动平台解决方案。', ja: '2026年から、KASはSUITE-FIRSTおよびAI-FIRST戦略を実施し、市場に包括的なAI駆動プラットフォームソリューションを提供します。' },
   
   // Pricing
   pricingBadge: { vi: 'Gói dịch vụ', en: 'Service Packages', ko: '서비스 패키지', zh: '服务套餐', ja: 'サービスパッケージ' },
-  pricingTitle: { vi: 'Gói dịch vụ KAS POS', en: 'KAS POS Service Packages', ko: 'KAS POS 서비스 패키지', zh: 'KAS POS服务套餐', ja: 'KAS POSサービスパッケージ' },
-  basicPlan: { vi: 'Gói Cơ Bản', en: 'Basic Plan', ko: '기본 플랜', zh: '基础套餐', ja: 'ベーシックプラン' },
-  advancePlan: { vi: 'Gói Nâng Cao', en: 'Advanced Plan', ko: '고급 플랜', zh: '高级套餐', ja: 'アドバンスプラン' },
-  premiumPlan: { vi: 'Gói Cao Cấp', en: 'Premium Plan', ko: '프리미엄 플랜', zh: '高级套餐', ja: 'プレミアムプラン' },
-  perMonth: { vi: '/tháng', en: '/month', ko: '/월', zh: '/月', ja: '/月' },
+  pricingTitle: { vi: 'Grow with KAS — From Seed to Legacy', en: 'Grow with KAS — From Seed to Legacy', ko: 'KAS와 함께 성장 — 씨앗에서 유산까지', zh: '与KAS一起成长——从种子到传承', ja: 'KASと共に成長—種から遺産へ' },
+  pricingTitle2: { vi: 'Từ hạt mầm đến di sản, KAS POS đồng hành cùng hành trình phát triển của bạn', en: 'From Seed to Legacy, KAS POS accompanies your growth journey', ko: '씨앗에서 유산까지, KAS POS는 귀하의 성장 여정을 동반합니다', zh: '从种子到传承，KAS POS伴随您的成长之旅', ja: '種から遺産へ、KAS POSはあなたの成長の旅に同行します' },
+  
+  // Seed Plan
+  seedPlan: { vi: 'Seed', en: 'Seed', ko: 'Seed', zh: 'Seed', ja: 'Seed' },
+  seedTarget: { vi: 'Khách hàng', en: 'Target Customer', ko: '대상 고객', zh: '目标客户', ja: 'ターゲット顧客' },
+  seedDesc1: { vi: 'Dành cho cửa hàng mới mở hoặc startup trong lĩnh vực FnB, Retail, Spa, Mini mart', en: 'For newly opened stores or startups in FnB, Retail, Spa, Mini mart', ko: 'FnB, 소매, 스파, 미니마트 분야의 신규 매장이나 스타트업을 위한', zh: '适用于餐饮、零售、水疗、便利店领域的新开店铺或创业公司', ja: 'FnB、小売、スパ、ミニマート分野の新規開業店舗やスタートアップ向け' },
+  seedDesc2: { vi: 'Cần số hóa quy trình bán hàng ngay từ đầu', en: 'Need to digitize sales process from the start', ko: '처음부터 판매 프로세스를 디지털화해야 합니다', zh: '需要从一开始就数字化销售流程', ja: '最初から販売プロセスをデジタル化する必要があります' },
+  seedDesc3: { vi: 'Cần phần mềm dễ dùng, giá hợp lý, triển khai nhanh, không cần nhân viên IT', en: 'Need easy-to-use, affordable software with quick deployment, no IT staff required', ko: '사용하기 쉽고 합리적인 가격의 소프트웨어가 필요하며 빠른 배포가 가능하고 IT 직원이 필요하지 않습니다', zh: '需要易用、价格合理、快速部署、无需IT人员的软件', ja: '使いやすく、手頃な価格で、迅速な展開が可能で、IT スタッフ不要のソフトウェアが必要' },
+  seedFeatures: { vi: 'Đặc điểm:', en: 'Features:', ko: '특징:', zh: '特点:', ja: '特徴:' },
+  seedFeature1: { vi: 'Thiết lập điểm bán trong vài phút, sẵn sàng hoạt động ngay', en: 'Set up POS in minutes, ready to operate immediately', ko: '몇 분 안에 POS 설정, 즉시 운영 가능', zh: '几分钟内设置POS，立即准备运营', ja: '数分でPOSをセットアップし、すぐに運用可能' },
+  seedFeature2: { vi: 'Giao diện thân thiện, thao tác nhanh – phù hợp nhân viên mới', en: 'User-friendly interface, quick operation – suitable for new staff', ko: '사용자 친화적 인터페이스, 빠른 작동 - 신입 직원에게 적합', zh: '友好的界面，快速操作 - 适合新员工', ja: 'ユーザーフレンドリーなインターフェース、迅速な操作 - 新しいスタッフに最適' },
+  seedFeature3: { vi: 'Quản lý đơn hàng, doanh thu, tồn kho cơ bản trên 1 màn hình', en: 'Manage orders, revenue, basic inventory on one screen', ko: '하나의 화면에서 주문, 수익, 기본 재고 관리', zh: '在一个屏幕上管理订单、收入、基本库存', ja: '1つの画面で注文、収益、基本在庫を管理' },
+  seedFeature4: { vi: 'Báo cáo ngày – ca – doanh số – top món bán chạy', en: 'Daily – shift – sales – top selling items reports', ko: '일일 - 교대 - 판매 - 베스트셀러 보고서', zh: '日报 - 班次 - 销售 - 畅销商品报告', ja: '日次 - シフト - 売上 - ベストセラーアイテムレポート' },
+  seedFeature5: { vi: 'Hỗ trợ đa thiết bị (POS, tablet, điện thoại)', en: 'Multi-device support (POS, tablet, phone)', ko: '다중 장치 지원 (POS, 태블릿, 전화)', zh: '多设备支持（POS、平板电脑、手机）', ja: 'マルチデバイスサポート（POS、タブレット、電話）' },
+  seedFeature6: { vi: 'Tích hợp ví điện tử & máy in hóa đơn', en: 'E-wallet & invoice printer integration', ko: '전자 지갑 및 송장 프린터 통합', zh: '电子钱包和发票打印机集成', ja: '電子ウォレットと請求書プリンターの統合' },
+  seedQuote: { vi: 'Giúp bạn bắt đầu hành trình kinh doanh chuyên nghiệp, nhanh chóng và tiết kiệm.', en: 'Help you start your professional business journey quickly and cost-effectively.', ko: '전문적인 비즈니스 여정을 빠르고 비용 효율적으로 시작할 수 있도록 도와드립니다.', zh: '帮助您快速且经济高效地开始专业的商业之旅。', ja: 'プロフェッショナルなビジネスの旅を迅速かつ費用対効果的に開始できるようサポートします。' },
+  
+  // Bloom Plan
+  bloomPlan: { vi: 'Bloom', en: 'Bloom', ko: 'Bloom', zh: 'Bloom', ja: 'Bloom' },
+  bloomTarget: { vi: 'Dành cho doanh nghiệp đang tăng trưởng', en: 'For growing businesses', ko: '성장하는 기업을 위한', zh: '适用于成长中的企业', ja: '成長中の企業向け' },
+  bloomDesc1: { vi: 'Quy mô từ 2–10 chi nhánh, muốn quản lý tập trung dữ liệu và nhân sự', en: '2-10 branches, centralized data and HR management', ko: '2-10개 지점, 중앙 집중식 데이터 및 인사 관리', zh: '2-10个分支机构，集中数据和人力资源管理', ja: '2〜10支店、集中データおよび人事管理' },
+  bloomDesc2: { vi: 'Đang mở rộng, bắt đầu thấy khó kiểm soát tồn kho, doanh thu, nhân viên giữa các chi nhánh', en: 'Expanding, difficulty controlling inventory, revenue, staff across branches', ko: '확장 중, 지점 간 재고, 수익, 직원 통제의 어려움', zh: '扩张中，难以控制分支机构之间的库存、收入、员工', ja: '拡大中、支店間の在庫、収益、スタッフの管理が困難' },
+  bloomFeature1: { vi: 'Quản lý tập trung nhiều chi nhánh trong 1 hệ thống', en: 'Centralized multi-branch management in one system', ko: '하나의 시스템에서 여러 지점 중앙 관리', zh: '在一个系统中集中管理多个分支机构', ja: '1つのシステムで複数支店の集中管理' },
+  bloomFeature2: { vi: 'Theo dõi doanh số từng cửa hàng, ca làm, nhân viên', en: 'Track sales by store, shift, employee', ko: '매장, 교대, 직원별 판매 추적', zh: '按商店、班次、员工跟踪销售', ja: '店舗、シフト、従業員別の売上追跡' },
+  bloomFeature3: { vi: 'Quản lý kho liên chi nhánh, chuyển hàng nội bộ dễ dàng', en: 'Inter-branch inventory management, easy internal transfers', ko: '지점 간 재고 관리, 쉬운 내부 이동', zh: '分支机构间库存管理，轻松内部转移', ja: '支店間在庫管理、簡単な内部転送' },
+  bloomFeature4: { vi: 'Báo cáo phân tích theo khu vực, sản phẩm, thời gian', en: 'Analytical reports by region, product, time', ko: '지역, 제품, 시간별 분석 보고서', zh: '按地区、产品、时间的分析报告', ja: '地域、製品、時間別の分析レポート' },
+  bloomFeature5: { vi: 'Tích hợp CRM cơ bản – quản lý khách hàng & khuyến mãi', en: 'Basic CRM integration – customer & promotion management', ko: '기본 CRM 통합 – 고객 및 프로모션 관리', zh: '基本CRM集成 – 客户和促销管理', ja: '基本的なCRM統合 – 顧客とプロモーション管理' },
+  bloomFeature6: { vi: 'Hỗ trợ team vận hành và kế toán xuất báo cáo nhanh', en: 'Support operations & accounting teams with quick reports', ko: '빠른 보고서로 운영 및 회계팀 지원', zh: '通过快速报告支持运营和会计团队', ja: '迅速なレポートで運営および会計チームをサポート' },
+  bloomQuote: { vi: 'Tăng trưởng vững chắc, kiểm soát tập trung – KAS POS đồng hành cùng bạn trên hành trình mở rộng.', en: 'Solid growth, centralized control – KAS POS accompanies you on your expansion journey.', ko: '견고한 성장, 중앙 집중식 제어 – KAS POS는 확장 여정에서 귀하와 함께합니다.', zh: '稳健增长，集中控制 – KAS POS伴随您的扩张之旅。', ja: '確実な成長、集中管理 – KAS POSはあなたの拡張の旅に同行します。' },
+  
+  // Thrive Plan
+  thrivePlan: { vi: 'Thrive', en: 'Thrive', ko: 'Thrive', zh: 'Thrive', ja: 'Thrive' },
+  thriveTarget: { vi: 'Dành cho doanh nghiệp quy mô vừa đến lớn', en: 'For medium to large enterprises', ko: '중대형 기업을 위한', zh: '适用于中大型企业', ja: '中堅から大企業向け' },
+  thriveDesc1: { vi: 'Từ 10–100 cửa hàng, cần tối ưu vận hành, phân tích dữ liệu, và tự động hóa quy trình', en: '10-100 stores, optimize operations, data analysis, process automation', ko: '10-100개 매장, 운영 최적화, 데이터 분석, 프로세스 자동화', zh: '10-100家店铺，优化运营、数据分析、流程自动化', ja: '10〜100店舗、運営最適化、データ分析、プロセス自動化' },
+  thriveDesc2: { vi: 'Cần hệ thống mạnh, dữ liệu thời gian thực, kết nối các bộ phận để ra quyết định nhanh', en: 'Need powerful system, real-time data, department connectivity for quick decisions', ko: '강력한 시스템, 실시간 데이터, 빠른 의사 결정을 위한 부서 연결 필요', zh: '需要强大的系统、实时数据、部门连接以快速决策', ja: '強力なシステム、リアルタイムデータ、迅速な意思決定のための部門接続が必要' },
+  thriveFeature1: { vi: 'Quản lý chuỗi cửa hàng trên toàn quốc, dữ liệu realtime', en: 'Nationwide chain management with real-time data', ko: '실시간 데이터로 전국 체인 관리', zh: '实时数据的全国连锁管理', ja: 'リアルタイムデータによる全国チェーン管理' },
+  thriveFeature2: { vi: 'Phân quyền đa cấp cho chi nhánh, khu vực, quản lý vùng', en: 'Multi-level permissions for branches, regions, area management', ko: '지점, 지역, 구역 관리를 위한 다단계 권한', zh: '分支机构、地区、区域管理的多级权限', ja: '支店、地域、エリア管理のための多段階権限' },
+  thriveFeature3: { vi: 'Tự động đồng bộ dữ liệu giữa POS – kho – kế toán', en: 'Auto-sync data between POS – inventory – accounting', ko: 'POS – 재고 – 회계 간 자동 데이터 동기화', zh: 'POS – 库存 – 会计之间的自动数据同步', ja: 'POS – 在庫 – 会計間の自動データ同期' },
+  thriveFeature4: { vi: 'Dashboard phân tích doanh thu, chi phí, lợi nhuận theo KPI', en: 'KPI dashboard analyzing revenue, costs, profit', ko: 'KPI 대시보드로 수익, 비용, 이익 분석', zh: 'KPI仪表板分析收入、成本、利润', ja: 'KPIダッシュボードによる収益、コスト、利益の分析' },
+  thriveFeature5: { vi: 'API kết nối ERP, CRM, Loyalty, E-invoice, Payment Gateway', en: 'API connects ERP, CRM, Loyalty, E-invoice, Payment Gateway', ko: 'ERP, CRM, Loyalty, E-invoice, Payment Gateway 연결 API', zh: 'API连接ERP、CRM、Loyalty、电子发票、支付网关', ja: 'ERP、CRM、Loyalty、電子請求書、決済ゲートウェイを接続するAPI' },
+  thriveFeature6: { vi: 'Tích hợp AI gợi ý hàng tồn, dự báo doanh số, tối ưu thực đơn', en: 'AI integration for inventory suggestions, sales forecasting, menu optimization', ko: '재고 제안, 판매 예측, 메뉴 최적화를 위한 AI 통합', zh: 'AI集成用于库存建议、销售预测、菜单优化', ja: '在庫提案、売上予測、メニュー最適化のためのAI統合' },
+  thriveQuote: { vi: 'Tăng tốc chuỗi của bạn với sức mạnh dữ liệu và tự động hóa thông minh từ KAS.', en: 'Accelerate your chain with data power and smart automation from KAS.', ko: 'KAS의 데이터 파워와 스마트 자동화로 체인을 가속화하세요.', zh: '使用KAS的数据力量和智能自动化加速您的连锁店。', ja: 'KASのデータパワーとスマート自動化でチェーンを加速。' },
+  
+  // Legacy Plan
+  legacyPlan: { vi: 'Legacy', en: 'Legacy', ko: 'Legacy', zh: 'Legacy', ja: 'Legacy' },
+  legacyTarget: { vi: 'Giải pháp dành cho tập đoàn, thương hiệu chuỗi lớn', en: 'Solution for corporations, large chain brands', ko: '기업, 대형 체인 브랜드를 위한 솔루션', zh: '适用于集团、大型连锁品牌的解决方案', ja: '企業、大規模チェーンブランド向けソリューション' },
+  legacyDesc1: { vi: '100+ cửa hàng, multi-brand, multi-country', en: '100+ stores, multi-brand, multi-country', ko: '100개 이상의 매장, 멀티 브랜드, 멀티 국가', zh: '100+家店铺，多品牌，多国家', ja: '100店舗以上、マルチブランド、マルチカントリー' },
+  legacyDesc2: { vi: 'Cần hệ thống POS mạnh mẽ, tùy chỉnh linh hoạt, kết nối toàn bộ hệ sinh thái vận hành', en: 'Need powerful POS system, flexible customization, full ecosystem connectivity', ko: '강력한 POS 시스템, 유연한 맞춤화, 전체 생태계 연결 필요', zh: '需要强大的POS系统、灵活的定制、全生态系统连接', ja: '強力なPOSシステム、柔軟なカスタマイズ、フルエコシステム接続が必要' },
+  legacyDesc3: { vi: 'Cần giải pháp riêng biệt', en: 'Need dedicated solution', ko: '전용 솔루션 필요', zh: '需要专用解决方案', ja: '専用ソリューションが必要' },
+  legacyFeature1: { vi: 'Quản lý tập trung nhiều thương hiệu, quốc gia, ngôn ngữ, tiền tệ', en: 'Centralized multi-brand, country, language, currency management', ko: '다중 브랜드, 국가, 언어, 통화 중앙 관리', zh: '集中管理多品牌、国家、语言、货币', ja: 'マルチブランド、国、言語、通貨の集中管理' },
+  legacyFeature2: { vi: 'Hệ thống tùy chỉnh workflow, báo cáo BI, AI Insight chuyên sâu', en: 'Customizable workflow, BI reporting, deep AI Insights', ko: '사용자 정의 워크플로, BI 보고, 심층 AI 인사이트', zh: '可定制工作流程、BI报告、深度AI洞察', ja: 'カスタマイズ可能なワークフロー、BIレポート、深いAIインサイト' },
+  legacyFeature3: { vi: 'Tích hợp ERP, HRM, CRM, Loyalty, Voucher Hub, Payment Hub', en: 'Integration with ERP, HRM, CRM, Loyalty, Voucher Hub, Payment Hub', ko: 'ERP, HRM, CRM, Loyalty, Voucher Hub, Payment Hub 통합', zh: '集成ERP、HRM、CRM、Loyalty、Voucher Hub、Payment Hub', ja: 'ERP、HRM、CRM、Loyalty、Voucher Hub、Payment Hubとの統合' },
+  legacyFeature4: { vi: 'Bảo mật cấp doanh nghiệp, phân quyền phức hợp', en: 'Enterprise-grade security, complex permissions', ko: '엔터프라이즈급 보안, 복잡한 권한', zh: '企业级安全、复杂权限', ja: 'エンタープライズグレードのセキュリティ、複雑な権限' },
+  legacyFeature5: { vi: 'Hạ tầng Cloud riêng, hiệu năng cao, uptime 99.99%', en: 'Private cloud infrastructure, high performance, 99.99% uptime', ko: '프라이빗 클라우드 인프라, 고성능, 99.99% 가동 시간', zh: '私有云基础设施、高性能、99.99%正常运行时间', ja: 'プライベートクラウドインフラ、高性能、99.99%稼働時間' },
+  legacyFeature6: { vi: 'Đội ngũ triển khai & hỗ trợ riêng (Dedicated Account Team)', en: 'Dedicated deployment & support team', ko: '전담 배포 및 지원팀', zh: '专门的部署和支持团队', ja: '専任の展開およびサポートチーム' },
+  legacyQuote: { vi: 'Từ hệ thống chuỗi đến tập đoàn – KAS POS là nền tảng vận hành trung tâm cho doanh nghiệp của bạn.', en: 'From chain system to corporation – KAS POS is the central operating platform for your business.', ko: '체인 시스템에서 기업까지 – KAS POS는 귀하의 비즈니스를 위한 중앙 운영 플랫폼입니다.', zh: '从连锁系统到集团 – KAS POS是您业务的中央运营平台。', ja: 'チェーンシステムから企業まで – KAS POSはあなたのビジネスの中心的な運営プラットフォームです。' },
+  
+  // Pricing
+  seedPrice: { vi: '299,000₫', en: '$12', ko: '$12', zh: '$12', ja: '$12' },
+  bloomPrice: { vi: '399,000₫', en: '$16', ko: '$16', zh: '$16', ja: '$16' },
+  thrivePrice: { vi: '599,000₫', en: '$24', ko: '$24', zh: '$24', ja: '$24' },
+  legacyPrice: { vi: '999,000₫', en: '$40', ko: '$40', zh: '$40', ja: '$40' },
+  perStorePerMonth: { vi: '/cửa hàng/tháng', en: '/store/month', ko: '/매장/월', zh: '/店铺/月', ja: '/店舗/月' },
+  
   contactForPrice: { vi: 'Liên hệ báo giá', en: 'Contact for pricing', ko: '가격 문의', zh: '联系报价', ja: '価格についてお問い合わせ' },
   
   // Workplace Section
-  workplaceBadge: { vi: 'Bộ Giải Pháp Workplace', en: 'Workplace Solutions Suite', ko: '직장 솔루션 제품군', zh: '工作场所解决方案套件', ja: 'ワークプレイスソリューションスイート' },
+  workplaceBadge: { vi: 'SUITE-FIRST, AI-FIRST', en: 'SUITE-FIRST, AI-FIRST', ko: 'SUITE-FIRST, AI-FIRST', zh: 'SUITE-FIRST, AI-FIRST', ja: 'SUITE-FIRST, AI-FIRST' },
   workplaceTitle: { vi: 'Hệ Sinh Thái Ứng Dụng', en: 'Application Ecosystem', ko: '애플리케이션 생태계', zh: '应用生态系统', ja: 'アプリケーションエコシステム' },
-  workplaceSubtitle: { vi: 'Toàn Diện Cho Doanh Nghiệp', en: 'Complete For Enterprise', ko: '기업을 위한 완전한', zh: '企业完整解决方案', ja: '企業向け完全ソリューション' },
-  workplaceDesc: { vi: 'Bộ công cụ tích hợp giúp doanh nghiệp số hóa mọi quy trình làm việc, từ ký số, quản lý nhân sự đến trí tuệ nhân tạo', en: 'Integrated suite of tools to digitize all business workflows, from digital signatures, HR management to artificial intelligence', ko: '디지털 서명, 인사 관리부터 인공지능까지 모든 비즈니스 워크플로우를 디지털화하는 통합 도구', zh: '集成工具套件，将所有业务工作流程数字化，从数字签名、人力资源管理到人工智能', ja: 'デジタル署名、人事管理から人工知能まで、すべてのビジネスワークフローをデジタル化する統合ツールスイート' },
+  workplaceSubtitle: { vi: 'Mang lại giải pháp AI-Driven toàn diện cho Doanh nghiệp', en: 'Delivering comprehensive AI-Driven solutions for Enterprises', ko: '기업을 위한 포괄적인 AI 기반 솔루션 제공', zh: '为企业提供全面的AI驱动解决方案', ja: '企業向けに包括的なAI駆動ソリューションを提供' },
+  workplaceDesc: { vi: 'Tài chính - Khách hàng - Quản trị nội bộ - Đào tạo và phát triển', en: 'Finance - Customers - Internal Management - Training and Development', ko: '재무 - 고객 - 내부 관리 - 교육 및 개발', zh: '财务 - 客户 - 内部管理 - 培训与发展', ja: '財務 - 顧客 - 内部管理 - トレーニングと開発' },
 
    // Koffice
   koffice: { vi: 'Koffice', en: 'Koffice', ko: 'Koffice', zh: 'Koffice', ja: 'Koffice' },
@@ -108,19 +173,19 @@ const translations: Translations = {
   kosDesc: { vi: 'Từ chiến lược đến thực thi', en: 'Action by Vision', ko: '비전에서 실행으로', zh: '从战略到执行', ja: 'ビジョンから実行へ' },
   
   // Kops
-  kops: { vi: 'Kops', en: 'Kops', ko: 'Kops', zh: 'Kops', ja: 'Kops' },
+  kops: { vi: 'KOPS', en: 'KOPS', ko: 'KOPS', zh: 'KOPS', ja: 'KOPS' },
   kopsDesc: { vi: 'Vận hành xuất sắc', en: 'Operational Excellence', ko: '운영 우수성', zh: '卓越运营', ja: 'オペレーショナルエクセレンス' },
   
   // Kforce
-  kforce: { vi: 'Kforce', en: 'Kforce', ko: 'Kforce', zh: 'Kforce', ja: 'Kforce' },
+  kforce: { vi: 'KFORCE', en: 'KFORCE', ko: 'KFORCE', zh: 'KFORCE', ja: 'KFORCE' },
   kforceDesc: { vi: 'Phát triển nhân tài. Kiến tạo tương lai', en: 'Build Talent. Shape the Future.', ko: '인재 육성. 미래 창조', zh: '培养人才·塑造未来', ja: '人材育成·未来を創る' },
   
   // Ksign
-  ksign: { vi: 'Ksign', en: 'Ksign', ko: 'Ksign', zh: 'Ksign', ja: 'Ksign' },
+  ksign: { vi: 'KSIGN', en: 'KSIGN', ko: 'KSIGN', zh: 'KSIGN', ja: 'KSIGN' },
   ksignDesc: { vi: 'Ký nhanh, bảo vệ hành tinh xanh', en: 'Sign fast, save green', ko: '빠른 서명, 친환경 보호', zh: '快速签署，保护绿色星球', ja: '迅速署名、地球を守る' },
 
   //Klinks
-  klinks: { vi: 'Klinks', en: 'Klinks', ko: 'Klinks', zh: 'Klinks', ja: 'Klinks' },
+  klinks: { vi: 'KLINKS', en: 'KLINKS', ko: 'KLINKS', zh: 'KLINKS', ja: 'KLINKS' },
   klinksDesc: { vi: 'Kết nối thông minh, Chia sẻ không giới hạn', en: 'Smart Connect, Unlimited Share', ko: '스마트 연결, 무제한 공유', zh: '智能连接，无限分享', ja: 'スマート接続、無制限の共有' },
   
   // Kare
@@ -278,36 +343,36 @@ export default function KASLanding() {
       {/* Vision Section */}
       <section id="vision" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center space-x-2 bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wide mb-6">
-            <Target size={16} />
+          <div className="inline-flex items-center space-x-2 bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-xl font-bold uppercase tracking-wide mb-6">
+            <Target size={20} />
             <span>{t('visionBadge')}</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            <span className="bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
               {t('visionTitle')}
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          {/* <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             {t('visionDesc')}
-          </p>
+          </p> */}
         </div>
       </section>
 
       {/* Mission Section */}
       <section id="mission" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center space-x-2 bg-indigo-100 text-indigo-600 px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wide mb-6">
-            <Heart size={16} />
+          <div className="inline-flex items-center space-x-2 bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-xl font-bold uppercase tracking-wide mb-6">
+            <Heart size={20} />
             <span>{t('missionBadge')}</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            <span className="bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
               {t('missionTitle')}
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          {/* <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             {t('missionDesc')}
-          </p>
+          </p> */}
         </div>
       </section>
 
@@ -315,18 +380,18 @@ export default function KASLanding() {
       <section id="values" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wide mb-6">
-              <Gem size={16} />
+            <div className="inline-flex items-center space-x-2 bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-xl font-bold uppercase tracking-wide mb-6">
+              <Gem size={20} />
               <span>{t('valuesBadge')}</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            {/* <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               <span className="bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
                 {t('valuesTitle')}
               </span>
-            </h2>
+            </h2> */}
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100 hover:border-blue-300">
               <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4">
                 <Sparkles size={24} className="text-white" />
@@ -358,42 +423,56 @@ export default function KASLanding() {
               <h3 className="text-xl font-bold text-gray-900 mb-3">{t('value4')}</h3>
               <p className="text-gray-600">{t('value4Desc')}</p>
             </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100 hover:border-blue-300">
+              <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center mb-4">
+                <TrendingUp size={24} className="text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">{t('value5')}</h3>
+              <p className="text-gray-600">{t('value5Desc')}</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Roadmap Section */}
+      {/* SectionbSectionboor */}
       <section id="roadmap" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-green-100 text-green-600 px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wide mb-6">
-              <TrendingUp size={16} />
+          <div className="text-center mb-12 md:mb-16">
+            <div className="inline-flex items-center space-x-2 bg-green-100 text-green-600 px-4 py-2 rounded-full text-xl font-bold uppercase tracking-wide">
+              <TrendingUp size={20} />
               <span>{t('roadmapBadge')}</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              <span className="bg-gradient-to-r from-green-600 to-blue-500 bg-clip-text text-transparent">
-                {t('roadmapTitle')}
-              </span>
-            </h2>
           </div>
 
           <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-500 to-green-500"></div>
+            {/* Vertical timeline line for mobile */}
+            <div className="absolute left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-green-500 md:hidden"></div>
             
-            <div className="space-y-12">
+            {/* Horizontal timeline line for desktop */}
+            <div className="absolute top-8 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 hidden md:block"></div>
+            
+            {/* Timeline items */}
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-6">
               {[
-                { year: t('roadmap2020'), desc: t('roadmap2020Desc'), color: 'blue' },
-                { year: t('roadmap2021'), desc: t('roadmap2021Desc'), color: 'indigo' },
-                { year: t('roadmap2023'), desc: t('roadmap2023Desc'), color: 'purple' },
+                { year: t('roadmap2015'), desc: t('roadmap2015Desc'), color: 'blue' },
+                { year: t('roadmap2018'), desc: t('roadmap2018Desc'), color: 'indigo' },
+                { year: t('roadmap2020'), desc: t('roadmap2020Desc'), color: 'purple' },
                 { year: t('roadmap2025'), desc: t('roadmap2025Desc'), color: 'green' },
+                { year: t('roadmap2026'), desc: t('roadmap2026Desc'), color: 'teal' },
               ].map((item, index) => (
-                <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-                  <div className="w-1/2"></div>
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white border-4 border-blue-500 rounded-full"></div>
-                  <div className={`w-1/2 ${index % 2 === 0 ? 'pl-8' : 'pr-8'}`}>
-                    <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border border-gray-100">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{item.year}</h3>
-                      <p className="text-gray-600">{item.desc}</p>
+                <div key={index} className="relative pl-12 md:pl-0">
+                  {/* Timeline dot for mobile (left side) */}
+                  <div className="absolute left-0 top-6 w-8 h-8 bg-white border-4 border-blue-500 rounded-full z-10 md:hidden"></div>
+                  
+                  {/* Timeline dot for desktop (top center) */}
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white border-4 border-blue-500 rounded-full z-10 hidden md:block"></div>
+                  
+                  {/* Content card */}
+                  <div className="md:mt-20">
+                    <div className="bg-white rounded-2xl p-5 md:p-6 shadow-lg hover:shadow-2xl transition-all border border-gray-100 h-full">
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">{item.year}</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -407,50 +486,165 @@ export default function KASLanding() {
       <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-orange-100 text-orange-600 px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wide mb-6">
-              <Star size={16} />
+            <div className="inline-flex items-center space-x-2 bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-xl font-bold uppercase tracking-wide mb-6">
+              <Star size={20} />
               <span>{t('pricingBadge')}</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              <span className="bg-gradient-to-r from-orange-600 to-blue-500 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <span className="bg-gradient-to-r from-pink-600 to-pink-400 bg-clip-text text-transparent">
                 {t('pricingTitle')}
+              </span>
+            </h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+              <span className="bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">
+                {t('pricingTitle2')}
               </span>
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Basic */}
-            <div className="bg-white rounded-3xl p-8 border-2 border-gray-200 hover:border-blue-300 transition-all hover:shadow-2xl">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">{t('basicPlan')}</h3>
-              <div className="mb-6">
-                <span className="text-4xl font-bold text-gray-900">{t('contactForPrice')}</span>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Seed */}
+            <div className="bg-white rounded-3xl p-6 border-2 border-green-200 hover:border-green-400 transition-all hover:shadow-2xl flex flex-col">
+              <div className="flex items-center gap-2 mb-3">
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent">{t('seedPlan')}</h3>
               </div>
-              <Link href="#contact" className="block w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl text-center font-bold hover:from-blue-700 hover:to-blue-800 transition-all">
+              
+              <div className="mb-4">
+                <p className="text-3xl font-bold text-gray-900">{t('seedPrice')}</p>
+                <p className="text-sm text-gray-500">{t('perStorePerMonth')}</p>
+              </div>
+              
+              <p className="text-xs font-semibold text-gray-500 uppercase mb-2">{t('seedTarget')}</p>
+              <ul className="text-sm text-gray-600 space-y-2 mb-4">
+                <li>• {t('seedDesc1')}</li>
+                <li>• {t('seedDesc2')}</li>
+                <li>• {t('seedDesc3')}</li>
+              </ul>
+              
+              <p className="text-xs font-bold text-gray-900 mb-2">{t('seedFeatures')}</p>
+              <ul className="text-xs text-gray-600 space-y-1 mb-4">
+                <li>✓ {t('seedFeature1')}</li>
+                <li>✓ {t('seedFeature2')}</li>
+                <li>✓ {t('seedFeature3')}</li>
+                <li>✓ {t('seedFeature4')}</li>
+                <li>✓ {t('seedFeature5')}</li>
+                <li>✓ {t('seedFeature6')}</li>
+              </ul>
+              
+              <div className="bg-green-50 p-3 rounded-lg mb-4">
+                <p className="text-xs italic text-green-800"> {t('seedQuote')}</p>
+              </div>
+              
+              <Link href="#contact" className="block w-full px-4 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl text-center font-bold hover:from-green-700 hover:to-green-800 transition-all text-sm mt-auto">
                 {t('contactUs')}
               </Link>
             </div>
 
-            {/* Advanced */}
-            <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl p-8 shadow-2xl transform md:scale-110">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-xs font-bold">
-                POPULAR
+            {/* Bloom */}
+            <div className="bg-white rounded-3xl p-6 border-2 border-blue-200 hover:border-blue-400 transition-all hover:shadow-2xl relative flex flex-col">
+              <div className="flex items-center gap-2 mb-3">
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">{t('bloomPlan')}</h3>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">{t('advancePlan')}</h3>
-              <div className="mb-6">
-                <span className="text-4xl font-bold text-white">{t('contactForPrice')}</span>
+              
+              <div className="mb-4">
+                <p className="text-3xl font-bold text-gray-900">{t('bloomPrice')}</p>
+                <p className="text-sm text-gray-500">{t('perStorePerMonth')}</p>
               </div>
-              <Link href="#contact" className="block w-full px-6 py-4 bg-white text-blue-600 rounded-xl text-center font-bold hover:bg-blue-50 transition-all">
+              
+              <p className="text-xs font-semibold text-gray-500 uppercase mb-2">{t('bloomTarget')}</p>
+              <ul className="text-sm text-gray-600 space-y-2 mb-4">
+                <li>• {t('bloomDesc1')}</li>
+                <li>• {t('bloomDesc2')}</li>
+              </ul>
+              
+              <p className="text-xs font-bold text-gray-900 mb-2">{t('seedFeatures')}</p>
+              <ul className="text-xs text-gray-600 space-y-1 mb-4">
+                <li>✓ {t('bloomFeature1')}</li>
+                <li>✓ {t('bloomFeature2')}</li>
+                <li>✓ {t('bloomFeature3')}</li>
+                <li>✓ {t('bloomFeature4')}</li>
+                <li>✓ {t('bloomFeature5')}</li>
+                <li>✓ {t('bloomFeature6')}</li>
+              </ul>
+              
+              <div className="bg-blue-50 p-3 rounded-lg mb-4">
+                <p className="text-xs italic text-blue-800"> {t('bloomQuote')}</p>
+              </div>
+              
+              <Link href="#contact" className="block w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl text-center font-bold hover:from-blue-700 hover:to-blue-800 transition-all text-sm mt-auto">
                 {t('contactUs')}
               </Link>
             </div>
 
-            {/* Premium */}
-            <div className="bg-white rounded-3xl p-8 border-2 border-gray-200 hover:border-indigo-300 transition-all hover:shadow-2xl">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">{t('premiumPlan')}</h3>
-              <div className="mb-6">
-                <span className="text-4xl font-bold text-gray-900">{t('contactForPrice')}</span>
+            {/* Thrive */}
+            <div className="bg-white rounded-3xl p-6 border-2 border-purple-200 hover:border-purple-400 transition-all hover:shadow-2xl flex flex-col">
+              <div className="flex items-center gap-2 mb-3">
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-purple-500 bg-clip-text text-transparent">{t('thrivePlan')}</h3>
               </div>
-              <Link href="#contact" className="block w-full px-6 py-4 bg-gradient-to-r from-indigo-600 to-purple-700 text-white rounded-xl text-center font-bold hover:from-indigo-700 hover:to-purple-800 transition-all">
+              
+              <div className="mb-4">
+                <p className="text-3xl font-bold text-gray-900">{t('thrivePrice')}</p>
+                <p className="text-sm text-gray-500">{t('perStorePerMonth')}</p>
+              </div>
+              
+              <p className="text-xs font-semibold text-gray-500 uppercase mb-2">{t('thriveTarget')}</p>
+              <ul className="text-sm text-gray-600 space-y-2 mb-4">
+                <li>• {t('thriveDesc1')}</li>
+                <li>• {t('thriveDesc2')}</li>
+              </ul>
+              
+              <p className="text-xs font-bold text-gray-900 mb-2">{t('seedFeatures')}</p>
+              <ul className="text-xs text-gray-600 space-y-1 mb-4">
+                <li>✓ {t('thriveFeature1')}</li>
+                <li>✓ {t('thriveFeature2')}</li>
+                <li>✓ {t('thriveFeature3')}</li>
+                <li>✓ {t('thriveFeature4')}</li>
+                <li>✓ {t('thriveFeature5')}</li>
+                <li>✓ {t('thriveFeature6')}</li>
+              </ul>
+              
+              <div className="bg-purple-50 p-3 rounded-lg mb-4">
+                <p className="text-xs italic text-purple-800"> {t('thriveQuote')}</p>
+              </div>
+              
+              <Link href="#contact" className="block w-full px-4 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-xl text-center font-bold hover:from-purple-700 hover:to-purple-800 transition-all text-sm mt-auto">
+                {t('contactUs')}
+              </Link>
+            </div>
+
+            {/* Legacy */}
+            <div className="bg-white rounded-3xl p-6 border-2 border-orange-200 hover:border-orange-400 transition-all hover:shadow-2xl flex flex-col">
+              <div className="flex items-center gap-2 mb-3">
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">{t('legacyPlan')}</h3>
+              </div>
+              
+              <div className="mb-4">
+                <p className="text-3xl font-bold text-gray-900">{t('legacyPrice')}</p>
+                <p className="text-sm text-gray-500">{t('perStorePerMonth')}</p>
+              </div>
+              
+              <p className="text-xs font-semibold text-gray-500 uppercase mb-2">{t('legacyTarget')}</p>
+              <ul className="text-sm text-gray-600 space-y-2 mb-4">
+                <li>• {t('legacyDesc1')}</li>
+                <li>• {t('legacyDesc2')}</li>
+                <li>• {t('legacyDesc3')}</li>
+              </ul>
+              
+              <p className="text-xs font-bold text-gray-900 mb-2">{t('seedFeatures')}</p>
+              <ul className="text-xs text-gray-600 space-y-1 mb-4">
+                <li>✓ {t('legacyFeature1')}</li>
+                <li>✓ {t('legacyFeature2')}</li>
+                <li>✓ {t('legacyFeature3')}</li>
+                <li>✓ {t('legacyFeature4')}</li>
+                <li>✓ {t('legacyFeature5')}</li>
+                <li>✓ {t('legacyFeature6')}</li>
+              </ul>
+              
+              <div className="bg-orange-50 p-3 rounded-lg mb-4">
+                <p className="text-xs italic text-orange-800"> {t('legacyQuote')}</p>
+              </div>
+              
+              <Link href="#contact" className="block w-full px-4 py-3 bg-gradient-to-r from-orange-600 to-orange-700 text-white rounded-xl text-center font-bold hover:from-orange-700 hover:to-orange-800 transition-all text-sm mt-auto">
                 {t('contactUs')}
               </Link>
             </div>
@@ -467,11 +661,11 @@ export default function KASLanding() {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-600 px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wide mb-6">
-              <Briefcase size={16} />
+            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-600 px-4 py-2 rounded-full text-xl font-bold uppercase tracking-wide mb-6">
+              <Briefcase size={20} />
               <span>{t('workplaceBadge')}</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
                 {t('workplaceTitle')}
               </span>
@@ -876,7 +1070,8 @@ export default function KASLanding() {
           {/* CTA and Stats */}
           <div className="text-center">
             <Link
-              href="https://kas.asia"
+              href="https://koffice.ai/"
+              target="_blank"
               className="inline-flex items-center space-x-3 px-10 py-5 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-2xl font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 mb-12"
             >
               <Briefcase size={24} />
