@@ -213,26 +213,26 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
             <nav className="space-y-2">
               {/* Navigation Links */}
               <Link
-                href="/customers"
+                href="/customer"
                 className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
                 onClick={handleMobileMenuClose}
               >
                 {t('customers')}
               </Link>
               <Link
-                href="/solutions"
+                href="/solution"
                 className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
                 onClick={handleMobileMenuClose}
               >
                 {t('solutions')}
               </Link>
-              <Link
+              {/* <Link
                 href="/ai-transformation"
                 className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
                 onClick={handleMobileMenuClose}
               >
                 {t('aiTransformation')}
-              </Link>
+              </Link> */}
 
               {/* Divider */}
               <div className="my-4 border-t border-gray-200"></div>
