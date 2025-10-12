@@ -13,25 +13,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "POS ONE - Phần mềm quản lý bán hàng thông minh",
+  title: "KAS - KAS TECHNOLOGY",
   description: "Giải pháp quản lý bán hàng và vận hành chuỗi toàn diện. Tích hợp thanh toán, quản lý kho, báo cáo thông minh - tất cả trong một hệ thống.",
-  keywords: "POS, quản lý bán hàng, phần mềm quản lý, quản lý kho, thanh toán, báo cáo bán hàng, POS ONE",
+  keywords: "POS, quản lý bán hàng, phần mềm quản lý, quản lý kho, thanh toán, báo cáo bán hàng, KAS",
   icons: {
-    icon: "https://api-kom.kas.asia/api/uploads/avatar/avatar_1750042090886.png",
-    shortcut: "https://api-kom.kas.asia/api/uploads/avatar/avatar_1750042090886.png",
-    apple: "https://api-kom.kas.asia/api/uploads/avatar/avatar_1750042090886.png",
+    icon: "https://api-kom.kas.asia/api/uploads/chat_image/Logo_KAS_1751350227987.png",
+    shortcut: "https://api-kom.kas.asia/api/uploads/chat_image/Logo_KAS_1751350227987.png",
+    apple: "https://api-kom.kas.asia/api/uploads/chat_image/Logo_KAS_1751350227987.png",
   },
   openGraph: {
-    title: "POS ONE - Phần mềm quản lý bán hàng thông minh",
+    title: "KAS - KAS TECHNOLOGY",
     description: "Giải pháp quản lý bán hàng và vận hành chuỗi toàn diện. Tích hợp thanh toán, quản lý kho, báo cáo thông minh.",
     url: "https://posone.vn",
-    siteName: "POS ONE",
+    siteName: "KAS",
     images: [
       {
-        url: "https://api-kom.kas.asia/api/uploads/avatar/avatar_1750042090886.png",
+        url: "https://api-kom.kas.asia/api/uploads/chat_image/Logo_KAS_1751350227987.png",
         width: 1200,
         height: 630,
-        alt: "POS ONE Logo",
+        alt: "KAS Logo",
       },
     ],
     locale: "vi_VN",
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "POS ONE - Phần mềm quản lý bán hàng thông minh",
+    title: "KAS - KAS TECHNOLOGY",
     description: "Giải pháp quản lý bán hàng và vận hành chuỗi toàn diện.",
-    images: ["https://api-kom.kas.asia/api/uploads/avatar/avatar_1750042090886.png"],
+    images: ["https://api-kom.kas.asia/api/uploads/chat_image/Logo_KAS_1751350227987.png"],
   },
 };
 

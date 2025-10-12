@@ -170,67 +170,67 @@ const translations: Translations = {
   customerListDesc: { vi: 'Nhiều chuỗi FnB, Retail, Serivces đã đồng hành cùng chúng tôi từ ngày đầu khởi nghiệp đến khi thành chuỗi lớn. Bên cạnh đó cũng có nhiều chuỗi đã chuyển qua KAS POS ở giai đoạn Bloom hoặc Thrive', en: 'Many FnB, Retail, and Services chains have accompanied us from the early days of startup to becoming large chains. Additionally, many chains have switched to KAS POS during the Bloom or Thrive stages.', ko: '많은 FnB, 소매 및 서비스 체인이 스타트업 초기부터 대형 체인이 될 때까지 우리와 함께했습니다. 또한 많은 체인이 Bloom 또는 Thrive 단계에서 KAS POS로 전환했습니다.', zh: '许多餐饮、零售和服务连锁店从创业初期就与我们同行，直到成为大型连锁店。此外，许多连锁店在Bloom或Thrive阶段切换到KAS POS。', ja: '多くのFnB、小売、サービスチェーンが、スタートアップの初期から大規模なチェーンになるまで私たちと共に歩んできました。さらに、多くのチェーンがBloomまたはThrive段階でKAS POSに切り替えています。' },
 };
 
-// Customer logos data
+// Customer logos data - with image URLs
 const customers = [
-  // Row 1
-  { name: 'Dookki', logo: '🍲', category: 'chain' },
-  { name: 'Spicy Box', logo: '🌶️', category: 'small' },
-  { name: 'Tous les Jours', logo: '🥐', category: 'chain' },
-  { name: 'Bon Bon', logo: '🍰', category: 'small' },
-  { name: 'Cobi Bread', logo: '🍞', category: 'chain' },
-  { name: 'Chicken Plus', logo: '🍗', category: 'chain' },
-  { name: 'Goobne', logo: '🐓', category: 'chain' },
-  { name: 'Butter Bean', logo: '☕', category: 'small' },
-  { name: 'Hot & Cold', logo: '🥤', category: 'small' },
-  { name: 'Papa\'s Chicken', logo: '🍗', category: 'chain' },
-  
-  // Row 2
-  { name: 'Phở Lộc Thọ', logo: '🍜', category: 'small' },
-  { name: 'Cơm Niêu Thiên Lý', logo: '🍚', category: 'chain' },
-  { name: 'Papagayo', logo: '🦜', category: 'small' },
-  { name: 'Yên Thư', logo: '🍲', category: 'small' },
-  { name: 'Bamboo', logo: '🎋', category: 'small' },
-  { name: 'Hong Kong', logo: '🥟', category: 'chain' },
-  { name: 'Trung Dương', logo: '🍤', category: 'small' },
-  { name: 'Thai Market', logo: '🌶️', category: 'small' },
-  { name: 'PiThai', logo: '🍛', category: 'chain' },
-  { name: 'Mớ Cỏ', logo: '🥗', category: 'small' },
-  
-  // Row 3
-  { name: 'Cargo Club', logo: '🚢', category: 'small' },
-  { name: 'Le Panier', logo: '🥖', category: 'small' },
-  { name: 'Morning Glory', logo: '☕', category: 'chain' },
-  { name: 'Hansang', logo: '🍱', category: 'chain' },
-  { name: 'Vin Lợi', logo: '🍽️', category: 'small' },
-  { name: 'V\'s Deli', logo: '🥪', category: 'small' },
-  { name: 'M Market', logo: '🏪', category: 'small' },
-  { name: 'Bún Ân Cookie', logo: '🍜', category: 'small' },
-  { name: 'Mộc Mộc', logo: '🥢', category: 'small' },
-  { name: 'iMarket', logo: '🛒', category: 'enterprise' },
-  
-  // Row 4
-  { name: 'Heineken', logo: '🍺', category: 'enterprise' },
-  { name: 'Viva Star', logo: '⭐', category: 'chain' },
-  { name: 'Viva', logo: '✨', category: 'chain' },
-  { name: 'Kim Tú Garden', logo: '🌺', category: 'small' },
-  { name: 'Best Coffee', logo: '☕', category: 'chain' },
-  { name: 'Asian Food Town', logo: '🍜', category: 'chain' },
-  { name: 'Karaoke', logo: '🎤', category: 'chain' },
-  { name: 'Skydeck', logo: '🏙️', category: 'enterprise' },
-  { name: 'Bitexco', logo: '🏢', category: 'enterprise' },
-  { name: 'Phở Hồ Chí Minh', logo: '🍜', category: 'chain' },
-  
+  // Row 1 - Korean Chain Restaurants
+  { name: 'Dookki', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Spicy Box', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'Tous les Jours', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Bon Bon', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'Cobi Bread', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Chicken Plus', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Goobne', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Butter Bean', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'Hot & Cold', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'Papa\'s Chicken', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+
+  // Row 2 - Vietnamese Restaurants
+  { name: 'Phở Lộc Thọ', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'Cơm Niêu Thiên Lý', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Papagayo', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'Yên Thư', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'Bamboo', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'Hong Kong', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Trung Dương', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'Thai Market', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'PiThai', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Mớ Cỏ', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+
+  // Row 3 - Cafes & Bakeries
+  { name: 'Cargo Club', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'Le Panier', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'Morning Glory', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Hansang', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Vin Lợi', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'V\'s Deli', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'M Market', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'Bún Ân Cookie', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'Mộc Mộc', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'iMarket', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'enterprise' },
+
+  // Row 4 - Large Enterprises
+  { name: 'Heineken', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'enterprise' },
+  { name: 'Viva Star', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Viva', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Kim Tú Garden', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'Best Coffee', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Asian Food Town', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Karaoke', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Skydeck', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'enterprise' },
+  { name: 'Bitexco', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'enterprise' },
+  { name: 'Phở Hồ Chí Minh', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+
   // Row 5
-  { name: 'Mikado Sushi', logo: '🍣', category: 'chain' },
-  { name: 'Phở Phượng Trang', logo: '🍜', category: 'small' },
-  { name: 'Lotte', logo: '🏬', category: 'enterprise' },
-  { name: 'Shinrim Bakery', logo: '🥐', category: 'chain' },
-  { name: 'K-Market', logo: '🏪', category: 'chain' },
-  { name: 'Werd', logo: '📝', category: 'small' },
-  { name: 'Cơm Nhà Home', logo: '🏠', category: 'small' },
-  { name: 'Market 54', logo: '🛒', category: 'chain' },
-  { name: 'C2000', logo: '💧', category: 'enterprise' },
-  { name: 'Vietthy', logo: '🍜', category: 'chain' },
+  { name: 'Mikado Sushi', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Phở Phượng Trang', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'Lotte', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'enterprise' },
+  { name: 'Shinrim Bakery', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'K-Market', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Werd', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'Cơm Nhà Home', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'Market 54', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'C2000', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'enterprise' },
+  { name: 'Vietthy', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
 ];
 
 export default function CustomersPage() {
@@ -882,22 +882,26 @@ export default function CustomersPage() {
               {customers.map((customer, index) => (
                 <div
                   key={`first-${index}`}
-                  className="group flex-shrink-0 w-28 h-28 bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center justify-center border-2 border-gray-100 hover:border-green-400"
+                  className="group flex-shrink-0 w-32 h-32 bg-white rounded-2xl p-3 shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center justify-center border-2 border-gray-100 hover:border-green-400"
                 >
-                  <div className="text-5xl transform group-hover:scale-125 transition-transform duration-300">
-                    {customer.logo}
-                  </div>
+                  <img 
+                    src={customer.logo} 
+                    alt={customer.name}
+                    className="w-full h-full object-contain rounded-xl transform group-hover:scale-110 transition-transform duration-300"
+                  />
                 </div>
               ))}
               {/* Duplicate set for seamless loop */}
               {customers.map((customer, index) => (
                 <div
                   key={`second-${index}`}
-                  className="group flex-shrink-0 w-28 h-28 bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center justify-center border-2 border-gray-100 hover:border-green-400"
+                  className="group flex-shrink-0 w-32 h-32 bg-white rounded-2xl p-3 shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center justify-center border-2 border-gray-100 hover:border-green-400"
                 >
-                  <div className="text-5xl transform group-hover:scale-125 transition-transform duration-300">
-                    {customer.logo}
-                  </div>
+                  <img 
+                    src={customer.logo} 
+                    alt={customer.name}
+                    className="w-full h-full object-contain rounded-xl transform group-hover:scale-110 transition-transform duration-300"
+                  />
                 </div>
               ))}
             </div>
@@ -915,12 +919,14 @@ export default function CustomersPage() {
               {customers.slice(0, 20).map((customer, index) => (
                 <div
                   key={index}
-                  className="group relative aspect-square bg-white rounded-2xl p-4 shadow-md hover:shadow-2xl transition-all duration-300 flex items-center justify-center border-2 border-gray-100 hover:border-green-400 transform hover:scale-110"
+                  className="group relative aspect-square bg-white rounded-2xl p-3 shadow-md hover:shadow-2xl transition-all duration-300 flex items-center justify-center border-2 border-gray-100 hover:border-green-400 transform hover:scale-110"
                   style={{animationDelay: `${index * 0.02}s`}}
                 >
-                  <div className="text-4xl transform group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
-                    {customer.logo}
-                  </div>
+                  <img 
+                    src={customer.logo} 
+                    alt={customer.name}
+                    className="w-full h-full object-contain rounded-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300"
+                  />
                   
                   {/* Tooltip */}
                   <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 bg-gray-900 text-white px-4 py-2 rounded-xl text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-20 shadow-xl">
