@@ -490,7 +490,7 @@ export default function KASLanding() {
 
           {/* Enhanced Title with Card Effect */}
           <div className="glass-effect bg-gradient-to-br from-white/80 to-blue-50/30 rounded-3xl p-8 md:p-12 shadow-2xl border border-blue-100/50 hover:shadow-blue-200/50 transition-all duration-500 hover:-translate-y-2">
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
               <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent animate-gradient inline-block">
                 {t('visionTitle')}
               </span>
@@ -522,7 +522,7 @@ export default function KASLanding() {
 
           {/* Enhanced Title with Card Effect */}
           <div className="glass-effect bg-gradient-to-br from-white/80 to-purple-50/30 rounded-3xl p-8 md:p-12 shadow-2xl border border-purple-100/50 hover:shadow-purple-200/50 transition-all duration-500 hover:-translate-y-2">
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
               <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700 bg-clip-text text-transparent animate-gradient inline-block">
                 {t('missionTitle')}
               </span>
