@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Globe, ChevronDown, Menu, X } from "lucide-react";
+import ConsultationForm from "./ConsultationForm";
 
 type Language = 'vi' | 'en' | 'ko' | 'zh' | 'ja';
 
@@ -20,9 +21,9 @@ const translations: Translations = {
   customers: { vi: 'Khách hàng', en: 'Customers', ko: '고객', zh: '客户', ja: '顧客' },
   solutions: { vi: 'Giải pháp', en: 'Solutions', ko: '솔루션', zh: '解决方案', ja: 'ソリューション' },
   aiTransformation: { vi: 'AI Transformation', en: 'AI Transformation', ko: 'AI 트랜스포메이션', zh: 'AI转型', ja: 'AI変革' },
-  login: { vi: 'Đăng nhập', en: 'Login', ko: '로그인', zh: '登录', ja: 'ログイン' },
-  register: { vi: 'Đăng ký', en: 'Register', ko: '등록', zh: '注册', ja: '登録' },
-  trial: { vi: 'Yêu cầu dùng thử', en: 'Request Trial', ko: '체험 신청', zh: '申请试用', ja: 'トライアル申請' },
+  login: { vi: 'KAS POS', en: 'KAS POS', ko: 'KAS POS', zh: 'KAS POS', ja: 'KAS POS' },
+  register: { vi: 'POSONE', en: 'POSONE', ko: 'POSONE', zh: 'POSONE', ja: 'POSONE' },
+  trial: { vi: 'Đăng ký tư vấn', en: 'Request Consultation', ko: '상담 요청', zh: '请求咨询', ja: '相談をリクエスト' },
   language: { vi: 'Ngôn ngữ', en: 'Language', ko: '언어', zh: '语言', ja: '言語' },
 };
 
@@ -44,6 +45,7 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
   const [mobileLangMenuOpen, setMobileLangMenuOpen] = useState(false);
+  const [consultationFormOpen, setConsultationFormOpen] = useState(false);
 
   const t = (key: string): string => {
     return translations[key]?.[language] || key;
@@ -132,29 +134,35 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
               </div>
 
               <Link 
-                href="https://kas.asia"
+                href="https://kaspos.ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 font-medium"
+                className="group relative px-6 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-medium transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 overflow-hidden"
               >
-                {t('login')}
+                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+                <span className="relative z-10">{t('login')}</span>
               </Link>
               <Link
-                href="https://kas.asia/register"
+                href="https://posone.ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2.5 bg-white border-2 border-blue-500 text-blue-600 rounded-xl font-medium hover:bg-blue-50 transition-all duration-300"
+                className="group relative px-6 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-xl font-medium transition-all duration-300 shadow-lg shadow-green-500/30 hover:shadow-xl hover:shadow-green-500/50 hover:scale-105 overflow-hidden"
               >
-                {t('register')}
+                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+                <span className="relative z-10">{t('register')}</span>
               </Link>
-              <Link
-                href="https://kas.asia/trial"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-2.5 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-xl font-medium hover:from-teal-600 hover:to-green-700 transition-all duration-300"
+              <button
+                onClick={() => setConsultationFormOpen(true)}
+                className="group relative px-6 py-2.5 bg-gradient-to-r from-purple-500 to-purple-400 text-white rounded-xl font-medium transition-all duration-300 shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/50 hover:scale-105 overflow-hidden"
               >
-                {t('trial')}
-              </Link>
+                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+                <span className="relative z-10 flex items-center space-x-2">
+                  <span>{t('trial')}</span>
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -226,32 +234,40 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
 
               {/* CTA Buttons */}
               <Link
-                href="https://kas.asia"
+                href="https://kaspos.ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block px-4 py-3 text-center bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl font-bold hover:from-blue-600 hover:to-blue-700 transition-all shadow-lg"
+                className="group relative block px-4 py-3.5 text-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl overflow-hidden"
                 onClick={handleMobileMenuClose}
               >
-                {t('login')}
+                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+                <span className="relative z-10">{t('login')}</span>
               </Link>
               <Link
-                href="https://kas.asia/register"
+                href="https://posone.ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block px-4 py-3 text-center bg-white border-2 border-blue-500 text-blue-600 rounded-xl font-bold hover:bg-blue-50 transition-all"
+                className="group relative block px-4 py-3.5 text-center bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl overflow-hidden"
                 onClick={handleMobileMenuClose}
               >
-                {t('register')}
+                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+                <span className="relative z-10">{t('register')}</span>
               </Link>
-              <Link
-                href="https://kas.asia/trial"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block px-4 py-3 text-center bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-xl font-bold hover:from-teal-600 hover:to-green-700 transition-all"
-                onClick={handleMobileMenuClose}
+              <button
+                onClick={() => {
+                  handleMobileMenuClose();
+                  setConsultationFormOpen(true);
+                }}
+                className="group relative block w-full px-4 py-3.5 text-center bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl overflow-hidden"
               >
-                {t('trial')}
-              </Link>
+                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+                <span className="relative z-10 flex items-center justify-center space-x-2">
+                  <span>{t('trial')}</span>
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+              </button>
 
               {/* Language Selector */}
               <div className="mt-6">
@@ -303,6 +319,13 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
           </div>
         </div>
       </div>
+
+      {/* Consultation Form Modal */}
+      <ConsultationForm 
+        isOpen={consultationFormOpen}
+        onClose={() => setConsultationFormOpen(false)}
+        language={language}
+      />
     </>
   );
 }

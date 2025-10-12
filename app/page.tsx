@@ -2,7 +2,7 @@
 
 //trang chính kas
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -231,21 +231,42 @@ const translations: Translations = {
 
 export default function KASLanding() {
   const [language, setLanguage] = useState<Language>('vi');
+  const [scrollY, setScrollY] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+    
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const t = (key: string): string => {
     return translations[key]?.[language] || key;
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <style jsx>{`
         @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          25% { transform: translateY(-15px) rotate(1deg); }
+          75% { transform: translateY(-15px) rotate(-1deg); }
         }
         @keyframes pulse-glow {
-          0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
-          50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.8); }
+          0%, 100% { 
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4),
+                        0 0 40px rgba(59, 130, 246, 0.2); 
+          }
+          50% { 
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.6),
+                        0 0 60px rgba(59, 130, 246, 0.3),
+                        0 0 80px rgba(59, 130, 246, 0.1); 
+          }
         }
         @keyframes gradient-shift {
           0% { background-position: 0% 50%; }
@@ -255,11 +276,21 @@ export default function KASLanding() {
         @keyframes slide-up {
           from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(40px);
           }
           to {
             opacity: 1;
             transform: translateY(0);
+          }
+        }
+        @keyframes fade-in-scale {
+          from {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
           }
         }
         @keyframes scroll {
@@ -270,27 +301,98 @@ export default function KASLanding() {
             transform: translateX(-50%);
           }
         }
+        @keyframes shimmer {
+          0% {
+            background-position: -1000px 0;
+          }
+          100% {
+            background-position: 1000px 0;
+          }
+        }
+        @keyframes bounce-subtle {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-5px);
+          }
+        }
         .animate-float {
-          animation: float 3s ease-in-out infinite;
+          animation: float 6s ease-in-out infinite;
         }
         .animate-pulse-glow {
-          animation: pulse-glow 2s ease-in-out infinite;
+          animation: pulse-glow 3s ease-in-out infinite;
         }
         .animate-gradient {
-          background-size: 200% 200%;
-          animation: gradient-shift 3s ease infinite;
+          background-size: 300% 300%;
+          animation: gradient-shift 8s ease infinite;
         }
         .animate-slide-up {
-          animation: slide-up 0.6s ease-out forwards;
+          animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-fade-in-scale {
+          animation: fade-in-scale 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         .animate-scroll {
-          animation: scroll 30s linear infinite;
+          animation: scroll 40s linear infinite;
+        }
+        .animate-shimmer {
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.5),
+            transparent
+          );
+          background-size: 200% 100%;
+          animation: shimmer 3s infinite;
+        }
+        .animate-bounce-subtle {
+          animation: bounce-subtle 2s ease-in-out infinite;
         }
         .pause-animation {
           animation-play-state: paused;
         }
         .hover\\:pause-animation:hover {
           animation-play-state: paused;
+        }
+        .stagger-1 {
+          animation-delay: 0.1s;
+        }
+        .stagger-2 {
+          animation-delay: 0.2s;
+        }
+        .stagger-3 {
+          animation-delay: 0.3s;
+        }
+        .stagger-4 {
+          animation-delay: 0.4s;
+        }
+        .stagger-5 {
+          animation-delay: 0.5s;
+        }
+        .card-3d {
+          transform-style: preserve-3d;
+          transition: transform 0.3s ease;
+        }
+        .card-3d:hover {
+          transform: translateY(-8px) rotateX(2deg);
+        }
+        .glass-effect {
+          background: rgba(255, 255, 255, 0.9);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+        }
+        .text-shadow-glow {
+          text-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+        }
+        @media (prefers-reduced-motion: reduce) {
+          *,
+          *::before,
+          *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+          }
         }
       `}</style>
 
@@ -299,79 +401,140 @@ export default function KASLanding() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 -z-10 animate-gradient" />
+        {/* Enhanced Background with Multiple Layers */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 -z-10" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-100/30 to-transparent -z-10 animate-gradient" />
         
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl -z-10 animate-float" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-400/20 rounded-full blur-3xl -z-10 animate-float" style={{animationDelay: '1s'}} />
+        {/* Animated Orbs with Parallax Effect */}
+        <div 
+          className="absolute top-20 -left-20 w-[500px] h-[500px] bg-gradient-to-br from-blue-400/30 to-indigo-400/20 rounded-full blur-3xl -z-10 animate-float"
+          style={{ transform: `translateY(${scrollY * 0.3}px)` }}
+        />
+        <div 
+          className="absolute top-40 right-0 w-[400px] h-[400px] bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl -z-10 animate-float" 
+          style={{animationDelay: '1s', transform: `translateY(${scrollY * 0.2}px)`}} 
+        />
+        <div 
+          className="absolute bottom-20 left-1/4 w-[350px] h-[350px] bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-full blur-3xl -z-10 animate-float" 
+          style={{animationDelay: '2s', transform: `translateY(${scrollY * 0.25}px)`}} 
+        />
 
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold mb-8 shadow-lg animate-pulse-glow">
-            <Star size={16} fill="currentColor" />
-            <span>{t('badge')}</span>
-            <Sparkles size={16} />
+        {/* Grid Pattern Overlay */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSg1OSwgMTMwLCAyNDYsIDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-40 -z-10" />
+
+        <div className={`max-w-7xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+          {/* Badge with Enhanced Animation */}
+          <div className="inline-flex items-center space-x-2 glass-effect bg-gradient-to-r from-blue-500/90 to-indigo-500/90 text-blue-500 px-6 py-3 rounded-full text-sm font-semibold mb-8 shadow-2xl animate-fade-in-scale border border-white/20">
+            <Star size={18} fill="currentColor" className="animate-bounce-subtle" />
+            <span className="tracking-wide">{t('badge')}</span>
+            <Sparkles size={18} className="animate-pulse" />
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-slide-up">
-            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent animate-gradient">
+          {/* Main Title with Stagger Animation */}
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <span className="inline-block animate-slide-up bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent animate-gradient text-shadow-glow">
               {t('heroTitle')}
             </span>
           </h1>
 
-          <p className="text-2xl text-gray-600 mb-4 font-semibold">{t('heroSubtitle')}</p>
-          <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">{t('heroDesc')}</p>
+          {/* Subtitle with Stagger */}
+          <p className="text-2xl md:text-3xl text-gray-700 mb-4 font-bold animate-slide-up stagger-1">
+            {t('heroSubtitle')}
+          </p>
+          <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed animate-slide-up stagger-2">
+            {t('heroDesc')}
+          </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+          {/* Enhanced CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-slide-up stagger-3">
             <Link
               href="https://kas.asia/register"
-              className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-500 text-white rounded-xl font-bold shadow-xl shadow-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/50 transition-all flex items-center space-x-3 hover:scale-105"
+              className="group relative px-10 py-5 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-600 text-white rounded-2xl font-bold shadow-2xl shadow-blue-500/40 hover:shadow-blue-500/60 transition-all duration-300 flex items-center space-x-3 hover:scale-105 hover:-translate-y-1 overflow-hidden"
             >
-              <Zap size={20} />
-              <span>{t('registerNow')}</span>
-              <ArrowRight size={20} />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <Zap size={22} className="relative z-10 group-hover:animate-bounce-subtle" />
+              <span className="relative z-10 text-lg">{t('registerNow')}</span>
+              <ArrowRight size={22} className="relative z-10 group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
               href="#contact"
-              className="px-8 py-4 bg-white border-2 border-blue-500 text-blue-600 rounded-xl font-bold hover:bg-blue-50 transition-all flex items-center space-x-3"
+              className="group px-10 py-5 glass-effect bg-white/80 border-2 border-blue-500 text-blue-700 rounded-2xl font-bold hover:bg-blue-50 transition-all duration-300 flex items-center space-x-3 hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-xl"
             >
-              <span>{t('contactUs')}</span>
+              <span className="text-lg">{t('contactUs')}</span>
+              <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
             </a>
+          </div>
+
+          {/* Scroll Indicator */}
+          <div className="animate-bounce-subtle opacity-60">
+            <div className="w-6 h-10 border-2 border-gray-400 rounded-full mx-auto relative">
+              <div className="w-1.5 h-3 bg-gray-400 rounded-full absolute top-2 left-1/2 transform -translate-x-1/2 animate-pulse" />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Vision Section */}
-      <section id="vision" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center space-x-2 bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-xl font-bold uppercase tracking-wide mb-6">
-            <Target size={20} />
+      <section id="vision" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl -z-10" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl -z-10" />
+        
+        <div className="max-w-7xl mx-auto text-center relative">
+          {/* Enhanced Badge */}
+          <div className="inline-flex items-center space-x-3 glass-effect bg-blue-50/80 text-blue-600 px-6 py-3 rounded-full text-lg font-bold uppercase tracking-wide mb-8 shadow-lg border border-blue-100 hover:scale-105 transition-transform duration-300">
+            <Target size={24} className="animate-pulse" />
             <span>{t('visionBadge')}</span>
+            <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
           </div>
-          <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-6">
-            <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
-              {t('visionTitle')}
-            </span>
-          </h2>
-          {/* <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            {t('visionDesc')}
-          </p> */}
+
+          {/* Enhanced Title with Card Effect */}
+          <div className="glass-effect bg-gradient-to-br from-white/80 to-blue-50/30 rounded-3xl p-8 md:p-12 shadow-2xl border border-blue-100/50 hover:shadow-blue-200/50 transition-all duration-500 hover:-translate-y-2">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
+              <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent animate-gradient inline-block">
+                {t('visionTitle')}
+              </span>
+            </h2>
+          </div>
+
+          {/* Decorative Elements */}
+          <div className="mt-8 flex justify-center space-x-2">
+            <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce-subtle" />
+            <div className="w-3 h-3 bg-indigo-500 rounded-full animate-bounce-subtle" style={{animationDelay: '0.1s'}} />
+            <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce-subtle" style={{animationDelay: '0.2s'}} />
+          </div>
         </div>
       </section>
 
       {/* Mission Section */}
-      <section id="mission" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center space-x-2 bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-xl font-bold uppercase tracking-wide mb-6">
-            <Heart size={20} />
+      <section id="mission" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 via-purple-50/30 to-white overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-3xl -z-10" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-pink-500/5 rounded-full blur-3xl -z-10" />
+        
+        <div className="max-w-7xl mx-auto text-center relative">
+          {/* Enhanced Badge */}
+          <div className="inline-flex items-center space-x-3 glass-effect bg-purple-50/80 text-purple-600 px-6 py-3 rounded-full text-lg font-bold uppercase tracking-wide mb-8 shadow-lg border border-purple-100 hover:scale-105 transition-transform duration-300">
+            <Heart size={24} className="animate-pulse" fill="currentColor" />
             <span>{t('missionBadge')}</span>
+            <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" />
           </div>
-          <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-6">
-            <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
-              {t('missionTitle')}
-            </span>
-          </h2>
-          {/* <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            {t('missionDesc')}
-          </p> */}
+
+          {/* Enhanced Title with Card Effect */}
+          <div className="glass-effect bg-gradient-to-br from-white/80 to-purple-50/30 rounded-3xl p-8 md:p-12 shadow-2xl border border-purple-100/50 hover:shadow-purple-200/50 transition-all duration-500 hover:-translate-y-2">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
+              <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700 bg-clip-text text-transparent animate-gradient inline-block">
+                {t('missionTitle')}
+              </span>
+            </h2>
+          </div>
+
+          {/* Decorative Elements */}
+          <div className="mt-8 flex justify-center space-x-2">
+            <div className="w-3 h-3 bg-purple-500 rounded-full animate-bounce-subtle" />
+            <div className="w-3 h-3 bg-pink-500 rounded-full animate-bounce-subtle" style={{animationDelay: '0.1s'}} />
+            <div className="w-3 h-3 bg-purple-500 rounded-full animate-bounce-subtle" style={{animationDelay: '0.2s'}} />
+          </div>
         </div>
       </section>
 

@@ -1,10 +1,9 @@
 "use client";
 
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Store, Users, Building2, TrendingUp, Coffee } from 'lucide-react';
+import { Store, Users, Building2, TrendingUp, Coffee, Sparkles, Shield, ArrowRight, Star } from 'lucide-react';
 
 type Language = 'vi' | 'en' | 'ko' | 'zh' | 'ja';
 
@@ -161,14 +160,14 @@ const translations: Translations = {
   growthB: { vi: 'Giá trị hợp đồng cao, gắn bó dài hạn', en: 'High contract value, long-term commitment', ko: '높은 계약 가치, 장기 약속', zh: '合同价值高, 长期承诺', ja: '高い契約価値、長期コミットメント' },
   
   // Target Customers Section
-  targetCustomersBadge: { vi: 'Khách hàng mục tiêu', en: 'Target Customers', ko: '목표 고객', zh: '目标客户', ja: 'ターゲット顧客' },
-  targetCustomersTitle: { vi: 'Đối Tượng Khách Hàng', en: 'Customer Segments', ko: '고객 세그먼트', zh: '客户细分', ja: '顧客セグメント' },
-  targetCustomersDesc: { vi: 'Chúng tôi phục vụ đa dạng các ngành nghề và quy mô', en: 'We serve diverse industries and scales', ko: '다양한 산업과 규모에 서비스를 제공합니다', zh: '我们为各行各业和规模提供服务', ja: '多様な業界と規模にサービスを提供' },
+  targetCustomersBadge: { vi: 'NGÀNH HÀNG MỤC TIÊU', en: 'TARGET INDUSTRIES', ko: '대상 산업', zh: '目标行业', ja: 'ターゲット業界' },
+  targetCustomersTitle: { vi: 'KAS POS tập trung vào ngành hàng FnB, Retail và Services', en: 'KAS POS focuses on FnB, Retail, and Services industries', ko: 'KAS POS는 FnB, 소매 및 서비스 산업에 중점', zh: 'KAS POS专注于餐饮、零售和服务行业', ja: 'KAS POSはFnB、小売、サービス業に注力' },
+  targetCustomersDesc: { vi: 'Đội ngũ chúng tôi có nhiều kinh nghiệm triển khai các chuỗi FnB, Retail và Services', en: 'Our team has extensive experience in deploying FnB, Retail, and Services chains', ko: '우리 팀은 FnB, 소매 및 서비스 체인 배포에 대한 광범위한 경험을 보유', zh: '我们的团队在部署餐饮、零售和服务连锁方面拥有丰富经验', ja: '私たちのチームは、FnB、小売、サービスチェーンの展開に豊富な経験を持っています' },
   
   // Customer List Section
   customerListBadge: { vi: 'Khách hàng tiêu biểu', en: 'Featured Customers', ko: '주요 고객', zh: '代表客户', ja: '代表顧客' },
-  customerListTitle: { vi: 'Danh Sách Khách Hàng Tham Khảo', en: 'Customer Reference List', ko: '고객 참조 목록', zh: '客户参考列表', ja: '顧客参照リスト' },
-  customerListDesc: { vi: 'Hơn 10.000 doanh nghiệp đã tin tưởng và sử dụng KAS', en: 'Over 10,000 businesses trust and use KAS', ko: '10,000개 이상의 기업이 KAS를 신뢰하고 사용합니다', zh: '超过10,000家企业信任和使用KAS', ja: '10,000以上の企業がKASを信頼し使用' },
+  customerListTitle: { vi: 'CHÚNG TÔI LUÔN ĐỒNG HÀNH VÀ PHÁT TRIỂN CÙNG KHÁCH HÀNG', en: 'WE ALWAYS ACCOMPANY AND GROW WITH OUR CUSTOMERS', ko: '우리는 항상 고객과 함께 동행하고 성장합니다', zh: '我们始终与客户同行并共同成长', ja: '私たちは常に顧客と共に歩み、成長します' },
+  customerListDesc: { vi: 'Nhiều chuỗi FnB, Retail, Serivces đã đồng hành cùng chúng tôi từ ngày đầu khởi nghiệp đến khi thành chuỗi lớn. Bên cạnh đó cũng có nhiều chuỗi đã chuyển qua KAS POS ở giai đoạn Bloom hoặc Thrive', en: 'Many FnB, Retail, and Services chains have accompanied us from the early days of startup to becoming large chains. Additionally, many chains have switched to KAS POS during the Bloom or Thrive stages.', ko: '많은 FnB, 소매 및 서비스 체인이 스타트업 초기부터 대형 체인이 될 때까지 우리와 함께했습니다. 또한 많은 체인이 Bloom 또는 Thrive 단계에서 KAS POS로 전환했습니다.', zh: '许多餐饮、零售和服务连锁店从创业初期就与我们同行，直到成为大型连锁店。此外，许多连锁店在Bloom或Thrive阶段切换到KAS POS。', ja: '多くのFnB、小売、サービスチェーンが、スタートアップの初期から大規模なチェーンになるまで私たちと共に歩んできました。さらに、多くのチェーンがBloomまたはThrive段階でKAS POSに切り替えています。' },
 };
 
 // Customer logos data
@@ -236,6 +235,19 @@ const customers = [
 
 export default function CustomersPage() {
   const [language, setLanguage] = useState<Language>('vi');
+  const [scrollY, setScrollY] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+    
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const t = (key: string): string => {
     return translations[key]?.[language] || key;
@@ -246,11 +258,12 @@ export default function CustomersPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <style jsx>{`
         @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          25% { transform: translateY(-15px) rotate(1deg); }
+          75% { transform: translateY(-15px) rotate(-1deg); }
         }
         @keyframes gradient-shift {
           0% { background-position: 0% 50%; }
@@ -260,11 +273,21 @@ export default function CustomersPage() {
         @keyframes fade-in-up {
           from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(40px);
           }
           to {
             opacity: 1;
             transform: translateY(0);
+          }
+        }
+        @keyframes fade-in-scale {
+          from {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
           }
         }
         @keyframes scale-in {
@@ -277,31 +300,66 @@ export default function CustomersPage() {
             transform: scale(1);
           }
         }
+        @keyframes slide-up {
+          from {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
         @keyframes marquee {
           0% { transform: translateX(0%); }
           100% { transform: translateX(-50%); }
         }
         @keyframes pulse-ring {
           0% { transform: scale(0.95); opacity: 1; }
-          50% { transform: scale(1); opacity: 0.7; }
+          50% { transform: scale(1.05); opacity: 0.7; }
           100% { transform: scale(0.95); opacity: 1; }
+        }
+        @keyframes pulse-glow {
+          0%, 100% { 
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4),
+                        0 0 40px rgba(59, 130, 246, 0.2); 
+          }
+          50% { 
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.6),
+                        0 0 60px rgba(59, 130, 246, 0.3),
+                        0 0 80px rgba(59, 130, 246, 0.1); 
+          }
         }
         @keyframes shimmer {
           0% { background-position: -1000px 0; }
           100% { background-position: 1000px 0; }
         }
+        @keyframes bounce-subtle {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-5px);
+          }
+        }
         .animate-float {
-          animation: float 3s ease-in-out infinite;
+          animation: float 6s ease-in-out infinite;
         }
         .animate-gradient {
-          background-size: 200% 200%;
-          animation: gradient-shift 3s ease infinite;
+          background-size: 300% 300%;
+          animation: gradient-shift 8s ease infinite;
         }
         .animate-fade-in-up {
-          animation: fade-in-up 0.6s ease-out forwards;
+          animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-fade-in-scale {
+          animation: fade-in-scale 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         .animate-scale-in {
-          animation: scale-in 0.4s ease-out forwards;
+          animation: scale-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-slide-up {
+          animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         .animate-marquee {
           animation: marquee 40s linear infinite;
@@ -310,119 +368,210 @@ export default function CustomersPage() {
           animation-play-state: paused;
         }
         .animate-pulse-ring {
-          animation: pulse-ring 2s ease-in-out infinite;
+          animation: pulse-ring 3s ease-in-out infinite;
+        }
+        .animate-pulse-glow {
+          animation: pulse-glow 3s ease-in-out infinite;
+        }
+        .animate-bounce-subtle {
+          animation: bounce-subtle 2s ease-in-out infinite;
         }
         .shimmer {
-          background: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+          background: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
           background-size: 1000px 100%;
           animation: shimmer 2s infinite;
+        }
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+        .glass-effect {
+          background: rgba(255, 255, 255, 0.9);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+        }
+        .card-3d {
+          transform-style: preserve-3d;
+          transition: transform 0.3s ease;
+        }
+        .card-3d:hover {
+          transform: translateY(-8px) rotateX(2deg);
+        }
+        .text-shadow-glow {
+          text-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+        }
+        @media (prefers-reduced-motion: reduce) {
+          *,
+          *::before,
+          *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+          }
         }
       `}</style>
 
       {/* Header */}
       <Header language={language} onLanguageChange={setLanguage} />
 
-      {/* Hero Section - Đồng bộ với KAS Landing */}
+      {/* Hero Section - Enhanced with Parallax */}
       <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center">
-        {/* Background gradient - Light theme như trang chính */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 -z-10 animate-gradient" />
+        {/* Enhanced Background with Multiple Layers */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 -z-10" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-100/30 to-transparent -z-10 animate-gradient" />
         
-        {/* Floating orbs decoration */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl -z-10 animate-float" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl -z-10 animate-float" style={{animationDelay: '1s'}} />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-400/15 rounded-full blur-3xl -z-10 animate-float" style={{animationDelay: '2s'}} />
+        {/* Animated Orbs with Parallax Effect */}
+        <div 
+          className="absolute top-20 -left-20 w-[500px] h-[500px] bg-gradient-to-br from-blue-400/30 to-indigo-400/20 rounded-full blur-3xl -z-10 animate-float"
+          style={{ transform: `translateY(${scrollY * 0.3}px)` }}
+        />
+        <div 
+          className="absolute bottom-20 right-0 w-[400px] h-[400px] bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl -z-10 animate-float" 
+          style={{animationDelay: '1s', transform: `translateY(${scrollY * 0.2}px)`}} 
+        />
+        <div 
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-full blur-3xl -z-10 animate-float" 
+          style={{animationDelay: '2s', transform: `translateY(${scrollY * 0.25}px)`}} 
+        />
 
-        <div className="max-w-7xl mx-auto text-center">
-          {/* Badge - Đồng bộ style với trang chính */}
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-6 py-3 rounded-full text-sm font-bold mb-8 shadow-lg">
-            <Users className="w-5 h-5" />
+        {/* Grid Pattern Overlay */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSg1OSwgMTMwLCAyNDYsIDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-40 -z-10" />
+
+        <div className={`max-w-7xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+          {/* Badge - Enhanced with Glow Effect */}
+          <div className="inline-flex items-center gap-3 glass-effect bg-gradient-to-r from-blue-500/90 to-indigo-500/90 text-blue-500 px-6 py-3 rounded-full text-sm font-bold mb-8 shadow-2xl animate-fade-in-scale border border-white/20">
+            <Users className="w-5 h-5 animate-bounce-subtle" />
             <span className="uppercase tracking-wide">{t('badge')}</span>
-            <TrendingUp className="w-5 h-5" />
+            <TrendingUp className="w-5 h-5 animate-pulse" />
           </div>
 
-          {/* Main title - Gradient text như trang chính */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-slide-up">
-            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 bg-clip-text text-transparent animate-gradient">
+          {/* Main title - Enhanced Gradient with Animation */}
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <span className="inline-block animate-slide-up bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent animate-gradient text-shadow-glow">
               {t('heroTitle')}
             </span>
           </h1>
           
-          {/* Subtitle - Text màu tối */}
-          <p className="text-2xl md:text-3xl text-gray-700 mb-4 font-bold">
+          {/* Subtitle - Enhanced with Stagger */}
+          <p className="text-2xl md:text-3xl text-gray-700 mb-4 font-bold animate-slide-up stagger-1">
             {t('heroSubtitle')}
           </p>
 
-          {/* Description */}
-          <p className="text-lg md:text-xl max-w-4xl mx-auto mb-12 text-gray-600 leading-relaxed">
+          {/* Description - Enhanced with Stagger */}
+          <p className="text-lg md:text-xl max-w-4xl mx-auto mb-12 text-gray-600 leading-relaxed animate-slide-up stagger-2">
             {t('heroDesc')}
           </p>
 
-          {/* Stats Cards - Đồng bộ với trang chính */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {/* Stats Cards - Enhanced with 3D Effects */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto animate-fade-in-up stagger-3">
             {/* Card 1 - Total Customers */}
-            <div className="group bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-300 hover:-translate-y-2">
-              <div className="text-5xl md:text-6xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-                {t('totalCustomers')}
-              </div>
-              <div className="h-1 w-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mb-3 group-hover:w-24 transition-all duration-300" />
-              <div className="text-base md:text-lg font-bold text-gray-700 uppercase tracking-wider">
-                {t('customersCount')}
+            <div className="group relative glass-effect bg-white/80 rounded-3xl p-10 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 border-2 border-gray-100 hover:border-blue-400 card-3d overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-cyan-400/10 rounded-full blur-2xl transform group-hover:scale-150 transition-transform duration-500" />
+              <div className="relative z-10">
+                <div className="flex justify-center mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Users className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+                <div className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                  {t('totalCustomers')}
+                </div>
+                <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mb-4 mx-auto group-hover:w-full transition-all duration-500" />
+                <div className="text-lg font-bold text-gray-700 uppercase tracking-wider">
+                  {t('customersCount')}
+                </div>
               </div>
             </div>
             
             {/* Card 2 - Brands */}
-            <div className="group bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-indigo-300 hover:-translate-y-2">
-              <div className="text-5xl md:text-6xl font-bold mb-3 bg-gradient-to-r from-indigo-600 to-purple-500 bg-clip-text text-transparent">
-                80+
-              </div>
-              <div className="h-1 w-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mb-3 group-hover:w-24 transition-all duration-300" />
-              <div className="text-base md:text-lg font-bold text-gray-700 uppercase tracking-wider">
-                {language === 'vi' ? 'Thương hiệu' : 
-                 language === 'en' ? 'Brands' :
-                 language === 'ko' ? '브랜드' :
-                 language === 'zh' ? '品牌' : 'ブランド'}
+            <div className="group relative glass-effect bg-white/80 rounded-3xl p-10 shadow-2xl hover:shadow-indigo-500/20 transition-all duration-500 border-2 border-gray-100 hover:border-indigo-400 card-3d overflow-hidden">
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-br from-indigo-400/20 to-purple-400/10 rounded-full blur-2xl transform group-hover:scale-150 transition-transform duration-500" />
+              <div className="relative z-10">
+                <div className="flex justify-center mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Store className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+                <div className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-indigo-600 to-purple-500 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                  80+
+                </div>
+                <div className="h-1 w-20 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mb-4 mx-auto group-hover:w-full transition-all duration-500" />
+                <div className="text-lg font-bold text-gray-700 uppercase tracking-wider">
+                  {language === 'vi' ? 'Thương hiệu' : 
+                   language === 'en' ? 'Brands' :
+                   language === 'ko' ? '브랜드' :
+                   language === 'zh' ? '品牌' : 'ブランド'}
+                </div>
               </div>
             </div>
 
             {/* Card 3 - Satisfaction */}
-            <div className="group bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-purple-300 hover:-translate-y-2">
-              <div className="text-5xl md:text-6xl font-bold mb-3 bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-                80%
+            <div className="group relative glass-effect bg-white/80 rounded-3xl p-10 shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 border-2 border-gray-100 hover:border-purple-400 card-3d overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/10 rounded-full blur-2xl transform group-hover:scale-150 transition-transform duration-500" />
+              <div className="relative z-10">
+                <div className="flex justify-center mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <TrendingUp className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+                <div className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                  80%
+                </div>
+                <div className="h-1 w-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4 mx-auto group-hover:w-full transition-all duration-500" />
+                <div className="text-lg font-bold text-gray-700 uppercase tracking-wider">
+                  {language === 'vi' ? 'Hài lòng' :
+                   language === 'en' ? 'Satisfaction' :
+                   language === 'ko' ? '만족도' :
+                   language === 'zh' ? '满意度' : '満足度'}
+                </div>
               </div>
-              <div className="h-1 w-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-3 group-hover:w-24 transition-all duration-300" />
-              <div className="text-base md:text-lg font-bold text-gray-700 uppercase tracking-wider">
-                {language === 'vi' ? 'Hài lòng' :
-                 language === 'en' ? 'Satisfaction' :
-                 language === 'ko' ? '만족도' :
-                 language === 'zh' ? '满意度' : '満足度'}
-              </div>
+            </div>
+          </div>
+
+          {/* Scroll Indicator */}
+          <div className="mt-16 animate-bounce-subtle opacity-60">
+            <div className="w-6 h-10 border-2 border-gray-400 rounded-full mx-auto relative">
+              <div className="w-1.5 h-3 bg-gray-400 rounded-full absolute top-2 left-1/2 transform -translate-x-1/2 animate-pulse" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Target Market Section - Enhanced with Cards */}
-      <section id="target-market" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-blue-50/30 to-white relative overflow-hidden">
-        {/* Background decoration */}
+      {/* Target Market Section - Enhanced with Glass Effects */}
+      <section id="target-market" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-blue-50/30 to-white overflow-hidden">
+        {/* Enhanced Background decoration with Parallax */}
         <div className="absolute top-0 left-0 w-full h-full opacity-30">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl" />
+          <div className="absolute top-10 left-10 w-[500px] h-[500px] bg-blue-400/20 rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-10 right-10 w-[600px] h-[600px] bg-purple-400/20 rounded-full blur-3xl animate-float" style={{animationDelay: '1s'}} />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-400/15 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}} />
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-700 mb-8 shadow-lg">
-              <Store className="w-5 h-5" />
-              <span className="text-sm font-bold uppercase tracking-wider">{t('targetMarketBadge')}</span>
+            {/* Enhanced Badge */}
+            <div className="inline-flex items-center gap-3 glass-effect bg-blue-50/80 text-blue-600 px-6 py-3 rounded-full text-lg font-bold uppercase tracking-wide mb-8 shadow-lg border border-blue-100 hover:scale-105 transition-transform duration-300">
+              <Store className="w-6 h-6 animate-pulse" />
+              <span>{t('targetMarketBadge')}</span>
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
+
+            {/* Enhanced Title */}
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent animate-gradient">
                 {t('targetMarketTitle')}
               </span>
             </h2>
-            <p className="text-2xl text-gray-600 max-w-4xl mx-auto font-medium">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto font-medium leading-relaxed">
               {t('targetMarketDesc')}
             </p>
+
+            {/* Decorative Elements */}
+            <div className="mt-6 flex justify-center space-x-2">
+              <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce-subtle" />
+              <div className="w-3 h-3 bg-purple-500 rounded-full animate-bounce-subtle" style={{animationDelay: '0.1s'}} />
+              <div className="w-3 h-3 bg-cyan-500 rounded-full animate-bounce-subtle" style={{animationDelay: '0.2s'}} />
+            </div>
           </div>
 
           {/* Segment Comparison Cards - Responsive Design */}
@@ -434,7 +583,7 @@ export default function CustomersPage() {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
                 <Coffee className="w-12 h-12 mb-4" />
                 <h3 className="text-3xl font-bold mb-2">
-                  {language === 'vi' ? 'SMALL (NHỎ)' : language === 'en' ? 'SMALL' : language === 'ko' ? 'SMALL (소규모)' : language === 'zh' ? 'SMALL (小型)' : 'SMALL (小規模)'}
+                  {language === 'vi' ? 'NHỎ' : language === 'en' ? 'SMALL' : language === 'ko' ? '소규모' : language === 'zh' ? '小型' : '小規模'}
                 </h3>
                 <p className="text-green-100 text-sm font-medium">
                   {language === 'vi' ? 'Cửa hàng nhỏ' : 'Small Business'}
@@ -489,7 +638,7 @@ export default function CustomersPage() {
                 <div className="absolute top-0 right-0 text-white/10 text-8xl font-bold">★</div>
                 <Store className="w-12 h-12 mb-4" />
                 <h3 className="text-3xl font-bold mb-2">
-                  {language === 'vi' ? 'MEDIUM (VỪA)' : language === 'en' ? 'MEDIUM' : language === 'ko' ? 'MEDIUM (중간규모)' : language === 'zh' ? 'MEDIUM (中型)' : 'MEDIUM (中規模)'}
+                  {language === 'vi' ? 'VỪA' : language === 'en' ? 'MEDIUM' : language === 'ko' ? '중간' : language === 'zh' ? '中型' : '中規模'}
                 </h3>
                 <p className="text-purple-100 text-sm font-medium">
                   {language === 'vi' ? 'Chuỗi đang phát triển' : 'Growing Chains'}
@@ -549,7 +698,7 @@ export default function CustomersPage() {
                 <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full -ml-16 -mb-16" />
                 <Building2 className="w-12 h-12 mb-4" />
                 <h3 className="text-3xl font-bold mb-2">
-                  {language === 'vi' ? 'LARGE (LỚN)' : language === 'en' ? 'LARGE' : language === 'ko' ? 'LARGE (대규모)' : language === 'zh' ? 'LARGE (大型)' : 'LARGE (大規模)'}
+                  {language === 'vi' ? 'LỚN' : language === 'en' ? 'LARGE' : language === 'ko' ? '대규모' : language === 'zh' ? '大型' : '大規模'}
                 </h3>
                 <p className="text-orange-100 text-sm font-medium">
                   {language === 'vi' ? 'Chuỗi lớn & Franchise' : 'Large Chains & Franchise'}
@@ -625,88 +774,76 @@ export default function CustomersPage() {
 
           {/* Industry Cards - 3D Hover Effect */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {/* F&B */}
+            {/* Restaurant & Cafe */}
             <div className="group relative bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-10 shadow-xl hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:rotate-1 transform-gpu border-2 border-orange-200">
               <div className="absolute top-0 right-0 w-32 h-32 bg-orange-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500" />
               <div className="text-7xl mb-6 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">🍽️</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                {language === 'vi' ? 'Nhà hàng & Cà phê' : 
+                {language === 'vi' ? 'Nhà hàng & Cafe' : 
                  language === 'en' ? 'Restaurant & Cafe' :
                  language === 'ko' ? '레스토랑 & 카페' :
                  language === 'zh' ? '餐厅和咖啡馆' : 'レストラン＆カフェ'}
               </h3>
               <p className="text-gray-700 font-medium leading-relaxed">
-                {language === 'vi' ? 'Quản lý bán hàng, kho, nhân viên cho F&B' :
-                 language === 'en' ? 'Sales, inventory, staff management for F&B' :
-                 language === 'ko' ? 'F&B용 판매, 재고, 직원 관리' :
-                 language === 'zh' ? 'F&B销售、库存、员工管理' : 'F&B向け販売、在庫、スタッフ管理'}
+                {language === 'vi' ? 'Nhà hàng, cafe và các mô hình ăn uống khác, đa dạng các concepts' :
+                 language === 'en' ? 'Restaurants, cafes and other dining models, diverse concepts' :
+                 language === 'ko' ? '레스토랑, 카페 및 기타 다양한 컨셉의 다이닝 모델' :
+                 language === 'zh' ? '餐厅、咖啡馆和其他餐饮模式，多样化概念' : 'レストラン、カフェ、その他多様なコンセプトの飲食モデル'}
               </p>
-              <div className="mt-6 text-orange-600 font-bold text-sm uppercase tracking-wider">
-                {language === 'vi' ? '1,500+ Khách hàng' : '1,500+ Customers'}
-              </div>
             </div>
 
-            {/* Retail */}
+            {/* Fastfood */}
             <div className="group relative bg-gradient-to-br from-pink-50 to-purple-50 rounded-3xl p-10 shadow-xl hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:rotate-1 transform-gpu border-2 border-pink-200">
               <div className="absolute bottom-0 left-0 w-32 h-32 bg-pink-400/10 rounded-full -ml-16 -mb-16 group-hover:scale-150 transition-transform duration-500" />
-              <div className="text-7xl mb-6 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">🛍️</div>
+              <div className="text-7xl mb-6 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">🍔</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                {language === 'vi' ? 'Bán lẻ & Thời trang' :
-                 language === 'en' ? 'Retail & Fashion' :
-                 language === 'ko' ? '소매 및 패션' :
-                 language === 'zh' ? '零售和时尚' : '小売＆ファッション'}
+                {language === 'vi' ? 'Fastfood' :
+                 language === 'en' ? 'Fast Food' :
+                 language === 'ko' ? '패스트푸드' :
+                 language === 'zh' ? '快餐' : 'ファストフード'}
               </h3>
               <p className="text-gray-700 font-medium leading-relaxed">
-                {language === 'vi' ? 'Giải pháp cho cửa hàng thời trang, phụ kiện' :
-                 language === 'en' ? 'Solutions for fashion & accessory stores' :
-                 language === 'ko' ? '패션 및 액세서리 매장 솔루션' :
-                 language === 'zh' ? '时尚和配饰店解决方案' : 'ファッション＆アクセサリー店舗ソリューション'}
+                {language === 'vi' ? 'Các mô hình fastfood từ quy mô một điểm bán cho tới chuỗi hàng ngàn điểm bán' :
+                 language === 'en' ? 'Fast food models from single outlet to chains of thousands of locations' :
+                 language === 'ko' ? '단일 매장부터 수천 개의 체인까지 패스트푸드 모델' :
+                 language === 'zh' ? '从单店到数千家连锁店的快餐模式' : '単店舗から数千店舗チェーンまでのファストフードモデル'}
               </p>
-              <div className="mt-6 text-pink-600 font-bold text-sm uppercase tracking-wider">
-                {language === 'vi' ? '800+ Khách hàng' : '800+ Customers'}
-              </div>
             </div>
 
-            {/* Beauty & Spa */}
+            {/* Supermarket & CVS */}
             <div className="group relative bg-gradient-to-br from-cyan-50 to-blue-50 rounded-3xl p-10 shadow-xl hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:rotate-1 transform-gpu border-2 border-cyan-200">
               <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500" />
-              <div className="text-7xl mb-6 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">💅</div>
+              <div className="text-7xl mb-6 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">🏪</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                {language === 'vi' ? 'Làm đẹp & Spa' :
-                 language === 'en' ? 'Beauty & Spa' :
-                 language === 'ko' ? '뷰티 & 스파' :
-                 language === 'zh' ? '美容和水疗' : 'ビューティー＆スパ'}
+                {language === 'vi' ? 'Siêu thị, cửa hàng tiện lợi' :
+                 language === 'en' ? 'Supermarket & CVS' :
+                 language === 'ko' ? '슈퍼마켓 & 편의점' :
+                 language === 'zh' ? '超市和便利店' : 'スーパーマーケット＆コンビニ'}
               </h3>
               <p className="text-gray-700 font-medium leading-relaxed">
-                {language === 'vi' ? 'Quản lý lịch hẹn, dịch vụ, khách hàng' :
-                 language === 'en' ? 'Appointment, service, customer management' :
-                 language === 'ko' ? '예약, 서비스, 고객 관리' :
-                 language === 'zh' ? '预约、服务、客户管理' : '予約、サービス、顧客管理'}
+                {language === 'vi' ? 'Chuỗi siêu thị tiện lợi (CVS), các cửa hàng tạp hóa cho đến Trung tâm thương mại' :
+                 language === 'en' ? 'CVS chains, grocery stores to shopping malls' :
+                 language === 'ko' ? 'CVS 체인, 식료품점에서 쇼핑몰까지' :
+                 language === 'zh' ? 'CVS连锁、杂货店到购物中心' : 'CVSチェーン、食料品店からショッピングモールまで'}
               </p>
-              <div className="mt-6 text-cyan-600 font-bold text-sm uppercase tracking-wider">
-                {language === 'vi' ? '500+ Khách hàng' : '500+ Customers'}
-              </div>
             </div>
 
-            {/* Services */}
+            {/* Other Services */}
             <div className="group relative bg-gradient-to-br from-green-50 to-teal-50 rounded-3xl p-10 shadow-xl hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:rotate-1 transform-gpu border-2 border-green-200">
               <div className="absolute bottom-0 left-0 w-32 h-32 bg-green-400/10 rounded-full -ml-16 -mb-16 group-hover:scale-150 transition-transform duration-500" />
-              <div className="text-7xl mb-6 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">🏢</div>
+                <div className="text-7xl mb-6 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">🛎️</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                {language === 'vi' ? 'Dịch vụ & Văn phòng' :
-                 language === 'en' ? 'Services & Office' :
-                 language === 'ko' ? '서비스 및 사무실' :
-                 language === 'zh' ? '服务和办公室' : 'サービス＆オフィス'}
+                {language === 'vi' ? 'Các dịch vụ khác' :
+                 language === 'en' ? 'Other Services' :
+                 language === 'ko' ? '기타 서비스' :
+                 language === 'zh' ? '其他服务' : 'その他サービス'}
               </h3>
               <p className="text-gray-700 font-medium leading-relaxed">
-                {language === 'vi' ? 'Giải pháp cho doanh nghiệp dịch vụ' :
-                 language === 'en' ? 'Solutions for service businesses' :
-                 language === 'ko' ? '서비스 비즈니스 솔루션' :
-                 language === 'zh' ? '服务企业解决方案' : 'サービスビジネスソリューション'}
+                {language === 'vi' ? 'Khách sạn, resort, foodcourt, nightlife,...' :
+                 language === 'en' ? 'Hotels, resorts, food courts, nightlife, etc.' :
+                 language === 'ko' ? '호텔, 리조트, 푸드코트, 나이트라이프 등' :
+                 language === 'zh' ? '酒店、度假村、美食广场、夜生活等' : 'ホテル、リゾート、フードコート、ナイトライフなど'}
               </p>
-              <div className="mt-6 text-green-600 font-bold text-sm uppercase tracking-wider">
-                {language === 'vi' ? '600+ Khách hàng' : '600+ Customers'}
-              </div>
             </div>
           </div>
         </div>
@@ -724,8 +861,8 @@ export default function CustomersPage() {
           {/* Section Header */}
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 mb-8 shadow-lg">
-              <Building2 className="w-5 h-5" />
-              <span className="text-sm font-bold uppercase tracking-wider">{t('customerListBadge')}</span>
+              <Building2 className="w-7 h-7" />
+              <span className="text-xl font-bold uppercase tracking-wider">{t('customerListBadge')}</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">
