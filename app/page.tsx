@@ -164,11 +164,11 @@ const translations: Translations = {
   workplaceDesc: { vi: 'Tài chính - Khách hàng - Quản trị nội bộ - Đào tạo và phát triển', en: 'Finance - Customers - Internal Management - Training and Development', ko: '재무 - 고객 - 내부 관리 - 교육 및 개발', zh: '财务 - 客户 - 内部管理 - 培训与发展', ja: '財務 - 顧客 - 内部管理 - トレーニングと開発' },
 
    // Koffice
-  koffice: { vi: 'Koffice', en: 'Koffice', ko: 'Koffice', zh: 'Koffice', ja: 'Koffice' },
+  koffice: { vi: 'KOFFICE', en: 'KOFFICE', ko: 'KOFFICE', zh: 'KOFFICE', ja: 'KOFFICE' },
   kofficeDesc: { vi: 'Nền tảng quản trị doanh nghiệp cùng AI', en: 'The AI-Powered Business Platform', ko: 'AI 기반 비즈니스 플랫폼', zh: 'AI驱动的商业平台', ja: 'AI搭載ビジネスプラットフォーム' },
   
   // Kos
-  kos: { vi: 'Kos', en: 'Kos', ko: 'Kos', zh: 'Kos', ja: 'Kos' },
+  kos: { vi: 'KOS', en: 'KOS', ko: 'KOS', zh: 'KOS', ja: 'KOS' },
   kosDesc: { vi: 'Từ chiến lược đến thực thi', en: 'Action by Vision', ko: '비전에서 실행으로', zh: '从战略到执行', ja: 'ビジョンから実行へ' },
   
   // Kops
@@ -346,7 +346,7 @@ export default function KASLanding() {
             <Target size={20} />
             <span>{t('visionBadge')}</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-6">
             <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
               {t('visionTitle')}
             </span>
@@ -364,7 +364,7 @@ export default function KASLanding() {
             <Heart size={20} />
             <span>{t('missionBadge')}</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-6">
             <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
               {t('missionTitle')}
             </span>
