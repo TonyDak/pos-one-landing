@@ -18,6 +18,7 @@ interface Translations {
 }
 
 const translations: Translations = {
+  home: { vi: 'Trang chủ', en: 'Home', ko: '홈', zh: '首页', ja: 'ホーム' },
   customers: { vi: 'Khách hàng', en: 'Customers', ko: '고객', zh: '客户', ja: '顧客' },
   solutions: { vi: 'Giải pháp', en: 'Solutions', ko: '솔루션', zh: '解决方案', ja: 'ソリューション' },
   aiTransformation: { vi: 'AI Transformation', en: 'AI Transformation', ko: 'AI 트랜스포메이션', zh: 'AI转型', ja: 'AI変革' },
@@ -212,6 +213,15 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
           <div className="flex-1 overflow-y-auto py-6 px-4">
             <nav className="space-y-2">
               {/* Navigation Links */}
+              {/* trang chủ */}
+              <Link
+                href="/"
+                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
+                onClick={handleMobileMenuClose}
+              >
+                {t('home')}
+              </Link>
+
               <Link
                 href="/customer"
                 className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
