@@ -158,35 +158,35 @@ const translations: Translations = {
   workplaceDesc: { vi: 'Bộ công cụ tích hợp giúp doanh nghiệp số hóa mọi quy trình làm việc, từ ký số, quản lý nhân sự đến trí tuệ nhân tạo', en: 'Integrated suite of tools to digitize all business workflows, from digital signatures, HR management to artificial intelligence', ko: '디지털 서명, 인사 관리부터 인공지능까지 모든 비즈니스 워크플로우를 디지털화하는 통합 도구', zh: '集成工具套件，将所有业务工作流程数字化，从数字签名、人力资源管理到人工智能', ja: 'デジタル署名、人事管理から人工知能まで、すべてのビジネスワークフローをデジタル化する統合ツールスイート' },
   
   // Koffice
-  koffice: { vi: 'Koffice', en: 'Koffice', ko: 'Koffice', zh: 'Koffice', ja: 'Koffice' },
+  koffice: { vi: 'KOFFICE', en: 'KOFFICE', ko: 'KOFFICE', zh: 'KOFFICE', ja: 'KOFFICE' },
   kofficeDesc: { vi: 'Nền tảng quản trị doanh nghiệp cùng AI', en: 'The AI-Powered Business Platform', ko: 'AI 기반 비즈니스 플랫폼', zh: 'AI驱动的商业平台', ja: 'AI搭載ビジネスプラットフォーム' },
   
   // Kos
-  kos: { vi: 'Kos', en: 'Kos', ko: 'Kos', zh: 'Kos', ja: 'Kos' },
+  kos: { vi: 'KOS', en: 'KOS', ko: 'KOS', zh: 'KOS', ja: 'KOS' },
   kosDesc: { vi: 'Từ chiến lược đến thực thi', en: 'Action by Vision', ko: '비전에서 실행으로', zh: '从战略到执行', ja: 'ビジョンから実行へ' },
   
   // Kops
-  kops: { vi: 'Kops', en: 'Kops', ko: 'Kops', zh: 'Kops', ja: 'Kops' },
+  kops: { vi: 'KOPS', en: 'KOPS', ko: 'KOPS', zh: 'KOPS', ja: 'KOPS' },
   kopsDesc: { vi: 'Vận hành xuất sắc', en: 'Operational Excellence', ko: '운영 우수성', zh: '卓越运营', ja: 'オペレーショナルエクセレンス' },
   
   // Kforce
-  kforce: { vi: 'Kforce', en: 'Kforce', ko: 'Kforce', zh: 'Kforce', ja: 'Kforce' },
+  kforce: { vi: 'KFORCE', en: 'KFORCE', ko: 'KFORCE', zh: 'KFORCE', ja: 'KFORCE' },
   kforceDesc: { vi: 'Phát triển nhân tài. Kiến tạo tương lai', en: 'Build Talent. Shape the Future.', ko: '인재 육성. 미래 창조', zh: '培养人才·塑造未来', ja: '人材育成·未来を創る' },
   
   // Ksign
-  ksign: { vi: 'Ksign', en: 'Ksign', ko: 'Ksign', zh: 'Ksign', ja: 'Ksign' },
+  ksign: { vi: 'KSIGN', en: 'KSIGN', ko: 'KSIGN', zh: 'KSIGN', ja: 'KSIGN' },
   ksignDesc: { vi: 'Ký nhanh, bảo vệ hành tinh xanh', en: 'Sign fast, save green', ko: '빠른 서명, 친환경 보호', zh: '快速签署，保护绿色星球', ja: '迅速署名、地球を守る' },
 
   //Klinks
-  klinks: { vi: 'Klinks', en: 'Klinks', ko: 'Klinks', zh: 'Klinks', ja: 'Klinks' },
+  klinks: { vi: 'KLINKS', en: 'KLINKS', ko: 'KLINKS', zh: 'KLINKS', ja: 'KLINKS' },
   klinksDesc: { vi: 'Kết nối thông minh, Chia sẻ không giới hạn', en: 'Smart Connect, Unlimited Share', ko: '스마트 연결, 무제한 공유', zh: '智能连接，无限分享', ja: 'スマート接続、無制限の共有' },
   
   // Kare
-  kare: { vi: 'Kare', en: 'Kare', ko: 'Kare', zh: 'Kare', ja: 'Kare' },
+  kare: { vi: 'KARE', en: 'KARE', ko: 'KARE', zh: 'KARE', ja: 'KARE' },
   kareDesc: { vi: 'Thấu hiểu khách hàng, Nâng tầm doanh nghiệp', en: 'Knowing Customers, Growing Business', ko: '고객 이해, 비즈니스 성장', zh: '了解客户，发展业务', ja: '顧客を理解し、ビジネスを成長させる' },
   
   // Kargo
-  kargo: { vi: 'Kargo', en: 'Kargo', ko: 'Kargo', zh: 'Kargo', ja: 'Kargo' },
+  kargo: { vi: 'KARGO', en: 'KARGO', ko: 'KARGO', zh: 'KARGO', ja: 'KARGO' },
   kargoDesc: { vi: 'Chủ động nguồn cung, cùng phát triển', en: 'Supply Smart, Grow United', ko: '스마트 공급, 함께 성장', zh: '智能供应，共同成长', ja: 'スマートサプライ、共に成長' },
   
   // KPOS
@@ -194,15 +194,15 @@ const translations: Translations = {
   kposDesc: { vi: 'Vận hành thông minh, phát triển vững mạnh', en: 'Operate smarter, Grow stronger', ko: '스마트 운영, 강력한 성장', zh: '智能运营，强劲增长', ja: 'スマート運営、強力な成長' },
   
   // Kount
-  kount: { vi: 'Kount', en: 'Kount', ko: 'Kount', zh: 'Kount', ja: 'Kount' },
+  kount: { vi: 'KOUNT', en: 'KOUNT', ko: 'KOUNT', zh: 'KOUNT', ja: 'KOUNT' },
   kountDesc: { vi: 'Giải pháp kế toán tin cậy, tối ưu cùng AI', en: 'Trusted Accounting, AI-Enhanced', ko: '신뢰할 수 있는 회계, AI 강화', zh: '可信的会计，AI增强', ja: '信頼できる会計、AI強化' },
   
   // Kvision
-  kvision: { vi: 'Kvision', en: 'Kvision', ko: 'Kvision', zh: 'Kvision', ja: 'Kvision' },
+  kvision: { vi: 'KVISION', en: 'KVISION', ko: 'KVISION', zh: 'KVISION', ja: 'KVISION' },
   kvisionDesc: { vi: 'Quyết định thông minh với insight từ AI', en: 'Make decisions with AI-powered insights', ko: 'AI 기반 인사이트로 스마트한 의사결정', zh: '基于AI洞察做出明智决策', ja: 'AI駆動のインサイトで賢明な意思決定' },
   
   // Kuru
-  kuru: { vi: 'Kuru', en: 'Kuru', ko: 'Kuru', zh: 'Kuru', ja: 'Kuru' },
+  kuru: { vi: 'KURU', en: 'KURU', ko: 'KURU', zh: 'KURU', ja: 'KURU' },
   kuruDesc: { vi: 'Nơi tri thức hoạt động', en: 'Where Knowledge Works', ko: '지식이 작동하는 곳', zh: '知识运作之地', ja: '知識が機能する場所' },
   
   workplaceCTA: { vi: 'Khám phá Tất cả Ứng dụng', en: 'Explore All Apps', ko: '모든 앱 탐색', zh: '探索所有应用', ja: 'すべてのアプリを探索' },
