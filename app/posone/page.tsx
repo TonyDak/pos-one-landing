@@ -111,6 +111,12 @@ const translations: Translations = {
   advancePlan: { vi: 'Gói Advance', en: 'Advance Plan', ko: '어드밴스 플랜', zh: '进阶套餐', ja: 'アドバンスプラン' },
   premiumPlan: { vi: 'Gói Premium', en: 'Premium Plan', ko: '프리미엄 플랜', zh: '高级套餐', ja: 'プレミアムプラン' },
   
+  // Pricing values
+  basicPrice: { vi: '2.640.000', en: '$105', ko: '$105', zh: '$105', ja: '$105' },
+  advancePrice: { vi: '3.228.000', en: '$129', ko: '$129', zh: '$129', ja: '$129' },
+  premiumPrice: { vi: '4.428.000', en: '$179', ko: '$179', zh: '$179', ja: '$179' },
+  currencySymbol: { vi: 'đ', en: '', ko: '', zh: '', ja: '' },
+  
   perStore: { vi: '/Cửa hàng/Năm', en: '/Store/Year', ko: '/매장/년', zh: '/店铺/年', ja: '/店舗/年' },
   perMonth: { vi: '/tháng', en: '/month', ko: '/월', zh: '/月', ja: '/月' },
   mostPopular: { vi: 'PHỔ BIẾN NHẤT', en: 'MOST POPULAR', ko: '가장 인기있는', zh: '最受欢迎', ja: '最も人気' },
@@ -224,7 +230,7 @@ const translations: Translations = {
   // Footer specific
   companyFullName: { vi: 'Công ty Cổ Phần Công Nghệ KAS', en: 'KAS Technology Corporation', ko: 'KAS 기술 주식회사', zh: 'KAS科技股份公司', ja: 'KAS テクノロジー株式会社' },
   address: { vi: 'Địa chỉ', en: 'Address', ko: '주소', zh: '地址', ja: '住所' },
-  addressDetail: { vi: '199 Đường Nguyễn Hoàng, Phường Bình Trưng, Thành Phố Hồ Chí Minh', en: '199 Nguyen Hoang Street, Binh Trung Ward, Ho Chi Minh City', ko: '199 응우옌 호앙 거리, 빈 쯩 구, 호치민시', zh: '胡志明市平中坊阮晃街199号', ja: 'ホーチミン市ビンチュン区グエンホアン通り199番地' },
+  addressDetail: { vi: '199 Đường Nguyễn Hoàng, Phường Bình Trưng, Thành Phố Hồ Chí Minh', en: '199 Nguyen Hoang Street, Binh Trung Ward, Ho Chi Minh City', ko: '199 Nguyen Hoang Street, Binh Trung Ward, Ho Chi Minh City', zh: '199 Nguyen Hoang Street, Binh Trung Ward, Ho Chi Minh City', ja: '199 Nguyen Hoang Street, Binh Trung Ward, Ho Chi Minh City' },
   hotline: { vi: 'Hotline', en: 'Hotline', ko: '핫라인', zh: '热线', ja: 'ホットライン' },
   email: { vi: 'Email', en: 'Email', ko: '이메일', zh: '邮箱', ja: 'メール' },
   website: { vi: 'Website', en: 'Website', ko: '웹사이트', zh: '网站', ja: 'ウェブサイト' },
@@ -232,6 +238,8 @@ const translations: Translations = {
   contactPhone: { vi: 'Liên hệ: 1900 2137', en: 'Contact: 1900 2137', ko: '문의: 1900 2137', zh: '联系: 1900 2137', ja: 'お問い合わせ: 1900 2137' },
   developedBy: { vi: 'Phát triển bởi Công ty Cổ Phần Công Nghệ KAS', en: 'Developed by KAS Technology Corporation', ko: 'KAS 기술 주식회사에서 개발', zh: '由KAS科技股份公司开发', ja: 'KAS テクノロジー株式会社が開発' },
   privacyPolicy: { vi: 'Chính sách bảo mật', en: 'Privacy Policy', ko: '개인정보 처리방침', zh: '隐私政策', ja: 'プライバシーポリシー' },
+  downloadApp: { vi: 'Tải ứng dụng', en: 'Download App', ko: '앱 다운로드', zh: '下载应用', ja: 'アプリをダウンロード' },
+  scanQR: { vi: 'Quét mã QR để tải ứng dụng', en: 'Scan QR code to download', ko: 'QR 코드를 스캔하여 다운로드', zh: '扫描二维码下载', ja: 'QRコードをスキャンしてダウンロード' },
   termsOfService: { vi: 'Điều khoản dịch vụ', en: 'Terms of Service', ko: '서비스 약관', zh: '服务条款', ja: '利用規約' },
 };
 
@@ -450,12 +458,23 @@ export default function POSOneLanding() {
             </div>
 
             {/* Mobile Menu Button */}
-            <button 
-              className="md:hidden p-2"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+           <div className="lg:hidden flex items-center gap-2 sm:gap-3 flex-shrink-0">
+              <Link 
+                href="https://posone.vn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-2.5 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-lg shadow-green-500/30 hover:shadow-xl hover:shadow-green-500/50 hover:scale-105 font-medium"
+              >
+              {t('login')}
+              </Link>
+              
+              <button 
+                className="p-2"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Menu */}
@@ -512,14 +531,14 @@ export default function POSOneLanding() {
                 {t('demo')}
               </Link>
               
-              <Link 
+              {/* <Link 
                 href="https://posone.vn"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block px-6 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl text-center font-medium"
               >              
                 {t('login')}
-              </Link>
+              </Link> */}
             </div>
           )}
         </nav>
@@ -807,8 +826,9 @@ export default function POSOneLanding() {
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{t('basicPlan')}</h3>
                 <p className="text-sm text-gray-500 mb-3">{t('forSmallBusiness')}</p>
-                <div className="flex items-baseline">
-                  <span className="text-5xl font-bold text-gray-900">$105</span>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-5xl font-bold text-gray-900">{t('basicPrice')}</span>
+                  {language === 'vi' && <span className="text-2xl font-bold text-gray-900">{t('currencySymbol')}</span>}
                 </div>
                 <span className="text-gray-600">{t('perStore')}</span>
               </div>
@@ -886,9 +906,10 @@ export default function POSOneLanding() {
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">{t('advancePlan')}</h3>
               <p className="text-sm text-green-100 mb-3">{t('forGrowingBusiness')}</p>
-              <div className="text-4xl font-bold text-white mb-6">
-                $129
-                <span className="text-lg text-green-100 font-normal">{t('perStore')}</span>
+              <div className="flex items-baseline gap-1 mb-6">
+                <span className="text-4xl font-bold text-white">{t('advancePrice')}</span>
+                {language === 'vi' && <span className="text-2xl font-bold text-white">{t('currencySymbol')}</span>}
+                <span className="text-lg text-green-100 font-normal ml-2">{t('perStore')}</span>
               </div>
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start space-x-3">
@@ -939,8 +960,9 @@ export default function POSOneLanding() {
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{t('premiumPlan')}</h3>
                 <p className="text-sm text-gray-500 mb-3">{t('forEnterprise')}</p>
-                <div className="flex items-baseline">
-                  <span className="text-5xl font-bold text-gray-900">$177</span>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-5xl font-bold text-gray-900">{t('premiumPrice')}</span>
+                  {language === 'vi' && <span className="text-2xl font-bold text-gray-900">{t('currencySymbol')}</span>}
                 </div>
                 <span className="text-gray-600">{t('perStore')}</span>
               </div>
@@ -1537,6 +1559,24 @@ export default function POSOneLanding() {
                   <a href="https://kas.asia" target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors">kas.asia</a>
                 </p>
               </div>
+            </div>
+
+            {/* Download App - QR Code */}
+            <div>
+              <h4 className="text-white font-bold text-lg mb-4 flex items-center">
+                <div className="w-1 h-6 bg-gradient-to-b from-green-500 to-emerald-500 rounded-full mr-3"></div>
+                {t('downloadApp')}
+              </h4>
+              <div className="bg-white p-4 rounded-2xl shadow-xl inline-block hover:shadow-2xl transition-shadow duration-300">
+                <img
+                  src="https://ftp-staging.posone.vn/Files/qrcode_20250908115408.jpg"
+                  alt="QR Code Download POSONE App"
+                  width={150}
+                  height={150}
+                  className="w-[150px] h-[150px] object-contain"
+                />
+              </div>
+              <p className="text-sm text-gray-400 mt-3">{t('scanQR')}</p>
             </div>
 
             {/* Product Links */}
