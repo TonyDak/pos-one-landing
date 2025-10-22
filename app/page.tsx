@@ -438,10 +438,10 @@ export default function KASLanding() {
           </h1>
 
           {/* Subtitle with Stagger */}
-          <p className="text-2xl md:text-3xl text-gray-700 mb-4 font-bold animate-slide-up stagger-1">
+          <p className="text-2xl md:text-3xl text-gray-700 mb-4 font-bold animate-slide-up stagger-1 leading-relaxed">
             {t('heroSubtitle')}
           </p>
-          <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed animate-slide-up stagger-2">
+          <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
             {t('heroDesc')}
           </p>
 
@@ -559,7 +559,7 @@ export default function KASLanding() {
                 <Sparkles size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{t('value1')}</h3>
-              <p className="text-gray-600">{t('value1Desc')}</p>
+              <p className="text-gray-600 leading-relaxed">{t('value1Desc')}</p>
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100 hover:border-indigo-300">
@@ -567,7 +567,7 @@ export default function KASLanding() {
                 <Shield size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{t('value2')}</h3>
-              <p className="text-gray-600">{t('value2Desc')}</p>
+              <p className="text-gray-600 leading-relaxed">{t('value2Desc')}</p>
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100 hover:border-purple-300">
@@ -575,7 +575,7 @@ export default function KASLanding() {
                 <Heart size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{t('value3')}</h3>
-              <p className="text-gray-600">{t('value3Desc')}</p>
+              <p className="text-gray-600 leading-relaxed">{t('value3Desc')}</p>
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100 hover:border-blue-300">
@@ -583,7 +583,7 @@ export default function KASLanding() {
                 <Users size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{t('value4')}</h3>
-              <p className="text-gray-600">{t('value4Desc')}</p>
+              <p className="text-gray-600 leading-relaxed">{t('value4Desc')}</p>
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100 hover:border-blue-300">
@@ -591,7 +591,7 @@ export default function KASLanding() {
                 <TrendingUp size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{t('value5')}</h3>
-              <p className="text-gray-600">{t('value5Desc')}</p>
+              <p className="text-gray-600 leading-relaxed">{t('value5Desc')}</p>
             </div>
           </div>
         </div>
@@ -672,18 +672,18 @@ export default function KASLanding() {
               </div>
               
               <div className="mb-4">
-                <p className="text-3xl font-bold text-gray-900">{t('seedPrice')}</p>
-                <p className="text-sm text-gray-500">{t('perStorePerMonth')}</p>
+                <p className="text-3xl font-bold text-gray-900 leading-relaxed">{t('seedPrice')}</p>
+                <p className="text-sm text-gray-500 leading-relaxed">{t('perStorePerMonth')}</p>
               </div>
               
-              <p className="text-xs font-semibold text-gray-500 uppercase mb-2">{t('seedTarget')}</p>
+              <p className="text-xs font-semibold text-gray-500 uppercase mb-2 leading-relaxed">{t('seedTarget')}</p>
               <ul className="text-sm text-gray-600 space-y-2 mb-4">
                 <li>• {t('seedDesc1')}</li>
                 <li>• {t('seedDesc2')}</li>
                 <li>• {t('seedDesc3')}</li>
               </ul>
               
-              <p className="text-xs font-bold text-gray-900 mb-2">{t('seedFeatures')}</p>
+              <p className="text-xs font-bold text-gray-900 mb-2 leading-relaxed">{t('seedFeatures')}</p>
               <ul className="text-xs text-gray-600 space-y-1 mb-4">
                 <li>✓ {t('seedFeature1')}</li>
                 <li>✓ {t('seedFeature2')}</li>
@@ -694,7 +694,7 @@ export default function KASLanding() {
               </ul>
               
               <div className="bg-green-50 p-3 rounded-lg mb-4">
-                <p className="text-xs italic text-green-800"> {t('seedQuote')}</p>
+                <p className="text-xs italic text-green-800 leading-relaxed"> {t('seedQuote')}</p>
               </div>
               
               <Link href="#contact" className="block w-full px-4 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl text-center font-bold hover:from-green-700 hover:to-green-800 transition-all text-sm mt-auto">
@@ -709,17 +709,17 @@ export default function KASLanding() {
               </div>
               
               <div className="mb-4">
-                <p className="text-3xl font-bold text-gray-900">{t('bloomPrice')}</p>
-                <p className="text-sm text-gray-500">{t('perStorePerMonth')}</p>
+                <p className="text-3xl font-bold text-gray-900 leading-relaxed">{t('bloomPrice')}</p>
+                <p className="text-sm text-gray-500 leading-relaxed">{t('perStorePerMonth')}</p>
               </div>
               
-              <p className="text-xs font-semibold text-gray-500 uppercase mb-2">{t('bloomTarget')}</p>
+              <p className="text-xs font-semibold text-gray-500 uppercase mb-2 leading-relaxed">{t('bloomTarget')}</p>
               <ul className="text-sm text-gray-600 space-y-2 mb-4">
                 <li>• {t('bloomDesc1')}</li>
                 <li>• {t('bloomDesc2')}</li>
               </ul>
               
-              <p className="text-xs font-bold text-gray-900 mb-2">{t('seedFeatures')}</p>
+              <p className="text-xs font-bold text-gray-900 mb-2 leading-relaxed">{t('seedFeatures')}</p>
               <ul className="text-xs text-gray-600 space-y-1 mb-4">
                 <li>✓ {t('bloomFeature1')}</li>
                 <li>✓ {t('bloomFeature2')}</li>
@@ -730,7 +730,7 @@ export default function KASLanding() {
               </ul>
               
               <div className="bg-blue-50 p-3 rounded-lg mb-4">
-                <p className="text-xs italic text-blue-800"> {t('bloomQuote')}</p>
+                <p className="text-xs italic text-blue-800 leading-relaxed"> {t('bloomQuote')}</p>
               </div>
               
               <Link href="#contact" className="block w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl text-center font-bold hover:from-blue-700 hover:to-blue-800 transition-all text-sm mt-auto">
@@ -745,11 +745,11 @@ export default function KASLanding() {
               </div>
               
               <div className="mb-4">
-                <p className="text-3xl font-bold text-gray-900">{t('thrivePrice')}</p>
-                <p className="text-sm text-gray-500">{t('perStorePerMonth')}</p>
+                <p className="text-3xl font-bold text-gray-900 leading-relaxed">{t('thrivePrice')}</p>
+                <p className="text-sm text-gray-500 leading-relaxed">{t('perStorePerMonth')}</p>
               </div>
               
-              <p className="text-xs font-semibold text-gray-500 uppercase mb-2">{t('thriveTarget')}</p>
+              <p className="text-xs font-semibold text-gray-500 uppercase mb-2 leading-relaxed">{t('thriveTarget')}</p>
               <ul className="text-sm text-gray-600 space-y-2 mb-4">
                 <li>• {t('thriveDesc1')}</li>
                 <li>• {t('thriveDesc2')}</li>
@@ -827,14 +827,14 @@ export default function KASLanding() {
               <Briefcase size={20} />
               <span>{t('workplaceBadge')}</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-relaxed">
               <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
                 {t('workplaceTitle')}
               </span>
               <br />
               {t('workplaceSubtitle')}
             </h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               {t('workplaceDesc')}
             </p>
           </div>
@@ -1042,7 +1042,7 @@ export default function KASLanding() {
                     <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mb-4 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
                       <BookOpen size={24} className="text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-teal-600 transition-colors">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-teal-600 transition-colors leading-relaxed">
                       {t('koffice')}
                     </h3>
                     <p className="text-sm text-gray-600 leading-relaxed">
@@ -1058,7 +1058,7 @@ export default function KASLanding() {
                     <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
                       <Target size={24} className="text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-relaxed">
                       {t('kos')}
                     </h3>
                     <p className="text-sm text-gray-600 leading-relaxed">
@@ -1074,7 +1074,7 @@ export default function KASLanding() {
                     <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
                       <TrendingUp size={24} className="text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-cyan-600 transition-colors">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-cyan-600 transition-colors leading-relaxed">
                       {t('kops')}
                     </h3>
                     <p className="text-sm text-gray-600 leading-relaxed">
@@ -1090,7 +1090,7 @@ export default function KASLanding() {
                     <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
                       <Users size={24} className="text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors leading-relaxed">
                       {t('kforce')}
                     </h3>
                     <p className="text-sm text-gray-600 leading-relaxed">
@@ -1106,7 +1106,7 @@ export default function KASLanding() {
                     <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
                       <Briefcase size={24} className="text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors leading-relaxed">
                       {t('ksign')}
                     </h3>
                     <p className="text-sm text-gray-600 leading-relaxed">
