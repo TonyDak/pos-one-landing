@@ -201,36 +201,36 @@ const customers = [
   { name: 'Le Panier', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/Screenshot_2025-10-16_140343_1760598359099.png', category: 'small' },
   { name: 'Morning Glory', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/Screenshot_2025-10-16_140401_1760598359134.png', category: 'chain' },
   { name: 'Hansang', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/Screenshot_2025-10-16_140413_1760598359179.png', category: 'chain' },
-  { name: 'Vin Lợi', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'V\'s Deli', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'M Market', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'Bún Ân Cookie', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'Mộc Mộc', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'iMarket', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'enterprise' },
+  { name: 'Vin Lợi', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1761101683100.png', category: 'small' },
+  { name: 'V\'s Deli', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/Screenshot_2025-10-16_140439_1760598359266.png', category: 'small' },
+  { name: 'Vy\'s Market', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1761101743082.png', category: 'small' },
+  { name: 'Hội An Combo', logo: 'https://tastevietnam.asia/sites/default/files/HoiAnCombo.png', category: 'small' },
+  { name: 'Monsoon', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1761102101776.png', category: 'small' },
+  { name: 'Market Roast & Grill', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0uuAIrMDhMz9qliAu4werrM_ALbL03V0fmQ&s', category: 'enterprise' },
 
   // Row 4 - Large Enterprises
-  { name: 'Heineken', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'enterprise' },
-  { name: 'Viva Star', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
-  { name: 'Viva', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
-  { name: 'Kim Tú Garden', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'Best Coffee', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
-  { name: 'Asian Food Town', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
-  { name: 'Karaoke', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
-  { name: 'Skydeck', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'enterprise' },
-  { name: 'Bitexco', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'enterprise' },
-  { name: 'Phở Hồ Chí Minh', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Hankki Deli', logo: 'https://mms.img.susercontent.com/vn-11134513-7ra0g-m6f8h1o9t2n59b@resize_ss1242x600!@crop_w1242_h600_cT', category: 'enterprise' },
+  { name: 'Viva Star', logo: 'https://cdn-new.topcv.vn/unsafe/https://static.topcv.vn/company_logos/J5oSM8AL2WN1rMmtk6vRudRjzRWneEEQ_1667381918____65c84286660189544364f4cf4a35955c.jpg', category: 'chain' },
+  { name: 'Viva', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1761102360099.png', category: 'chain' },
+  { name: 'Kem Tràng Tiền', logo: 'https://media.loveitopcdn.com/3807/logo-kem-trang-tien-1.jpg', category: 'small' },
+  { name: 'Nest Coffee', logo: 'https://thodia.mservice.io/display?url=https://img.mservice.com.vn/common/u/05e07d15ed1a84ee51cdfe60756960e55412b5dcd748a2e496a53522eb6597fa/17d38466-a75c-4d30-a4ab-54bef790a563vvj_9jwr.jpg&fmt=jpg&w=300&op=resize', category: 'chain' },
+  { name: 'Asiana Food Town', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1761102520654.png', category: 'chain' },
+  { name: 'Queen Place Karaoke', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1761102578808.png', category: 'chain' },
+  { name: 'Saigon Skydeck', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1761102629679.png', category: 'enterprise' },
+  { name: 'Bitexco', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1761102670861.png', category: 'enterprise' },
+  { name: 'Phở Hồ Chí Minh', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1761102728217.png', category: 'chain' },
 
   // Row 5
-  { name: 'Mikado Sushi', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
-  { name: 'Phở Phượng Trang', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'Lotte', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'enterprise' },
-  { name: 'Shinrim Bakery', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
-  { name: 'K-Market', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
-  { name: 'Werd', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'Cơm Nhà Home', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'Market 54', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
-  { name: 'C2000', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'enterprise' },
-  { name: 'Vietthy', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Mikado Sushi', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1761102779823.png', category: 'chain' },
+  { name: 'Phở Phượng Trang', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1761102810381.png', category: 'small' },
+  { name: 'Lotte', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1761102835937.png', category: 'enterprise' },
+  { name: 'Shinrim Bakery', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1761103192529.png', category: 'chain' },
+  { name: 'K-Market', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1761103236337.png', category: 'chain' },
+  { name: 'Werd', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1761103264499.png', category: 'small' },
+  { name: 'Cơm Nhà Home', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1761103310837.png', category: 'small' },
+  { name: 'Market SH', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1761103361864.png', category: 'chain' },
+  { name: 'C2000', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1761103401829.png', category: 'enterprise' },
+  { name: 'Vietthy', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1761103441021.png', category: 'chain' },
 ];
 
 export default function CustomersPage() {
@@ -520,10 +520,10 @@ export default function CustomersPage() {
                 </div>
                 <div className="h-1 w-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4 mx-auto group-hover:w-full transition-all duration-500" />
                 <div className="text-lg font-bold text-gray-700 uppercase tracking-wider">
-                  {language === 'vi' ? 'Hài lòng' :
-                   language === 'en' ? 'Satisfaction' :
-                   language === 'ko' ? '만족도' :
-                   language === 'zh' ? '满意度' : '満足度'}
+                  {language === 'vi' ? 'Khách chuỗi' :
+                   language === 'en' ? 'Satisfied Clients' :
+                   language === 'ko' ? '만족한 고객' :
+                   language === 'zh' ? '满意的客户' : '満足したクライアント'}
                 </div>
               </div>
             </div>
@@ -929,9 +929,9 @@ export default function CustomersPage() {
                   />
                   
                   {/* Tooltip */}
-                  <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 bg-gray-900 text-white px-4 py-2 rounded-xl text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-20 shadow-xl">
+                  {/* <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 bg-gray-900 text-white px-4 py-2 rounded-xl text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-20 shadow-xl">
                     {customer.name}
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </div>
