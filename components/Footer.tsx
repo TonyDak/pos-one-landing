@@ -20,9 +20,15 @@ const translations: Translations = {
   businessLicense: { vi: 'Giấy chứng nhận đăng ký kinh doanh số: 0316194224', en: 'Business Registration Certificate: 0316194224', ko: '사업자등록증 번호: 0316194224', zh: '营业执照号码：0316194224', ja: '事業登録証明書番号：0316194224' },
   issuedDate: { vi: 'Cấp ngày 11/03/2020', en: 'Issued on 11/03/2020', ko: '발급일: 2020년 3월 11일', zh: '发证日期：2020年3月11日', ja: '発行日：2020年3月11日' },
   bankAccount: { vi: 'Tài khoản ngân hàng', en: 'Bank Account', ko: '은행 계좌', zh: '银行账户', ja: '銀行口座' },
-  bankAccountValue: { vi: '1170205610 - Ngân hàng BIDV - CN Bình Điền Sài Gòn', en: '1170205610 - BIDV Bank - Binh Dien Sai Gon Branch', ko: '1170205610 - BIDV 은행 - 빈디엔사이공 지점', zh: '1170205610 - BIDV银行 - 平田西贡分行', ja: '1170205610 - BIDV銀行 - ビンディエンサイゴン支店' },
-  addressValue: { vi: '199 Đường Nguyễn Hoàng, Phường An Phú, Thành Phố Thủ Đức, Thành Phố Hồ Chí Minh', en: '199 Nguyen Hoang Street, An Phu Ward, Thu Duc City, Ho Chi Minh City', ko: '호치민시 투득시 안푸구 응우옌호앙거리 199번지', zh: '胡志明市守德市安富坊阮晃路199号', ja: 'ホーチミン市トゥドゥック市アンフー区グエンホアン通り199番地' },
+  bankAccountValue: { vi: '1170205610 - Ngân hàng BIDV - CN Bình Điền Sài Gòn', en: '1170205610 - BIDV Bank - Binh Dien Sai Gon Branch', ko: '1170205610 - BIDV Bank - Binh Dien Sai Gon Branch', zh: '1170205610 - BIDV Bank - Binh Dien Sai Gon Branch', ja: '1170205610 - BIDV Bank - Binh Dien Sai Gon Branch' },
+  addressValue: { vi: '199 Đường Nguyễn Hoàng, Phường Bình Trưng, Thành Phố Hồ Chí Minh', en: '199 Nguyen Hoang Street, Binh Trung Ward, Ho Chi Minh City', ko: '199 Nguyen Hoang Street, Binh Trung Ward, Ho Chi Minh City', zh: '199 Nguyen Hoang Street, Binh Trung Ward, Ho Chi Minh City', ja: '199 Nguyen Hoang Street, Binh Trung Ward, Ho Chi Minh City' },
   copyright: { vi: '© 2021 by KAS TECHNOLOGY CORPORATION', en: '© 2021 by KAS TECHNOLOGY CORPORATION', ko: '© 2021 KAS TECHNOLOGY CORPORATION', zh: '© 2021 KAS科技股份公司', ja: '© 2021 KAS TECHNOLOGY CORPORATION' },
+  offices: { vi: 'Văn phòng', en: 'Offices', ko: '사무실', zh: '办公室', ja: 'オフィス' },
+  hcmOffice: { vi: 'Trụ sở chính tại Tp.HCM', en: 'Head Office in Ho Chi Minh City', ko: 'Head Office in Ho Chi Minh City', zh: 'Head Office in Ho Chi Minh City', ja: 'Head Office in Ho Chi Minh City' },
+  danangBranch: { vi: 'Chi nhánh Đà Nẵng', en: 'Da Nang Branch', ko: 'Da Nang Branch', zh: 'Da Nang Branch', ja: 'Da Nang Branch' },
+  hanoiOffice: { vi: 'Văn phòng Hà Nội', en: 'Hanoi Office', ko: 'Hanoi Office', zh: 'Hanoi Office', ja: 'Hanoi Office' },
+  daklakOffice: { vi: 'Văn phòng Đắk Lắk', en: 'Dak Lak Office', ko: 'Dak Lak Office', zh: 'Dak Lak Office', ja: 'Dak Lak Office' },
+  gialaiOffice: { vi: 'Văn phòng Gia Lai', en: 'Gia Lai Office', ko: 'Gia Lai Office', zh: 'Gia Lai Office', ja: 'Gia Lai Office' },
 };
 
 interface FooterProps {
@@ -77,13 +83,13 @@ export default function Footer({ language }: FooterProps) {
 
           {/* Offices */}
           <div>
-            <h4 className="font-bold text-lg mb-4">Văn phòng</h4>
+            <h4 className="font-bold text-lg mb-4">{t('offices')}</h4>
             <div className="space-y-2 text-sm text-gray-300">
-              <p>• Trụ sở chính tại Tp.HCM</p>
-              <p>• Chi nhánh Đà Nẵng</p>
-              <p>• Văn phòng Hà Nội</p>
-              <p>• Văn phòng Đắk Lắk</p>
-              <p>• Văn phòng Gia Lai</p>
+              <p>• {t('hcmOffice')}</p>
+              <p>• {t('danangBranch')}</p>
+              <p>• {t('hanoiOffice')}</p>
+              <p>• {t('daklakOffice')}</p>
+              <p>• {t('gialaiOffice')}</p>
             </div>
           </div>
         </div>

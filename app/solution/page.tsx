@@ -69,6 +69,87 @@ const translations: Translations = {
   platformDesc: { vi: 'GIẢI PHÁP ERP CHUYÊN CHO NGÀNH FnB, RETAIL, SERVICES', en: 'ERP SOLUTION FOR FnB, RETAIL, SERVICES', ko: 'FnB, 소매, 서비스용 ERP 솔루션', zh: '面向FnB、零售、服务的ERP解决方案', ja: 'FnB、小売、サービス向けのERPソリューション' },
   
   platformValue: { vi: 'Doanh ngiệp tăng hiệu quả vận hành, ra quyết định nhanh hơn và tạo lợi thế cạnh tranh bền vững trong kỹ nguyên số', en: 'Businesses increase operational efficiency, make faster decisions, and create sustainable competitive advantages in the digital age', ko: '기업은 운영 효율성을 높이고 더 빠른 의사 결정을 내리며 디지털 시대에 지속 가능한 경쟁 우위를 창출합니다', zh: '企业提高运营效率，更快地做出决策，并在数字时代创造可持续的竞争优势', ja: '企業は運用効率を高め、より迅速な意思決定を行い、デジタル時代に持続可能な競争優位性を創出します' },
+
+  // Platform Modules
+  loyaltyModule: { vi: 'LOYALTY', en: 'LOYALTY', ko: '로열티', zh: '会员忠诚度', ja: 'ロイヤリティ' },
+  loyaltyFeature1: { vi: 'Thu hút khách hàng mới', en: 'Acquire new customers', ko: '신규 고객 확보', zh: '获取新客户', ja: '新規顧客獲得' },
+  loyaltyFeature2: { vi: 'Tích điểm & Đổi điểm', en: 'Earn & Burn Points', ko: '포인트 적립 및 사용', zh: '赚取和使用积分', ja: 'ポイント獲得・使用' },
+  loyaltyFeature3: { vi: 'Voucher & Phần thưởng', en: 'Voucher & Rewards', ko: '바우처 및 보상', zh: '优惠券和奖励', ja: 'バウチャー・報酬' },
+  loyaltyFeature4: { vi: 'Tùy chỉnh công nghệ', en: 'Tech Customization', ko: '기술 맞춤화', zh: '技术定制', ja: '技術カスタマイズ' },
+
+  storeOperationModule: { vi: 'STORE OPERATION', en: 'STORE OPERATION', ko: '매장 운영', zh: '门店运营', ja: '店舗運営' },
+  storeFeature1: { vi: 'Đặt bàn', en: 'Booking', ko: '예약', zh: '预订', ja: '予約' },
+  storeFeature2: { vi: 'Đơn hàng FDA', en: 'FDA Order', ko: 'FDA 주문', zh: 'FDA订单', ja: 'FDA注文' },
+  storeFeature3: { vi: 'Voucher, Loyalty', en: 'Voucher, Loyalty', ko: '바우처, 로열티', zh: '优惠券，会员', ja: 'バウチャー、ロイヤリティ' },
+  storeFeature4: { vi: 'E-Menu', en: 'E-Menu', ko: '전자 메뉴', zh: '电子菜单', ja: '電子メニュー' },
+  storeFeature5: { vi: 'Đặt hàng Mobile', en: 'Mobile Order', ko: '모바일 주문', zh: '移动订购', ja: 'モバイル注文' },
+  storeFeature6: { vi: 'Thu ngân', en: 'Cashier', ko: '계산대', zh: '收银', ja: 'レジ' },
+  storeFeature7: { vi: 'Hóa đơn điện tử', en: 'E-Invoice', ko: '전자 송장', zh: '电子发票', ja: '電子請求書' },
+  storeFeature8: { vi: 'KDS', en: 'KDS', ko: 'KDS', zh: '厨房显示系统', ja: 'KDS' },
+  storeFeature9: { vi: 'Kho hàng', en: 'Inventory', ko: '재고', zh: '库存', ja: '在庫' },
+  storeFeature10: { vi: 'Điểm danh', en: 'Clock In', ko: '출근 체크', zh: '打卡', ja: '出勤チェック' },
+  storeFeature11: { vi: 'Thanh toán', en: 'Payment', ko: '결제', zh: '支付', ja: '決済' },
+
+  headOfficeModule: { vi: 'HEAD OFFICE MANAGEMENT', en: 'HEAD OFFICE MANAGEMENT', ko: '본사 관리', zh: '总部管理', ja: '本社管理' },
+  headOfficeFeature1: { vi: 'Hệ thống', en: 'System', ko: '시스템', zh: '系统', ja: 'システム' },
+  headOfficeFeature2: { vi: 'Sản phẩm', en: 'Products', ko: '제품', zh: '产品', ja: '製品' },
+  headOfficeFeature3: { vi: 'Mua hàng & AP', en: 'Purchase & AP', ko: '구매 및 AP', zh: '采购和应付账款', ja: '購買・買掛金' },
+  headOfficeFeature4: { vi: 'Bán hàng & AR', en: 'Sales & AR', ko: '판매 및 AR', zh: '销售和应收账款', ja: '販売・売掛金' },
+  headOfficeFeature5: { vi: 'O2O', en: 'O2O', ko: 'O2O', zh: 'O2O', ja: 'O2O' },
+  headOfficeFeature6: { vi: 'Sổ quỹ', en: 'Cashbook', ko: '현금 장부', zh: '现金账簿', ja: '現金出納帳' },
+  headOfficeFeature7: { vi: 'Hóa đơn điện tử', en: 'E-Invoice', ko: '전자 송장', zh: '电子发票', ja: '電子請求書' },
+  headOfficeFeature8: { vi: 'Báo cáo doanh thu', en: 'Revenue Reports', ko: '수익 보고서', zh: '收入报告', ja: '収益レポート' },
+  headOfficeFeature9: { vi: 'Báo cáo Lãi lỗ', en: 'P&L Reports', ko: '손익 보고서', zh: '损益报告', ja: '損益レポート' },
+  headOfficeFeature10: { vi: 'Chi nhánh', en: 'Branches', ko: '지점', zh: '分支机构', ja: '支店' },
+  headOfficeFeature11: { vi: 'Khách hàng', en: 'Customer', ko: '고객', zh: '客户', ja: '顧客' },
+  headOfficeFeature12: { vi: 'Đặt bàn', en: 'Booking', ko: '예약', zh: '预订', ja: '予約' },
+  headOfficeFeature13: { vi: 'BOM', en: 'BOM', ko: 'BOM', zh: 'BOM', ja: 'BOM' },
+  headOfficeFeature14: { vi: 'Kho hàng', en: 'Inventory', ko: '재고', zh: '库存', ja: '在庫' },
+  headOfficeFeature15: { vi: 'Khảo sát', en: 'Survey', ko: '설문조사', zh: '调查', ja: 'アンケート' },
+  headOfficeFeature16: { vi: 'Check-in', en: 'Check-in', ko: '체크인', zh: '签到', ja: 'チェックイン' },
+  headOfficeFeature17: { vi: 'Khuyến mãi', en: 'Promotion', ko: '프로모션', zh: '促销', ja: 'プロモーション' },
+  headOfficeFeature18: { vi: 'Nhân sự', en: 'HR', ko: '인사', zh: '人力资源', ja: '人事' },
+  headOfficeFeature19: { vi: 'Chấm công', en: 'Time Sheet', ko: '근무표', zh: '考勤表', ja: 'タイムシート' },
+  headOfficeFeature20: { vi: 'Tiền lương', en: 'Payroll', ko: '급여', zh: '薪资', ja: '給与' },
+  headOfficeFeature21: { vi: 'Công việc/Dự án', en: 'Task/Project', ko: '작업/프로젝트', zh: '任务/项目', ja: 'タスク/プロジェクト' },
+  headOfficeFeature22: { vi: 'Q&A/Danh sách kiểm tra', en: 'Q&A/Checklist', ko: 'Q&A/체크리스트', zh: '问答/检查清单', ja: 'Q&A/チェックリスト' },
+  headOfficeFeature23: { vi: 'Loyalty', en: 'Loyalty', ko: '로열티', zh: '会员忠诚度', ja: 'ロイヤリティ' },
+
+  accountingModule: { vi: 'ACCOUNTING', en: 'ACCOUNTING', ko: '회계', zh: '会计', ja: '会計' },
+  accountingFeature1: { vi: 'Sổ cái tổng hợp', en: 'General Ledger', ko: '총계정원장', zh: '总账', ja: '総勘定元帳' },
+  accountingFeature2: { vi: 'Báo cáo thuế', en: 'Tax Reports', ko: '세금 보고서', zh: '税务报告', ja: '税務レポート' },
+  accountingFeature3: { vi: 'Báo cáo tài chính', en: 'Financial Statement', ko: '재무제표', zh: '财务报表', ja: '財務諸表' },
+  accountingFeature4: { vi: 'Lãi lỗ', en: 'P&L', ko: '손익계산서', zh: '损益表', ja: '損益計算書' },
+
+  onlineSalesModule: { vi: 'ONLINE SALES', en: 'ONLINE SALES', ko: '온라인 판매', zh: '在线销售', ja: 'オンライン販売' },
+  onlineFeature1: { vi: 'Đặt hàng qua web', en: 'Web Order', ko: '웹 주문', zh: '网站订购', ja: 'Web注文' },
+  onlineFeature2: { vi: 'GrabFood', en: 'GrabFood', ko: 'GrabFood', zh: 'GrabFood', ja: 'GrabFood' },
+  onlineFeature3: { vi: 'Facebook', en: 'Facebook', ko: 'Facebook', zh: 'Facebook', ja: 'Facebook' },
+  onlineFeature4: { vi: 'Zalo OA', en: 'Zalo OA', ko: 'Zalo OA', zh: 'Zalo OA', ja: 'Zalo OA' },
+
+  apiIntModule: { vi: 'API INT', en: 'API INT', ko: 'API 통합', zh: 'API集成', ja: 'API統合' },
+  apiFeature1: { vi: 'SAP', en: 'SAP', ko: 'SAP', zh: 'SAP', ja: 'SAP' },
+  apiFeature2: { vi: 'ORACLE', en: 'ORACLE', ko: 'ORACLE', zh: 'ORACLE', ja: 'ORACLE' },
+  apiFeature3: { vi: 'FAST', en: 'FAST', ko: 'FAST', zh: 'FAST', ja: 'FAST' },
+  apiFeature4: { vi: 'BRAVO', en: 'BRAVO', ko: 'BRAVO', zh: 'BRAVO', ja: 'BRAVO' },
+
+  thirdHubModule: { vi: '3RD HUB', en: '3RD HUB', ko: '제3자 허브', zh: '第三方枢纽', ja: 'サードパーティハブ' },
+  hubFeature1: { vi: 'E-INVOICE HUB', en: 'E-INVOICE HUB', ko: '전자 송장 허브', zh: '电子发票枢纽', ja: '電子請求書ハブ' },
+  hubFeature2: { vi: 'E-PAYMENT HUB', en: 'E-PAYMENT HUB', ko: '전자 결제 허브', zh: '电子支付枢纽', ja: '電子決済ハブ' },
+  hubFeature3: { vi: 'E-VOUCHER HUB', en: 'E-VOUCHER HUB', ko: '전자 바우처 허브', zh: '电子优惠券枢纽', ja: '電子バウチャーハブ' },
+  hubFeature4: { vi: 'E-SMS, CALL', en: 'E-SMS, CALL', ko: '전자 SMS, 통화', zh: '电子短信、电话', ja: '電子SMS、通話' },
+  hubFeature5: { vi: 'E-LOGISTIC', en: 'E-LOGISTIC', ko: '전자 물류', zh: '电子物流', ja: '電子物流' },
+  hubFeature6: { vi: 'CAMERA AI', en: 'CAMERA AI', ko: 'AI 카메라', zh: 'AI摄像头', ja: 'AIカメラ' },
+
+  infraModule: { vi: 'INFRA', en: 'INFRA', ko: '인프라', zh: '基础设施', ja: 'インフラ' },
+  infraFeature1: { vi: 'VM', en: 'VM', ko: 'VM', zh: '虚拟机', ja: 'VM' },
+  infraFeature2: { vi: 'VPC', en: 'VPC', ko: 'VPC', zh: '虚拟私有云', ja: 'VPC' },
+  infraFeature3: { vi: 'Load Balancer', en: 'Load Balancer', ko: '로드 밸런서', zh: '负载均衡器', ja: 'ロードバランサー' },
+  infraFeature4: { vi: 'Auto Scaling', en: 'Auto Scaling', ko: '자동 확장', zh: '自动扩展', ja: 'オートスケーリング' },
+  infraFeature5: { vi: 'VPN', en: 'VPN', ko: 'VPN', zh: 'VPN', ja: 'VPN' },
+  infraFeature6: { vi: 'CDN', en: 'CDN', ko: 'CDN', zh: 'CDN', ja: 'CDN' },
+  infraFeature7: { vi: 'SWAP', en: 'SWAP', ko: 'SWAP', zh: 'SWAP', ja: 'SWAP' },
+  infraFeature8: { vi: 'Sun Backup', en: 'Sun Backup', ko: 'Sun 백업', zh: 'Sun备份', ja: 'Sunバックアップ' },
 };
 
 export default function SolutionPage() {
@@ -343,8 +424,8 @@ export default function SolutionPage() {
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16 animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 glass-effect bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 rounded-full text-sm font-bold mb-6 text-green-500 shadow-lg border border-white/20">
-              <Monitor className="w-5 h-5 animate-bounce-subtle" />
+            <div className="inline-flex items-center gap-2 glass-effect bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 rounded-full text-xl font-bold mb-6 text-green-500 shadow-lg border border-white/20">
+              <Monitor className="w-7 h-7 animate-bounce-subtle" />
               <span className="uppercase tracking-wide">{t('deviceBadge')}</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent mb-6 pb-1 animate-gradient text-shadow-glow">
@@ -474,8 +555,8 @@ export default function SolutionPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-500 to-purple-500 px-6 py-3 rounded-full text-sm font-bold mb-6 text-white shadow-lg">
-              <Building2 className="w-5 h-5" />
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-500 to-purple-500 px-6 py-3 rounded-full text-xl font-bold mb-6 text-white shadow-lg">
+              <Building2 className="w-7 h-7" />
               <span className="uppercase tracking-wide">{t('platformBadge')}</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6 pt-2 animate-gradient">
@@ -490,71 +571,71 @@ export default function SolutionPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {/* Loyalty */}
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border-2 border-blue-200 hover:border-blue-400 hover:shadow-xl transition-all">
-              <h3 className="text-lg font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4 uppercase">LOYALTY</h3>
+              <h3 className="text-lg font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4 uppercase">{t('loyaltyModule')}</h3>
               <div className="space-y-2 text-sm text-gray-700">
-                <p>• Acquire new customers</p>
-                <p>• Earn & Burn Points</p>
-                <p>• Voucher & Rewards</p>
-                <p>• Tech Customization</p>
+                <p>• {t('loyaltyFeature1')}</p>
+                <p>• {t('loyaltyFeature2')}</p>
+                <p>• {t('loyaltyFeature3')}</p>
+                <p>• {t('loyaltyFeature4')}</p>
               </div>
             </div>
 
             {/* Store Operation */}
             <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-6 border-2 border-indigo-200 hover:border-indigo-400 hover:shadow-xl transition-all">
-              <h3 className="text-lg font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4 uppercase">STORE OPERATION</h3>
+              <h3 className="text-lg font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4 uppercase">{t('storeOperationModule')}</h3>
               <div className="space-y-2 text-sm text-gray-700">
-                <p>• Booking</p>
-                <p>• FDA Order</p>
-                <p>• Voucher, Loyalty</p>
-                <p>• E-Menu</p>
-                <p>• Mobile Order</p>
-                <p>• Cashier</p>
-                <p>• E-Invoice</p>
-                <p>• KDS</p>
-                <p>• Inventory</p>
-                <p>• Clock In</p>
-                <p>• Payment</p>
+                <p>• {t('storeFeature1')}</p>
+                <p>• {t('storeFeature2')}</p>
+                <p>• {t('storeFeature3')}</p>
+                <p>• {t('storeFeature4')}</p>
+                <p>• {t('storeFeature5')}</p>
+                <p>• {t('storeFeature6')}</p>
+                <p>• {t('storeFeature7')}</p>
+                <p>• {t('storeFeature8')}</p>
+                <p>• {t('storeFeature9')}</p>
+                <p>• {t('storeFeature10')}</p>
+                <p>• {t('storeFeature11')}</p>
               </div>
             </div>
 
             {/* Head Office */}
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 border-2 border-purple-200 hover:border-purple-400 hover:shadow-xl transition-all">
-              <h3 className="text-lg font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4 uppercase">HEAD OFFICE MANAGEMENT</h3>
+              <h3 className="text-lg font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4 uppercase">{t('headOfficeModule')}</h3>
               <div className="space-y-2 text-sm text-gray-700">
-                <p>• System</p>
-                <p>• Products</p>
-                <p>• Purchase & AP</p>
-                <p>• Sales & AR</p>
-                <p>• O2O</p>
-                <p>• Cashbook</p>
-                <p>• E-Invoice</p>
-                <p>• Revenue Reports</p>
-                <p>• P&L Reports</p>
-                <p>• Branches</p>
-                <p>• Customer</p>
-                <p>• Booking</p>
-                <p>• BOM</p>
-                <p>• Inventory</p>
-                <p>• Survey</p>
-                <p>• Check-in</p>
-                <p>• Promotion</p>
-                <p>• HR</p>
-                <p>• Time Sheet</p>
-                <p>• Payroll</p>
-                <p>• Task/Project</p>
-                <p>• Q&A/Checklist</p>
-                <p>• Loyalty</p>
+                <p>• {t('headOfficeFeature1')}</p>
+                <p>• {t('headOfficeFeature2')}</p>
+                <p>• {t('headOfficeFeature3')}</p>
+                <p>• {t('headOfficeFeature4')}</p>
+                <p>• {t('headOfficeFeature5')}</p>
+                <p>• {t('headOfficeFeature6')}</p>
+                <p>• {t('headOfficeFeature7')}</p>
+                <p>• {t('headOfficeFeature8')}</p>
+                <p>• {t('headOfficeFeature9')}</p>
+                <p>• {t('headOfficeFeature10')}</p>
+                <p>• {t('headOfficeFeature11')}</p>
+                <p>• {t('headOfficeFeature12')}</p>
+                <p>• {t('headOfficeFeature13')}</p>
+                <p>• {t('headOfficeFeature14')}</p>
+                <p>• {t('headOfficeFeature15')}</p>
+                <p>• {t('headOfficeFeature16')}</p>
+                <p>• {t('headOfficeFeature17')}</p>
+                <p>• {t('headOfficeFeature18')}</p>
+                <p>• {t('headOfficeFeature19')}</p>
+                <p>• {t('headOfficeFeature20')}</p>
+                <p>• {t('headOfficeFeature21')}</p>
+                <p>• {t('headOfficeFeature22')}</p>
+                <p>• {t('headOfficeFeature23')}</p>
               </div>
             </div>
 
             {/* Accounting */}
             <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6 border-2 border-pink-200 hover:border-pink-400 hover:shadow-xl transition-all">
-              <h3 className="text-lg font-bold bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent mb-4 uppercase">ACCOUNTING</h3>
+              <h3 className="text-lg font-bold bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent mb-4 uppercase">{t('accountingModule')}</h3>
               <div className="space-y-2 text-sm text-gray-700">
-                <p>• General Ledger</p>
-                <p>• Tax Reports</p>
-                <p>• Financial Statement</p>
-                <p>• P&L</p>
+                <p>• {t('accountingFeature1')}</p>
+                <p>• {t('accountingFeature2')}</p>
+                <p>• {t('accountingFeature3')}</p>
+                <p>• {t('accountingFeature4')}</p>
               </div>
             </div>
           </div>
@@ -563,23 +644,23 @@ export default function SolutionPage() {
           <div className="grid md:grid-cols-2 gap-6 mb-16">
             {/* Online Sales */}
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border-2 border-green-200 hover:border-green-400 hover:shadow-xl transition-all">
-              <h3 className="text-lg font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-4 uppercase">ONLINE SALES</h3>
+              <h3 className="text-lg font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-4 uppercase">{t('onlineSalesModule')}</h3>
               <div className="space-y-2 text-sm text-gray-700">
-                <p>• Web Order</p>
-                <p>• GrabFood</p>
-                <p>• Facebook</p>
-                <p>• Zalo OA</p>
+                <p>• {t('onlineFeature1')}</p>
+                <p>• {t('onlineFeature2')}</p>
+                <p>• {t('onlineFeature3')}</p>
+                <p>• {t('onlineFeature4')}</p>
               </div>
             </div>
 
             {/* API Int */}
             <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-6 border-2 border-orange-200 hover:border-orange-400 hover:shadow-xl transition-all">
-              <h3 className="text-lg font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent mb-4 uppercase">API INT</h3>
+              <h3 className="text-lg font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent mb-4 uppercase">{t('apiIntModule')}</h3>
               <div className="space-y-2 text-sm text-gray-700">
-                <p>• SAP</p>
-                <p>• ORACLE</p>
-                <p>• FAST</p>
-                <p>• BRAVO</p>
+                <p>• {t('apiFeature1')}</p>
+                <p>• {t('apiFeature2')}</p>
+                <p>• {t('apiFeature3')}</p>
+                <p>• {t('apiFeature4')}</p>
               </div>
             </div>
           </div>
@@ -587,28 +668,28 @@ export default function SolutionPage() {
           {/* 3RD HUB & INFRA */}
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl p-6 border-2 border-cyan-200 hover:border-cyan-400 hover:shadow-xl transition-all">
-              <h3 className="text-lg font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-4 uppercase">3RD HUB</h3>
+              <h3 className="text-lg font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-4 uppercase">{t('thirdHubModule')}</h3>
               <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-white border border-cyan-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-cyan-400 transition-all">E-INVOICE HUB</span>
-                <span className="px-4 py-2 bg-white border border-cyan-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-cyan-400 transition-all">E-PAYMENT HUB</span>
-                <span className="px-4 py-2 bg-white border border-cyan-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-cyan-400 transition-all">E-VOUCHER HUB</span>
-                <span className="px-4 py-2 bg-white border border-cyan-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-cyan-400 transition-all">E-SMS, CALL</span>
-                <span className="px-4 py-2 bg-white border border-cyan-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-cyan-400 transition-all">E-LOGISTIC</span>
-                <span className="px-4 py-2 bg-white border border-cyan-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-cyan-400 transition-all">CAMERA AI</span>
+                <span className="px-4 py-2 bg-white border border-cyan-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-cyan-400 transition-all">{t('hubFeature1')}</span>
+                <span className="px-4 py-2 bg-white border border-cyan-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-cyan-400 transition-all">{t('hubFeature2')}</span>
+                <span className="px-4 py-2 bg-white border border-cyan-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-cyan-400 transition-all">{t('hubFeature3')}</span>
+                <span className="px-4 py-2 bg-white border border-cyan-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-cyan-400 transition-all">{t('hubFeature4')}</span>
+                <span className="px-4 py-2 bg-white border border-cyan-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-cyan-400 transition-all">{t('hubFeature5')}</span>
+                <span className="px-4 py-2 bg-white border border-cyan-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-cyan-400 transition-all">{t('hubFeature6')}</span>
               </div>
             </div>
 
             <div className="bg-gradient-to-br from-slate-50 to-gray-50 rounded-2xl p-6 border-2 border-slate-200 hover:border-slate-400 hover:shadow-xl transition-all">
-              <h3 className="text-lg font-bold bg-gradient-to-r from-slate-600 to-gray-600 bg-clip-text text-transparent mb-4 uppercase">INFRA</h3>
+              <h3 className="text-lg font-bold bg-gradient-to-r from-slate-600 to-gray-600 bg-clip-text text-transparent mb-4 uppercase">{t('infraModule')}</h3>
               <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-slate-400 transition-all">VM</span>
-                <span className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-slate-400 transition-all">VPC</span>
-                <span className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-slate-400 transition-all">Load Balancer</span>
-                <span className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-slate-400 transition-all">Auto Scaling</span>
-                <span className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-slate-400 transition-all">VPN</span>
-                <span className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-slate-400 transition-all">CDN</span>
-                <span className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-slate-400 transition-all">SWAP</span>
-                <span className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-slate-400 transition-all">Sun Backup</span>
+                <span className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-slate-400 transition-all">{t('infraFeature1')}</span>
+                <span className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-slate-400 transition-all">{t('infraFeature2')}</span>
+                <span className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-slate-400 transition-all">{t('infraFeature3')}</span>
+                <span className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-slate-400 transition-all">{t('infraFeature4')}</span>
+                <span className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-slate-400 transition-all">{t('infraFeature5')}</span>
+                <span className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-slate-400 transition-all">{t('infraFeature6')}</span>
+                <span className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-slate-400 transition-all">{t('infraFeature7')}</span>
+                <span className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-gray-700 text-sm font-semibold hover:border-slate-400 transition-all">{t('infraFeature8')}</span>
               </div>
             </div>
           </div>

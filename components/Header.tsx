@@ -22,9 +22,11 @@ const translations: Translations = {
   customers: { vi: 'Khách hàng', en: 'Customers', ko: '고객', zh: '客户', ja: '顧客' },
   solutions: { vi: 'Giải pháp', en: 'Solutions', ko: '솔루션', zh: '解决方案', ja: 'ソリューション' },
   aiTransformation: { vi: 'AI Transformation', en: 'AI Transformation', ko: 'AI 트랜스포메이션', zh: 'AI转型', ja: 'AI変革' },
-  login: { vi: 'KAS POS', en: 'KAS POS', ko: 'KAS POS', zh: 'KAS POS', ja: 'KAS POS' },
-  register: { vi: 'POSONE', en: 'POSONE', ko: 'POSONE', zh: 'POSONE', ja: 'POSONE' },
-  trial: { vi: 'Đăng ký tư vấn', en: 'Request Consultation', ko: '상담 요청', zh: '请求咨询', ja: '相談をリクエスト' },
+  posOne: { vi: 'POS ONE', en: 'POS ONE', ko: 'POS ONE', zh: 'POS ONE', ja: 'POS ONE' },
+  kasPos: { vi: 'KAS POS', en: 'KAS POS', ko: 'KAS POS', zh: 'KAS POS', ja: 'KAS POS' },
+  koffice: { vi: 'KOFFICE', en: 'KOFFICE', ko: 'KOFFICE', zh: 'KOFFICE', ja: 'KOFFICE' },
+  kom: { vi: 'KOM', en: 'KOM', ko: 'KOM', zh: 'KOM', ja: 'KOM' },
+  trial: { vi: 'Tư vấn', en: 'Consultation', ko: '상담', zh: '咨询', ja: '相談' },
   language: { vi: 'Ngôn ngữ', en: 'Language', ko: '언어', zh: '语言', ja: '言語' },
 };
 
@@ -97,7 +99,7 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-6">
               <Link href="/customer" className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative group">
                 {t('customers')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
@@ -106,10 +108,56 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
                 {t('solutions')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </Link>
-              {/* <Link href="/ai-transformation" className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative group">
-                {t('aiTransformation')}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-              </Link> */}
+
+              {/* Product Buttons */}
+              <Link
+                href="https://posone.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative px-4 py-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-lg font-medium transition-all duration-300 shadow-md shadow-green-500/20 hover:shadow-lg hover:shadow-green-500/30 hover:scale-105 overflow-hidden text-sm"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+                <span className="relative z-10">{t('posOne')}</span>
+              </Link>
+              <Link
+                href="https://kaspos.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-medium transition-all duration-300 shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 hover:scale-105 overflow-hidden text-sm"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+                <span className="relative z-10">{t('kasPos')}</span>
+              </Link>
+              <Link
+                href="https://koffice.ai"
+                target="_blank"
+                className="group relative px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-medium transition-all duration-300 shadow-md shadow-purple-500/20 hover:shadow-lg hover:shadow-purple-500/30 hover:scale-105 overflow-hidden text-sm"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+                <span className="relative z-10">{t('koffice')}</span>
+              </Link>
+              <Link
+                href="https://kom.tech/introduction"
+                target="_blank"
+                className="group relative px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg font-medium transition-all duration-300 shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 hover:scale-105 overflow-hidden text-sm"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+                <span className="relative z-10">{t('kom')}</span>
+              </Link>
+
+              {/* Consultation Button */}
+              <button
+                onClick={() => setConsultationFormOpen(true)}
+                className="group relative px-6 py-2.5 bg-gradient-to-r from-purple-500 to-purple-400 text-white rounded-xl font-medium transition-all duration-300 shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/50 hover:scale-105 overflow-hidden"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+                <span className="relative z-10 flex items-center space-x-2">
+                  <span>{t('trial')}</span>
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+              </button>
 
               {/* Desktop Language Selector */}
               <div className="relative">
@@ -138,37 +186,6 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
                   </div>
                 )}
               </div>
-
-              <Link 
-                href="https://kaspos.ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative px-6 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-medium transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 overflow-hidden"
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
-                <span className="relative z-10">{t('login')}</span>
-              </Link>
-              <Link
-                href="https://posone.ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative px-6 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-xl font-medium transition-all duration-300 shadow-lg shadow-green-500/30 hover:shadow-xl hover:shadow-green-500/50 hover:scale-105 overflow-hidden"
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
-                <span className="relative z-10">{t('register')}</span>
-              </Link>
-              <button
-                onClick={() => setConsultationFormOpen(true)}
-                className="group relative px-6 py-2.5 bg-gradient-to-r from-purple-500 to-purple-400 text-white rounded-xl font-medium transition-all duration-300 shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/50 hover:scale-105 overflow-hidden"
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
-                <span className="relative z-10 flex items-center space-x-2">
-                  <span>{t('trial')}</span>
-                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </span>
-              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -247,33 +264,51 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
               {/* Divider */}
               <div className="my-4 border-t border-gray-200"></div>
 
-              {/* CTA Buttons */}
-              <Link
-                href="https://kaspos.ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative block px-4 py-3.5 text-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl overflow-hidden"
-                onClick={handleMobileMenuClose}
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
-                <span className="relative z-10">{t('login')}</span>
-              </Link>
+              {/* Product Buttons */}
               <Link
                 href="https://posone.ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative block px-4 py-3.5 text-center bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl overflow-hidden"
+                className="group relative block px-4 py-3 text-center bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-lg font-medium transition-all shadow-md hover:shadow-lg overflow-hidden"
                 onClick={handleMobileMenuClose}
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
-                <span className="relative z-10">{t('register')}</span>
+                <span className="relative z-10">{t('posOne')}</span>
               </Link>
+              <Link
+                href="https://kaspos.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative block px-4 py-3 text-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-medium transition-all shadow-md hover:shadow-lg overflow-hidden"
+                onClick={handleMobileMenuClose}
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+                <span className="relative z-10">{t('kasPos')}</span>
+              </Link>
+              <Link
+                href="#"
+                className="group relative block px-4 py-3 text-center bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-medium transition-all shadow-md hover:shadow-lg overflow-hidden"
+                onClick={handleMobileMenuClose}
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+                <span className="relative z-10">{t('koffice')}</span>
+              </Link>
+              <Link
+                href="#"
+                className="group relative block px-4 py-3 text-center bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg font-medium transition-all shadow-md hover:shadow-lg overflow-hidden"
+                onClick={handleMobileMenuClose}
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+                <span className="relative z-10">{t('kom')}</span>
+              </Link>
+
+              {/* Consultation Button */}
               <button
                 onClick={() => {
                   handleMobileMenuClose();
                   setConsultationFormOpen(true);
                 }}
-                className="group relative block w-full px-4 py-3.5 text-center bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl overflow-hidden"
+                className="group relative block w-full px-4 py-3.5 text-center bg-gradient-to-r from-purple-500 to-purple-400 text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl overflow-hidden"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
                 <span className="relative z-10 flex items-center justify-center space-x-2">

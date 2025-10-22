@@ -174,33 +174,33 @@ const translations: Translations = {
 const customers = [
   // Row 1 - Korean Chain Restaurants
   { name: 'Dookki', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
-  { name: 'Spicy Box', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'Tous les Jours', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
-  { name: 'Bon Bon', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'Cobi Bread', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
-  { name: 'Chicken Plus', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
-  { name: 'Goobne', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
-  { name: 'Butter Bean', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'Hot & Cold', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'Papa\'s Chicken', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Spicy Box', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1760596957077.png', category: 'small' },
+  { name: 'Tous les Jours', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1760596991306.png', category: 'chain' },
+  { name: 'Bon Bon', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1760597691670.png', category: 'small' },
+  { name: 'Cobi Bread', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1760597035842.png', category: 'chain' },
+  { name: 'Chicken Plus', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7JEBL-vLgRTOzm2ZHJENAw8eX1FJ_1rqv2w&s', category: 'chain' },
+  { name: 'Goobne', logo: 'https://employer.jobsgo.vn/uploads/media/img/201912/pictures_library_38047_20191219110036_4091.png', category: 'chain' },
+  { name: 'Butter Bean', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1760596830623.png', category: 'small' },
+  { name: 'Hot & Cold', logo: 'https://gigamall.com.vn/data/2022/06/06/22432212_logohotandcold900x900.jpg', category: 'small' },
+  { name: 'Papa\'s Chicken', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrHTkIuJs2LKZg-Fx66_IklPHV07LSKDyRiJoY6V0NmZzU4wWLdS9oCwOkOsSkS_jGAhE&usqp=CAU', category: 'chain' },
 
   // Row 2 - Vietnamese Restaurants
-  { name: 'Phở Lộc Thọ', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'Cơm Niêu Thiên Lý', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
-  { name: 'Papagayo', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'Yên Thư', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'Bamboo', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'Hong Kong', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
-  { name: 'Trung Dương', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'Thai Market', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'PiThai', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
-  { name: 'Mớ Cỏ', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
+  { name: 'Phúc Lộc Thọ', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1760597346351.png', category: 'small' },
+  { name: 'Cơm Niêu Thiên Lý', logo: 'https://1900.com.vn/storage/uploads/companies/logo/69/6-1697809216.png', category: 'chain' },
+  { name: 'Papa Xốt', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1760597312181.png', category: 'small' },
+  { name: 'Việt Phố', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1760597385132.png', category: 'small' },
+  { name: 'Làng nướng Nam Bộ', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1760597438139.png', category: 'small' },
+  { name: 'Hong Kong Hotpot', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1760597510673.png', category: 'chain' },
+  { name: 'Trùng Dương', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1760597554463.png', category: 'small' },
+  { name: 'Thai Market', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1760597603460.png', category: 'small' },
+  { name: 'PiThai', logo: 'https://images.urbox.vn/_img_server/2025/01/16/320/1737002004_67888c14ad55d.png', category: 'chain' },
+  { name: 'MorFai', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1760597759253.png', category: 'small' },
 
   // Row 3 - Cafes & Bakeries
-  { name: 'Cargo Club', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'Le Panier', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
-  { name: 'Morning Glory', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
-  { name: 'Hansang', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'chain' },
+  { name: 'Cargo Club', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/image_1760598202481.png', category: 'small' },
+  { name: 'Le Panier', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/Screenshot_2025-10-16_140343_1760598359099.png', category: 'small' },
+  { name: 'Morning Glory', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/Screenshot_2025-10-16_140401_1760598359134.png', category: 'chain' },
+  { name: 'Hansang', logo: 'https://api-kom.kas.asia/api/uploads/chat_image/Screenshot_2025-10-16_140413_1760598359179.png', category: 'chain' },
   { name: 'Vin Lợi', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
   { name: 'V\'s Deli', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
   { name: 'M Market', logo: 'https://cnvloyalty.com/storage/app/dookki/a.webp', category: 'small' },
@@ -759,8 +759,8 @@ export default function CustomersPage() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 mb-8 shadow-lg">
-              <Users className="w-5 h-5" />
-              <span className="text-sm font-bold uppercase tracking-wider">{t('targetCustomersBadge')}</span>
+              <Users className="w-7 h-7" />
+              <span className="text-xl font-bold uppercase tracking-wider">{t('targetCustomersBadge')}</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
@@ -916,7 +916,7 @@ export default function CustomersPage() {
                language === 'zh' ? '主要客户' : '主要顧客'}
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-4">
-              {customers.slice(0, 20).map((customer, index) => (
+              {customers.slice(10, 50).map((customer, index) => (
                 <div
                   key={index}
                   className="group relative aspect-square bg-white rounded-2xl p-3 shadow-md hover:shadow-2xl transition-all duration-300 flex items-center justify-center border-2 border-gray-100 hover:border-green-400 transform hover:scale-110"
@@ -1022,12 +1022,12 @@ export default function CustomersPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <button className="group px-10 py-5 bg-white text-purple-600 rounded-full font-black text-lg shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 flex items-center gap-3">
+            <button className="group px-10 py-5 bg-white text-purple-600 rounded-full font-black text-lg shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 flex items-center gap-3 font-bold">
               <span>{language === 'vi' ? 'Dùng thử miễn phí' : 'Start Free Trial'}</span>
               <span className="transform group-hover:translate-x-2 transition-transform duration-300">→</span>
             </button>
             
-            <button className="group px-10 py-5 bg-white/10 backdrop-blur-md border-2 border-white text-white rounded-full font-black text-lg hover:bg-white hover:text-purple-600 transition-all duration-300 flex items-center gap-3">
+            <button className="group px-10 py-5 bg-white/10 backdrop-blur-md border-2 border-white text-white rounded-full font-black text-lg hover:bg-white hover:text-purple-600 transition-all duration-300 flex items-center gap-3 font-bold">
               <span>{language === 'vi' ? 'Liên hệ tư vấn' : 'Contact Sales'}</span>
             </button>
           </div>
