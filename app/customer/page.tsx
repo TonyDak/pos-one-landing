@@ -542,8 +542,8 @@ export default function CustomersPage() {
       <section id="target-market" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-blue-50/30 to-white overflow-hidden">
         {/* Enhanced Background decoration with Parallax */}
         <div className="absolute top-0 left-0 w-full h-full opacity-30">
-          <div className="absolute top-10 left-10 w-[500px] h-[500px] bg-blue-400/20 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-10 right-10 w-[600px] h-[600px] bg-purple-400/20 rounded-full blur-3xl animate-float" style={{animationDelay: '1s'}} />
+          {/* <div className="absolute top-10 left-10 w-[500px] h-[500px] bg-blue-400/20 rounded-full blur-3xl animate-float" /> */}
+          {/* <div className="absolute bottom-10 right-10 w-[600px] h-[600px] bg-purple-400/20 rounded-full blur-3xl animate-float" style={{animationDelay: '1s'}} /> */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-400/15 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}} />
         </div>
 

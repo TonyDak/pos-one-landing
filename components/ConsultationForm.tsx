@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { X, Sparkles } from "lucide-react";
 
 type Language = 'vi' | 'en' | 'ko' | 'zh' | 'ja';
@@ -116,6 +116,15 @@ const businessTypes = {
   ja: ['レストラン / 飲食店', '小売店', 'スーパー / コンビニ', 'スパ / サロン', 'ホテル', 'カフェ / ティーショップ', 'チェーン店', 'その他'],
 };
 
+
+// Custom animation classes (add to your global CSS or Tailwind config)
+// .animate-modal-in { animation: modalIn 0.45s cubic-bezier(.4,0,.2,1) both; }
+// .animate-modal-out { animation: modalOut 0.35s cubic-bezier(.4,0,.2,1) both; }
+// .animate-overlay-in { animation: overlayIn 0.45s cubic-bezier(.4,0,.2,1) both; }
+// .animate-overlay-out { animation: overlayOut 0.35s cubic-bezier(.4,0,.2,1) both; }
+// .animate-fadeIn { animation: fadeIn 0.6s cubic-bezier(.4,0,.2,1) both; }
+// .animate-shake { animation: shake 0.4s cubic-bezier(.4,0,.2,1); }
+
 export default function ConsultationForm({ isOpen, onClose, language }: ConsultationFormProps) {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -128,15 +137,7 @@ export default function ConsultationForm({ isOpen, onClose, language }: Consulta
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [error, setError] = useState('');
-  const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    if (isOpen) {
-      setTimeout(() => setIsVisible(true), 10);
-    } else {
-      setIsVisible(false);
-    }
-  }, [isOpen]);
 
   const t = (key: string): string => {
     return formTranslations[key]?.[language] || key;
@@ -152,21 +153,14 @@ export default function ConsultationForm({ isOpen, onClose, language }: Consulta
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (!formData.fullName || !formData.phone || !formData.email || !formData.businessType || !formData.needs) {
       setError(t('required'));
       return;
     }
-
     setIsSubmitting(true);
-    
-    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
     setIsSubmitting(false);
     setShowSuccess(true);
-    
-    // Reset form after 3 seconds
     setTimeout(() => {
       setShowSuccess(false);
       setFormData({
@@ -184,28 +178,28 @@ export default function ConsultationForm({ isOpen, onClose, language }: Consulta
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 animate-fadeIn">
-      {/* Overlay with gradient */}
-      <div 
-        className={`absolute inset-0 bg-gradient-to-br from-blue-900/40 via-purple-900/40 to-indigo-900/40 backdrop-blur-md transition-opacity duration-500 ${
-          isVisible ? 'opacity-100' : 'opacity-0'
-        }`}
+  <div className="fixed inset-0 z-60 flex items-center justify-center p-4">
+      {/* Overlay with gradient and fade-in/out animation */}
+      <div
+        className={`absolute inset-0 bg-linear-to-br from-blue-900/40 via-purple-900/40 to-indigo-900/40 backdrop-blur-md
+          ${isOpen ? 'animate-overlay-in' : 'animate-overlay-out'}
+          ${!isOpen ? 'pointer-events-none' : ''}`}
         onClick={onClose}
       />
-      
-      {/* Modal */}
-      <div className={`relative w-full max-w-2xl mx-auto bg-white rounded-3xl shadow-2xl max-h-[90vh] overflow-hidden transform transition-all duration-500 ${
-        isVisible ? 'scale-100 opacity-100 translate-y-0' : 'scale-95 opacity-0 translate-y-4'
-      }`}>
+      {/* Modal with fade and scale animation */}
+      <div className={`relative w-full max-w-2xl mx-auto bg-white rounded-3xl shadow-2xl max-h-[90vh] overflow-hidden
+        ${isOpen ? 'animate-modal-in' : 'animate-modal-out'}
+        ${!isOpen ? 'pointer-events-none' : ''}`}
+        style={{ willChange: 'opacity, transform' }}>
         {/* Decorative gradient top */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
-        
+  <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+
         {/* Success Message with premium animation */}
         {showSuccess && (
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-white via-blue-50 to-purple-50 backdrop-blur-lg rounded-3xl z-10 animate-fadeIn">
+          <div className="absolute inset-0 flex items-center justify-center bg-linear-to-br from-white via-blue-50 to-purple-50 backdrop-blur-lg rounded-3xl z-10 animate-fadeIn">
             <div className="text-center p-8 space-y-6">
               <div className="relative">
-                <div className="w-24 h-24 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-green-500/50 animate-bounce-slow">
+                <div className="w-24 h-24 bg-linear-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-green-500/50 animate-bounce-slow">
                   <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                   </svg>
@@ -214,7 +208,7 @@ export default function ConsultationForm({ isOpen, onClose, language }: Consulta
                 <Sparkles className="absolute -bottom-2 -left-2 w-6 h-6 text-purple-400 animate-pulse delay-75" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <h3 className="text-2xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   Thành công!
                 </h3>
                 <p className="text-lg text-gray-700 leading-relaxed max-w-md mx-auto">
@@ -228,7 +222,7 @@ export default function ConsultationForm({ isOpen, onClose, language }: Consulta
         {/* Scrollable content wrapper */}
         <div className="max-h-[90vh] overflow-y-auto">
           {/* Header with gradient background */}
-          <div className="relative bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 px-8 py-6">
+          <div className="relative bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 px-8 py-6">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
@@ -244,7 +238,7 @@ export default function ConsultationForm({ isOpen, onClose, language }: Consulta
                 <X size={24} className="text-white group-hover:rotate-90 transition-transform duration-300" />
               </button>
             </div>
-            
+
             {/* Decorative wave */}
             <svg className="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 48H1440V24C1440 24 1200 0 720 0C240 0 0 24 0 24V48Z" fill="white"/>
@@ -254,7 +248,7 @@ export default function ConsultationForm({ isOpen, onClose, language }: Consulta
           {/* Form with premium styling */}
           <form onSubmit={handleSubmit} className="p-8 space-y-6">
             {error && (
-              <div className="p-4 bg-gradient-to-r from-red-50 to-pink-50 border-l-4 border-red-500 rounded-lg text-red-700 text-sm font-medium animate-shake">
+              <div className="p-4 bg-linear-to-r from-red-50 to-pink-50 border-l-4 border-red-500 rounded-lg text-red-700 text-sm font-medium animate-shake">
                 <div className="flex items-center space-x-2">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
@@ -264,6 +258,7 @@ export default function ConsultationForm({ isOpen, onClose, language }: Consulta
               </div>
             )}
 
+            {/* ...existing code... */}
             <div className="group">
               <label className="block text-sm font-semibold text-gray-700 mb-2 group-focus-within:text-blue-600 transition-colors">
                 {t('fullName')} <span className="text-red-500">*</span>
@@ -279,6 +274,7 @@ export default function ConsultationForm({ isOpen, onClose, language }: Consulta
               />
             </div>
 
+            {/* ...existing code... */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="group">
                 <label className="block text-sm font-semibold text-gray-700 mb-2 group-focus-within:text-blue-600 transition-colors">
@@ -295,6 +291,7 @@ export default function ConsultationForm({ isOpen, onClose, language }: Consulta
                 />
               </div>
 
+              {/* ...existing code... */}
               <div className="group">
                 <label className="block text-sm font-semibold text-gray-700 mb-2 group-focus-within:text-blue-600 transition-colors">
                   {t('email')} <span className="text-red-500">*</span>
@@ -311,6 +308,7 @@ export default function ConsultationForm({ isOpen, onClose, language }: Consulta
               </div>
             </div>
 
+            {/* ...existing code... */}
             <div className="group">
               <label className="block text-sm font-semibold text-gray-700 mb-2 group-focus-within:text-blue-600 transition-colors">
                 {t('company')}
@@ -325,6 +323,7 @@ export default function ConsultationForm({ isOpen, onClose, language }: Consulta
               />
             </div>
 
+            {/* ...existing code... */}
             <div className="group">
               <label className="block text-sm font-semibold text-gray-700 mb-2 group-focus-within:text-blue-600 transition-colors">
                 {t('businessType')} <span className="text-red-500">*</span>
@@ -350,6 +349,7 @@ export default function ConsultationForm({ isOpen, onClose, language }: Consulta
               </div>
             </div>
 
+            {/* ...existing code... */}
             <div className="group">
               <label className="block text-sm font-semibold text-gray-700 mb-2 group-focus-within:text-blue-600 transition-colors">
                 {t('needs')} <span className="text-red-500">*</span>
@@ -365,20 +365,21 @@ export default function ConsultationForm({ isOpen, onClose, language }: Consulta
               />
             </div>
 
+            {/* ...existing code... */}
             <div className="flex gap-4 pt-6">
-              <button
+                <button
                 type="button"
                 onClick={onClose}
-                className="flex-1 px-6 py-4 border-2 border-gray-200 text-gray-700 rounded-xl font-semibold hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
-              >
+                className="flex-1 px-6 py-4 bg-gray-50 text-gray-700 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                >
                 {t('cancel')}
-              </button>
+                </button>
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex-1 px-6 py-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden group"
+                className="flex-1 px-6 py-4 bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden group"
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></span>
+                <span className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
                 {isSubmitting ? (
                   <span className="flex items-center justify-center relative z-10">
                     <svg className="animate-spin h-5 w-5 mr-2" viewBox="0 0 24 24">
